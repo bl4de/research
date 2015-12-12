@@ -16,4 +16,4 @@ Git is "Git is a free and open source distributed version control system designe
 Newly created Git repository contains some default folder and files, where all information are stored.
 
 ![Empty .git folder structure]
-()
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)
