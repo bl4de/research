@@ -1,0 +1,81 @@
+=== RPC / Portmapper ===
+
+RPC: https://tools.ietf.org/html/rfc1057
+XDR: http://tools.ietf.org/html/rfc1832
+RPC protocol: http://tools.ietf.org/html/rfc5531
+
+IANA RPC programs numbers:
+http://www.iana.org/assignments/rpc-program-numbers/rpc-program-numbers.xhtml
+
+
+== RPC basic operations ==
+
+
+1. Calculate RPC port from rpcinfo output
+
+
+$ rpcinfo 192.168.1.1
+   program   version netid     address              service    owner
+   100000       4     tcp6     ::.0.111             portmapper superuser
+   100000       3     tcp6     ::.0.111             portmapper superuser
+   100000       4     udp6     ::.0.111             portmapper superuser
+   100000       3     udp6     ::.0.111             portmapper superuser
+   100000       4     tcp      0.0.0.0.0.111        portmapper superuser
+   100000       3     tcp      0.0.0.0.0.111        portmapper superuser
+   100000       2     tcp      0.0.0.0.0.111        portmapper superuser
+   100000       4     udp      0.0.0.0.0.111        portmapper superuser
+   100000       3     udp      0.0.0.0.0.111        portmapper superuser
+   100000       2     udp      0.0.0.0.0.111        portmapper superuser
+   100000       4     local    /var/run/rpcbind.sock portmapper superuser
+   100000       3     local    /var/run/rpcbind.sock portmapper superuser
+   100024       1     udp      0.0.0.0.161.56       status     102
+   100024       1     tcp      0.0.0.0.129.4        status     102
+   100024       1     udp6     ::.133.8             status     102
+   100024       1     tcp6     ::.159.221           status     102
+
+
+status: TCP, 0.0.0.0.129.4
+
+129 * 256 + 4 * 1 = 33024 + 4 = 33028
+
+
+2. Info (?)
+
+$ rpcinfo -T tcp 192.168.1.1 100024
+program 100024 version 1 is ready and waiting
+
+
+$ nmap -sV 192.168.1.1 -p-
+
+Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-16 20:17 IST
+Nmap scan report for 888.darknet.com (192.168.1.1)
+Host is up (0.00050s latency).
+Not shown: 65532 closed ports
+PORT      STATE SERVICE VERSION
+80/tcp    open  http    Apache httpd 2.2.22 ((Debian))
+111/tcp   open  rpcbind 2-4 (RPC #100000)
+33028/tcp open  status  1 (RPC #100024)				<-- port number calculated correctly
+
+
+$ nmap -sC -p 111 192.168.1.1
+
+Starting Nmap 6.49BETA4 ( https://nmap.org ) at 2015-09-16 21:58 IST
+Nmap scan report for 888.darknet.com (192.168.1.1)
+Host is up (0.00051s latency).
+PORT    STATE SERVICE
+111/tcp open  rpcbind
+| rpcinfo: 
+|   program version   port/proto  service
+|   100000  2,3,4        111/tcp  rpcbind
+|   100000  2,3,4        111/udp  rpcbind
+|   100024  1          33028/tcp  status
+|_  100024  1          41272/udp  status
+
+
+
+
+
+== Exploiting RPC services ==
+
+
+

