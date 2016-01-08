@@ -8,7 +8,9 @@ https://twitter.com/_bl4de
 My other IT security related profiles:
 
 CTFtime.org		https://ctftime.org/team/12769
+
 Bugcrowd:		https://bugcrowd.com/bl4de
+
 HackerOne:		https://hackerone.com/bl4de
 
 
