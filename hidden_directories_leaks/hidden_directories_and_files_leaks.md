@@ -15,7 +15,7 @@ Git is "(...)a free and open source distributed version control system designed 
 
 Newly created Git repository contains some default folder and files, where all information are stored. Here's sample .git folder, with one commit done.
 
-![Empty .git folder structure]
+![.git folder structure with single commit]
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)	
 
 Let's take a look at this from attacker point of view. As we know, all Git repository content is written in objects. All of them are stored in .git/objects folder. 
@@ -27,3 +27,22 @@ Commit is an information about commit, with current tree (folders and files stru
 Tree contains information about folders and files structure - and every single folder or file has its own object hash stored in tree object. It might be another tree (folder which is one level down in the folders structure) or file.
 
 Blob is Git object type where files content are saved. In other way - if you know an object hash of the particular file, you can read content of this file using git cat-file option.
+
+
+To be able to do this, you have to create your own, local dummy .git folder structure and download Git objects from remote server using following method:
+
+- create dummy Git folder:
+
+*$ git init*
+
+This will initialize empty Git repository with all required files and folders.
+
+- download found Git objects from remote server. Remember to keep valid path to object.
+
+- using following commands you can read all downloaded content as it was on your local machine:
+
+To check the type of object, you can use *git cat-file -f* command.
+To display the content of the object, use *git cat-file -p* command. 
+
+In both cases use object hash as an argument.
+
