@@ -16,6 +16,14 @@ Git is "(...)a free and open source distributed version control system designed 
 Newly created Git repository contains some default folder and files, where all information are stored. Here's sample .git folder, with one commit done.
 
 ![Empty .git folder structure]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)	
 
-Let's take a look at this from security point of view.
+Let's take a look at this from attacker point of view. As we know, all Git repository content is written in objects. All of them are stored in .git/objects folder. 
+
+Objects can be one of three types: commit, tree and blob. 
+
+Commit is an information about commit, with current tree (folders and files structure) object hash.
+
+Tree contains information about folders and files structure - and every single folder or file has its own object hash stored in tree object. It might be another tree (folder which is one level down in the folders structure) or file.
+
+Blob is Git object type where files content are saved. In other way - if you know an object hash of the particular file, you can read content of this file using git cat-file option.
