@@ -34,7 +34,7 @@ http://sekurak.pl/?s=bl4de
 
 ### Me online
 
-This is my IT security related research repository - writeups, articles, PoCs and all that stuff.
+This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
 
 You can follow me on **Twitter** if you want. I'm trying to share some IT security, web development and coding stuff. I am not following and sharing any politic or religious related content as I am totally independent and broadminded (I mean - I don't care :D )
 
