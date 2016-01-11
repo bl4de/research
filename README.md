@@ -1,3 +1,35 @@
+
+### My Research
+
+If you'd like to know more about me - here's the link:
+
+
+#### You can read now:
+
+(There's no finished articles right now)
+
+
+#### Actually working on...
+
+Leaks caused by hidden folders and files (eg. .git, which is my favourite :) )
+
+You can see _work in progress_ here: https://github.com/bl4de/research/blob/master/hidden_directories_leaks/hidden_directories_and_files_leaks.md
+
+#### CTF writeups
+
+You can take a look at some of my **writeups from CTFs** events which I've took a part and resolved some tasks:
+
+https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
+
+#### [PL only]
+
+Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
+Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
+
+http://sekurak.pl/?s=bl4de
+
+
+
 ### About me
 
 Hi,
@@ -61,29 +93,3 @@ Some of my XSS found.
 
 So far nothing to see here - I will describe all of my Bounty I'll find 
 
-
-### My Research
-
-#### You can read now:
-
-(There's no finished articles right now)
-
-
-#### Actually working on...
-
-Leaks caused by hidden folders and files (eg. .git, which is my favourite :) )
-
-You can see _work in progress_ here: https://github.com/bl4de/research/blob/master/hidden_directories_leaks/hidden_directories_and_files_leaks.md
-
-#### CTF writeups
-
-You can take a look at some of my **writeups from CTFs** events which I've took a part and resolved some tasks:
-
-https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
-
-#### [PL only]
-
-Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
-Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
-
-http://sekurak.pl/?s=bl4de
