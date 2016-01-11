@@ -6,7 +6,8 @@ Thanks for visiting my GitHub!
 
 A few words about myself :)
 
-I am Full stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit (Amiga 1200) in 2000 I've get my first PC machine. Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
+I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
+Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
 
 
 During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
