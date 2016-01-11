@@ -46,3 +46,9 @@ To display the content of the object, use *git cat-file -p* command.
 
 In both cases use object hash as an argument.
 
+
+#### Finding basic information about objects
+
+To start retrieving information from Git repository, first we have to find starting point. Git saves all information in log file and this file is available at _.git/logs/head_
+
+ 
