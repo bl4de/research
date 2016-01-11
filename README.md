@@ -1,6 +1,9 @@
 
 ## My Research
 
+
+This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
+
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
 
@@ -34,8 +37,6 @@ http://sekurak.pl/?s=bl4de
 
 ## Me online
 
-This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
-
 You can follow me on **Twitter** if you want. I'm trying to share some IT security, web development and coding stuff. I am not following and sharing any politic or religious related content as I am totally independent and broadminded (I mean - I don't care :D )
 
 https://twitter.com/_bl4de
@@ -54,19 +55,21 @@ You can see some of my **CTF writeups** from variuos events here: https://github
 In **2016** I'm going to get position in first 500 overall and equal or below 12 in Poland :)
 
 
-
-**XSSposed**       https://www.xssposed.org/researchers/_bl4de/
-
-Some of my XSS found.
-
-
 #### Bug Bounty programs
 
 **Bugcrowd**		    https://bugcrowd.com/bl4de
 
 **HackerOne**		  https://hackerone.com/bl4de
 
-So far nothing to see here - I will describe all of my Bounty I'll find 
+So far nothing to see here - I will be describing all of my bounty I'll find.
+
+
+#### Other sites
+
+**XSSposed**       https://www.xssposed.org/researchers/_bl4de/
+
+Some of my XSS found.
+
 
 
 ## About me
