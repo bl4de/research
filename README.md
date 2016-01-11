@@ -1,15 +1,19 @@
 ### About me
 
-I am Full stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit (Amiga 1200) in 2000 I've get my first PC machine. Unfortunately for me, I was able to start my professional IT career when I was almost 30 (well, you know, life is life... - before I was working in several places including supermarket, car service, gas station to name only few of them :P)
+Hi,
+
+Thanks for visiting my GitHub!
+
+A few words about myself :)
+
+I am Full stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit (Amiga 1200) in 2000 I've get my first PC machine. Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
 
 
-During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
+During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
 
 
-My goals? 
-
-In the next five years I'm going to get five IT security certifications: eWPT, eWPTX and eCPPT from eLearnSecurity and OSCP and OSCE from Offensive Security. Also I'm going to start professional IT security career in the next couple of years and, finally, I'm going to become an independent IT Security consultant and penetration tester (I see the bright future for this business :) ).
-Before this, I'm going to help some companies to improve their products security by attending in multiple Bug Bounty programs (HackerOne and Bugcrowd account already created :) ). 
+In the next five years I'm going to get five IT security certifications (one each year): eWPT, eWPTX and eCPPT from eLearnSecurity and OSCP and OSCE from Offensive Security. Also I'm going to start professional IT security career in the next couple of years and finally with some experience - I'm going to become an independent IT Security consultant and penetration tester before 50 (I see the bright future for this business :) ).
+Before this, I'm going to help some companies to improve their products security by taking a part in multiple Bug Bounty programs (HackerOne and Bugcrowd). 
 
 
 Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. Yeah, this will be definitely the biggest achievement of my entire IT professional life and I'm going to do this in the next 10, maybe 15 years.
