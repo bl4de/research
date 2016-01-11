@@ -1,7 +1,7 @@
 
 ### My Research
 
-If you'd like to know more about me - here's the link:
+If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
 
 #### You can read now:
@@ -28,31 +28,6 @@ Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu
 
 http://sekurak.pl/?s=bl4de
 
-
-
-### About me
-
-Hi,
-
-Thanks for visiting my GitHub!
-
-A few words about myself :)
-
-I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
-Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
-
-
-During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
-
-
-In the next five years I'm going to get five IT security certifications (one each year): eWPT, eWPTX and eCPPT from eLearnSecurity and OSCP and OSCE from Offensive Security. Also I'm going to start professional IT security career in the next couple of years and finally with some experience - I'm going to become an independent IT Security consultant and penetration tester before 50 (I see the bright future for this business :) ).
-Before this, I'm going to help some companies to improve their products security by taking a part in multiple Bug Bounty programs (HackerOne and Bugcrowd). 
-
-
-Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. Yeah, this will be definitely the biggest achievement of my entire IT professional life and I'm going to do this in the next 10, maybe 15 years.
-
-
-Yeah, that's a lot of work to do. So let's do this :)
 
 
 
@@ -92,4 +67,29 @@ Some of my XSS found.
 **HackerOne**		  https://hackerone.com/bl4de
 
 So far nothing to see here - I will describe all of my Bounty I'll find 
+
+
+### About me
+
+Hi,
+
+Thanks for visiting my GitHub!
+
+A few words about myself :)
+
+I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
+Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
+
+
+During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
+
+
+In the next five years I'm going to get five IT security certifications (one each year): eWPT, eWPTX and eCPPT from eLearnSecurity and OSCP and OSCE from Offensive Security. Also I'm going to start professional IT security career in the next couple of years and finally with some experience - I'm going to become an independent IT Security consultant and penetration tester before 50 (I see the bright future for this business :) ).
+Before this, I'm going to help some companies to improve their products security by taking a part in multiple Bug Bounty programs (HackerOne and Bugcrowd). 
+
+
+Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. Yeah, this will be definitely the biggest achievement of my entire IT professional life and I'm going to do this in the next 10, maybe 15 years.
+
+
+Yeah, that's a lot of work to do. So let's do this :)
 
