@@ -1,5 +1,5 @@
 
-### My Research
+## My Research
 
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
@@ -32,7 +32,7 @@ http://sekurak.pl/?s=bl4de
 
 
 
-### Me online
+## Me online
 
 This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
 
@@ -69,7 +69,7 @@ Some of my XSS found.
 So far nothing to see here - I will describe all of my Bounty I'll find 
 
 
-### About me
+## About me
 
 Hi,
 
@@ -92,4 +92,5 @@ Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on 
 
 
 Yeah, that's a lot of work to do. So let's do this :)
+
 
