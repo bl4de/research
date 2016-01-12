@@ -74,7 +74,7 @@ First we have to create valid path to object. Path contains common path to all o
 _localhost/testapp/.git/objects/07/603070376d63d911f608120eb4b5489b507692_
 
 
-And - here we are:
+And - here we are - file download popup:
 
 ![Downloading object file]
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/download_object_file.png)
