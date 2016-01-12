@@ -51,4 +51,38 @@ In both cases use object hash as an argument.
 
 To start retrieving information from Git repository, first we have to find starting point. Git saves all information in log file and this file is available at _.git/logs/head_
 
- 
+
+![.git/logs/file example]
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_logs_head_file.png)
+
+
+Let's take a look a little bit closer to sample line of this file:
+
+```
+0000000000000000000000000000000000000000 07603070376d63d911f608120eb4b5489b507692 
+bloorq@gmail.com <bloorq@gmail.com> 1452195279 +0000	commit (initial): index.php initial commit
+```
+
+First two strings are object hashes (previous and current) - and this is exactly what we are looking for.
+As this is the very first commit, first hash contains only 0 (it's dummy one), as second one contains informations about commit.
+
+First we have to create valid path to object. Path contains common path to all objects in repository, which is _.git/objects_ and then there are two parts build from hash - a directory name (first two signs from hash) and filename (rest of it). So to get object identified by hash 07603070376d63d911f608120eb4b5489b507692, we should try to retrieve following url:
+
+_localhost/testapp/.git/objects/07/603070376d63d911f608120eb4b5489b507692_
+
+
+And - here we are:
+
+![Downloading object file]
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/download_object_file.png)
+
+Remember - you have to save this file in your dummy Git folder created earlier - this is the simplest way to be able to read content of Git objects. So make sure that you saved it in exactly the same location:
+
+_path-to-your-dummy-git-repository/.git/objects/07/603070376d63d911f608120eb4b5489b507692_
+
+
+Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine):
+
+
+
+
