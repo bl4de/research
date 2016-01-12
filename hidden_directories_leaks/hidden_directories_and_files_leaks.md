@@ -63,7 +63,7 @@ Let's take a look a little bit closer to sample line of this file:
 bloorq@gmail.com <bloorq@gmail.com> 1452195279 +0000	commit (initial): index.php initial commit
 ```
 
-First two strings are object hashes (previous and current) - and this is exactly what we are looking for.
+First two strings are object hashes (previous and current commit) - and this is exactly what we are looking for.
 As this is the very first commit, first hash contains only 0 (it's dummy one), as second one contains informations about commit.
 
 First we have to create valid path to object. Path contains common path to all objects in repository, which is _.git/objects_ and then there are two parts build from hash - a directory name (first two signs from hash) and filename (rest of it). So to get object identified by hash 07603070376d63d911f608120eb4b5489b507692, we should try to retrieve following url:
