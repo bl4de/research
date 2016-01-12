@@ -14,7 +14,7 @@ If you'd like to know more about me - here's the link: https://github.com/bl4de/
 
 #### Actually working on...
 
-Leaks caused by hidden folders and files (eg. .git, which is my favourite :) )
+Leaks in web applications caused by hidden folders and files (like .git)
 
 You can see _work in progress_ here: https://github.com/bl4de/research/blob/master/hidden_directories_leaks/hidden_directories_and_files_leaks.md
 
