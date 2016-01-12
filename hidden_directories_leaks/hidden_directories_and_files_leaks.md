@@ -11,43 +11,41 @@ There's a lot of web servers where there's no problem to find such files with a 
 
 Git is "(...)a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency (https://git-scm.com/)". With GitHub.com webservice it's one of the most popular source code version control system right now, especially in opensource world. Also, a lot of companies use its own GitHub-like service (Gitlab - see https://about.gitlab.com/).
 
-#### Folder structure
+#### Basic information about Git objects
 
 Newly created Git repository contains some default folder and files, where all information are stored. Here's sample .git folder, with one commit done.
 
 ![.git folder structure with single commit]
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)	
 
-Let's take a look at this from attacker point of view. As we know, all Git repository content is written in objects. All of them are stored in .git/objects folder. 
+Let's take a look at this from attacker point of view. Git repository content is written in objects. All of them are stored in .git/objects folder. 
 
-Objects can be one of three types: commit, tree and blob. 
+Objects can be one of three types: _commit_, _tree_ and _blob_. 
 
-Commit is an information about commit, with current tree (folders and files structure) object hash.
+*_Commit_* is an information about commit, with current tree (folders and files structure) object hash.
 
-Tree contains information about folders and files structure - and every single folder or file has its own object hash stored in tree object. It might be another tree (folder which is one level down in the folders structure) or file.
+*_Tree_* contains information about folders and files structure - and every single folder or file has its own object hash stored in tree object. It might be another tree (folder which is one level down in the folders structure) or file.
 
-Blob is Git object type where files content are saved. In other way - if you know an object hash of the particular file, you can read content of this file using git cat-file option.
+*_Blob_* is Git object type where files content are saved. In other way - if you know an object hash of the particular file, you can read content of this file using *git cat-file* command.
+
+When you find .git folder on web server, there's simple way to get content of any file, just by downloading and reading Git objects.
 
 
-To be able to do this, you have to create your own, local dummy .git folder structure and download Git objects from remote server using following method:
+#### Reflecting remote files and folders using local Git repository
 
-- create dummy Git folder:
 
-*$ git init*
+To be able to do this, you have to create your own, local dummy .git repository with skeleton folder structure and download Git objects from remote server.
+
+First, create dummy Git folder:
+
+```
+$ git init
+```
 
 This will initialize empty Git repository with all required files and folders.
 
-- download found Git objects from remote server. Remember to keep valid path to object.
 
-- using following commands you can read all downloaded content as it was on your local machine:
-
-To check the type of object, you can use *git cat-file -f* command.
-To display the content of the object, use *git cat-file -p* command. 
-
-In both cases use object hash as an argument.
-
-
-#### Finding basic information about objects
+#### Retrieving and reading information about objects
 
 To start retrieving information from Git repository, first we have to find starting point. Git saves all information in log file and this file is available at _.git/logs/head_
 
@@ -80,6 +78,17 @@ Remember - you have to save this file in your dummy Git folder created earlier -
 
 _path-to-your-dummy-git-repository/.git/objects/07/603070376d63d911f608120eb4b5489b507692_
 
+To check the type of object, you can use following command:
+
+```
+$ git cat-file -f <hash>
+```
+
+To display the content of the object, use this command:
+
+```
+$ git cat-file -p <hash>
+```
 
 Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine):
 
