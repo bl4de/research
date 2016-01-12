@@ -81,7 +81,7 @@ _path-to-your-dummy-git-repository/.git/objects/07/603070376d63d911f608120eb4b54
 To check the type of object, you can use following command:
 
 ```
-$ git cat-file -f <hash>
+$ git cat-file -t <hash>
 ```
 
 To display the content of the object, use this command:
@@ -90,7 +90,7 @@ To display the content of the object, use this command:
 $ git cat-file -p <hash>
 ```
 
-Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine):
+Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine for any Git repository - the hash is the key :) )
 
 ![Execute Git cat-file commands on downloaded object]
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands.png)
