@@ -83,40 +83,6 @@ _path-to-your-dummy-git-repository/.git/objects/07/603070376d63d911f608120eb4b54
 
 Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine):
 
-![Execute Git cat-file commands on downloaded object]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands.png)
 
-
-When you look at commit description, you can find an information about actual tree object hash - as I mentioned earlier, tree contains information about current folder structure. Using the same method as above it's simple to see how it looks like:
-
-
-![Current repository files structure]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands-2.png)
-
-
-We're almost home. As you can see, currently there's only one file, _index.php_, and also we know its object hash and type, which is _blob_. And this is what we need to see content of file using the same method as we've used to read content of _commit_ and _tree_ objects before:
-
-![index.php content]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands-3.png)
-
-
-Voila!
-
-Now it is important to remember that this is content of _index.php_ as it was when commit described by object 07603070376d63d911f608120eb4b5489b507692 was done. If you take a look at log file, you can see that there was second commit (identified by object hash 4db7a14eee2cd3ff529278b75e1653e677fe1d02) and as it is last commit - it contains all last changes - maybe content of _index.php_ differs from what we have seen so far?
-
-Following all steps (read commit content to find tree hash, then read tree to find index.php hash and so on), we will see actual content of _index.php_:
-
-```
-bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $ git cat-file -p a4215057b6545240452087ad4d015bf9b5b817c5
-<?php
-echo "Hello testapp!";
-
-$i = 100;
-echo "Value of i is $i";
-
-bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $ 
-
-
-```
 
 
