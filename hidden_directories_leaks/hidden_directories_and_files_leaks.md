@@ -28,7 +28,7 @@ Objects can be one of three types: _commit_, _tree_ and _blob_.
 
 *_Blob_* is Git object type where files content are saved. In other way - if you know an object hash of the particular file, you can read content of this file using *git cat-file* command.
 
-When you find .git folder on web server, there's simple way to get content of any file, just by downloading and reading Git objects. To make sure that .git folder is available just check if you get eg. 403 response:
+When you find .git folder on web server, there's simple way to get content of any file, just by downloading and reading Git objects. To make sure that .git folder is available just check if you get HTTP 403 response (or similar, but not 404, because it means there's no .git folder on this server or in this location):
 
 
 ![.git repository found on the server]
