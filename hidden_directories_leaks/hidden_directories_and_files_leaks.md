@@ -128,4 +128,16 @@ bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $
 
 ```
 
+#### .gitignore file
 
+There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be commited into repository. So it's the simplest way to spot all content which can not be find in the way described above.
+
+
+![Sample .gitignore file]
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/sample-gitignore.png)
+
+
+
+## Configuration files
+
+There's a lot of web applications where not all files are saved as files which should be parsed by web server. 
