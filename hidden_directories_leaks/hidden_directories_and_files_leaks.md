@@ -1,17 +1,23 @@
-## Hidden directories and files as a source of sensitive information leaks
+# Hidden directories and files as a source of sensitive information leaks
 
 Hidden directories, left accidentaly (or not) on the server, might be a very huge source of sensitive data leaks.
 There's a lot of hidden directories: source code version systems folders and files (.git, .gitignore, .svn), any of .rc files (.npmrc, package.json, .htaccess), any not standard configuration files with common extensions, like config.json, config.yml, config.xml and many others.
 
 There's a lot of web servers where there's no problem to find such files with a lot of sensitive information. Let's take a look at them in more details.
 
-## Source code version control systems
+# Table of Contents
 
-### Git
+- [Source code version control systems](#source-code-version-control-systems)
+- [Configuration files](#configuration-files)
+
+
+# Source code version control systems
+
+## Git
 
 Git is "(...)a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency (https://git-scm.com/)". With GitHub.com webservice it's one of the most popular source code version control system right now, especially in opensource world. Also, a lot of companies use its own GitHub-like service (Gitlab - see https://about.gitlab.com/).
 
-#### Basic information about Git objects
+### Basic information about Git objects
 
 Newly created Git repository contains some default folder and files, where all information are stored. Here's sample .git folder, with one commit done.
 
@@ -36,7 +42,7 @@ When you find .git folder on web server, there's simple way to get content of an
 
 
 
-#### Reflecting remote files and folders using local Git repository
+### Reflecting remote files and folders using local Git repository
 
 
 To be able to do this, you have to create your own, local dummy .git repository with skeleton folder structure and download Git objects from remote server.
@@ -50,7 +56,7 @@ $ git init
 This will initialize empty Git repository with all required files and folders.
 
 
-#### Retrieving and reading information about objects
+### Retrieving and reading information about objects
 
 To start retrieving information from Git repository, first we have to find starting point. Git saves all information in log file and this file is available at _.git/logs/head_
 
@@ -133,7 +139,7 @@ bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $
 
 ```
 
-#### .gitignore file
+### .gitignore file
 
 There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be commited into repository. So it's the simplest way to spot all content which can not be find in the way described above.
 
@@ -143,6 +149,6 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 
 
 
-## Configuration files
+# Configuration files
 
 There's a lot of web applications where not all files are saved as files which should be parsed by web server. 
