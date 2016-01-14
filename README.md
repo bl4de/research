@@ -68,7 +68,14 @@ So far nothing to see here - I will be describing all of my bounty I'll find.
 
 **XSSposed**       https://www.xssposed.org/researchers/_bl4de/
 
-Some of my XSS found.
+Some of my XSS found in the wild.
+
+**Project Euler**
+
+Mathematic and algorithmic problems to solve. A lot of them :)
+
+![Project Euler badge]
+(https://projecteuler.net/profile/bl4de.png)
 
 
 
