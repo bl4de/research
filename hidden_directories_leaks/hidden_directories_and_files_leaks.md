@@ -8,6 +8,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 # Table of Contents
 
 - [Source code version control systems](#source-code-version-control-systems)
+- [IDE project files] (#ide-project-files)
 - [Configuration files](#configuration-files)
 
 
@@ -146,6 +147,14 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 
 ![Sample .gitignore file]
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/sample-gitignore.png)
+
+
+# IDE project files
+
+IDE (Integrated Development Environment) used by many of developers have one in common - they save project's settings and a lot of additional information in their own files, created for each project separately. If such folder has been left on web server - this is yet another source of information about web application.
+
+Let's take a look a little bit closer and as example we use my favourite JetBrains products (it's no matter if you are using WebStorm, PHPStorm, InteliiJ or PyCharm - all of them store information in folder named _.idea_)
+
 
 
 
