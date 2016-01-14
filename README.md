@@ -1,5 +1,5 @@
 
-## My Research
+# My Research
 
 
 This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
@@ -7,24 +7,24 @@ This is my IT security related research repository - writeups, articles, PoCs, b
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
 
-#### You can read now:
+### You can read now:
 
 (There's no finished articles right now)
 
 
-#### Actually working on...
+### Actually working on...
 
 Leaks in web applications caused by hidden folders and files (like .git)
 
 You can see _work in progress_ here: https://github.com/bl4de/research/blob/master/hidden_directories_leaks/hidden_directories_and_files_leaks.md
 
-#### CTF writeups
+### CTF writeups
 
 You can take a look at some of my **writeups from CTFs** events which I've took a part and resolved some tasks:
 
 https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
-#### [PL only]
+### [PL only]
 
 Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
 Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
@@ -35,7 +35,7 @@ http://sekurak.pl/?s=bl4de
 
 
 
-## Me online
+# Me online
 
 You can follow me on **Twitter** if you want. I'm trying to share some IT security, web development and coding stuff. I am not following and sharing any politic or religious related content as I am totally independent and broadminded (I mean - I don't care :D )
 
@@ -44,7 +44,7 @@ https://twitter.com/_bl4de
 
 My other IT security related profiles:
 
-#### CTF
+### CTF
 
 **CTFtime.org**		  https://ctftime.org/team/12769
 
@@ -55,7 +55,7 @@ You can see some of my **CTF writeups** from variuos events here: https://github
 In **2016** I'm going to get position in first 500 overall and equal or below 12 in Poland :)
 
 
-#### Bug Bounty programs
+### Bug Bounty programs
 
 **Bugcrowd**		    https://bugcrowd.com/bl4de
 
@@ -64,7 +64,7 @@ In **2016** I'm going to get position in first 500 overall and equal or below 12
 So far nothing to see here - I will be describing all of my bounty I'll find.
 
 
-#### Other sites
+### Other sites
 
 **XSSposed**       https://www.xssposed.org/researchers/_bl4de/
 
@@ -72,7 +72,7 @@ Some of my XSS found.
 
 
 
-## About me
+# About me
 
 Hi,
 
