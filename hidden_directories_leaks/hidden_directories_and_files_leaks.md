@@ -156,10 +156,11 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 
 IDE (Integrated Development Environment) used by many of developers have one in common - they save project's settings and a lot of additional information in their own files, created for each project separately. If such folder has been left on web server - this is yet another source of information about web application.
 
-Let's take a look a little bit closer and as example we use my favourite JetBrains products.
+Let's take a look a little bit closer and as example we use my favourite JetBrains products (https://www.jetbrains.com/).
 
 
 ## JetBrains IDEs - IntelliJ, WebStorm, PHPStorm
+
 
 Every project developed with one of JetBrains product creates its own hidden directory, _.idea/_.
 This directory contains all information about project, files, directories and IDE settings.
@@ -252,7 +253,8 @@ As you can see, this is very interesting source of information. I suggest you to
 
 ## NetBeans IDE
 
-NetBeans is another very popular, free IDE for Java, C/C++, PHP, HTML5 and JavaScript development. Currently supported (and owned) by Oracle, NetBeans becomes an offical IDE for Java applications and it's absolutely free and opensource.
+
+NetBeans (https://netbeans.org/) is another very popular, free IDE for Java, C/C++, PHP, HTML5 and JavaScript development. Currently supported (and owned) by Oracle, NetBeans becomes an offical IDE for Java applications and it's absolutely free and opensource.
 
 NetBeans, as JetBrains IDEs, creates its own folder in project's root folder, contains all project settings - _.nbproject/_
 
@@ -260,4 +262,5 @@ NetBeans, as JetBrains IDEs, creates its own folder in project's root folder, co
 
 # Configuration files
 
-There's a lot of web applications where not all files are saved as files which should be parsed by web server. 
+
+There's a lot of web applications where not all files are saved as files which should be parsed by web server. Those files, which names mostly start with dot sign also contains a lot of information about used technologies, libraries, some directories not available directly from the browser or even not detectable by tools like DirBuster (http://sourceforge.net/projects/dirbuster/).
