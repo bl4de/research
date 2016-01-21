@@ -9,6 +9,8 @@ There's a lot of web servers where there's no problem to find such files with a 
 
 - [Source code version control systems](#source-code-version-control-systems)
 - [IDE project files] (#ide-project-files)
+	- [JetBrains IntelliJ, PHPStrom, WebStorm] (#netbeans-ide)
+	- [NetBeans] (#netbeans-ide)
 - [Configuration files](#configuration-files)
 
 
