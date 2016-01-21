@@ -153,8 +153,105 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 
 IDE (Integrated Development Environment) used by many of developers have one in common - they save project's settings and a lot of additional information in their own files, created for each project separately. If such folder has been left on web server - this is yet another source of information about web application.
 
-Let's take a look a little bit closer and as example we use my favourite JetBrains products (it's no matter if you are using WebStorm, PHPStorm, InteliiJ or PyCharm - all of them store information in folder named _.idea_)
+Let's take a look a little bit closer and as example we use my favourite JetBrains products.
 
+
+## JetBrains IDEs - IntelliJ, WebStorm, PHPStorm
+
+Every project developed with one of JetBrains product creates its own hidden directory, _.idea/_.
+This directory contains all information about project, files, directories and IDE settings.
+
+
+
+![sample .idea directory]
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/idea_tree.png)
+
+
+One of those files is extremly valuable from Security Researcher point of view. _workspace.xml_ contains a lot of useful information, which allows to enumerate all files and folders, source version control system information and many others.
+
+We spot them step by step:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+	(...)
+	<component name="FileEditorManager">
+	    <leaf>
+	      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+	        <entry file="file://$PROJECT_DIR$/README.md">
+				(...)
+	</component>
+(...)
+```
+All nodes in _component name="FileEditorManager"_ contains all files and their relative paths (to project's root directory). Simply saying - it's just XML-wrapped result of Bash command _ls_ executed in main project folder :)
+
+If you take a closer look at every _component_ node, you'll find information about used control version system, like in this example:
+
+```xml
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+```
+
+Another interesting thing might be changes history, stored in _component name="ChangeListManager"_ node:
+
+```xml
+	<component name="ChangeListManager">
+		(...)
+		<change type="DELETED" beforePath="$PROJECT_DIR$/chat/node_modules/socket.io/node_modules/socket.io-adapter/node_modules/debug/Makefile" afterPath="" />
+		(...)
+	</component>
+```
+
+If developer used to manage database with integrated DB manager, there are another very interesting files: _dataSources.ids_  where you can find databases structure, _dataSource.xml_, _dataSources.xml_, _dataSources.local.xml_ and _dbnavigator.xml_ contains example information:
+
+```xml
+        <database>
+          <name value="database_name" />
+          <description value="" />
+          <database-type value="MYSQL" />
+          <config-type value="BASIC" />
+          <database-version value="5.7" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <host value="localhost" />
+          <port value="3306" />
+          <database value="mywebapp" />
+          <url-type value="DATABASE" />
+          <os-authentication value="false" />
+          <empty-password value="false" />
+          <user value="root" />
+          <password value="cm9vdA==" />
+        </database>
+```
+
+or even more, like _dataSources.local.xml_:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - mywebapp@localhost" uuid="8681098b-fc96-4258-8b4f-bfbd00012e2b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>mywebapp.*</schema-pattern>
+      <default-schemas>mywebapp.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+
+```
+
+
+As you can see, this is very interesting source of information. I suggest you to download any JetBrains IDE (they offer 30 days trials of almost every product, even more - you can download IntelliJ Idea Community or PyCharm Community and use it for free), then create sample project, add some folders and files, try to manage Git or SVN, create sample database connection and play around with Database Manager - and then dig into _.idea/_ folder to see what you can find there.
+
+
+## NetBeans IDE
+
+NetBeans is another very popular, free IDE for Java, C/C++, PHP, HTML5 and JavaScript development. Currently supported (and owned) by Oracle, NetBeans becomes an offical IDE for Java applications and it's absolutely free and opensource.
+
+NetBeans, as JetBrains IDEs, creates its own folder in project's root folder, contains all project settings - _.nbproject/_
 
 
 
