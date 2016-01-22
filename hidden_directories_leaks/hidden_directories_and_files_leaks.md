@@ -197,6 +197,19 @@ If you take a closer look at every _component_ node, you'll find information abo
   </component>
 ```
 
+Also, there are information about commits and other tasks executed on project files, in node _component name="TaskManager"_:
+
+```xml
+(...)
+    <task id="LOCAL-00211" summary="change WebSocket port to 1099">
+      <created>1436206418000</created>
+      <option name="number" value="00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1436206418000</updated>
+    </task>
+(...)
+```
+
 Another interesting thing might be changes history, stored in _component name="ChangeListManager"_ node:
 
 ```xml
@@ -205,6 +218,21 @@ Another interesting thing might be changes history, stored in _component name="C
 		<change type="DELETED" beforePath="$PROJECT_DIR$/chat/node_modules/socket.io/node_modules/socket.io-adapter/node_modules/debug/Makefile" afterPath="" />
 		(...)
 	</component>
+```
+
+as well as in _component name="editorHistoryManager"_ node:
+
+```xml
+(...)
+    <entry file="file://$PROJECT_DIR$/public_html/vendor/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3233" column="29" selection-start-line="3233" selection-start-column="29" selection-end-line="3233" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+(...)
+
 ```
 
 If developer used to manage database with integrated DB manager, there are another very interesting files: _dataSources.ids_  where you can find databases structure, _dataSource.xml_, _dataSources.xml_, _dataSources.local.xml_ and _dbnavigator.xml_ contains example information:
@@ -246,6 +274,8 @@ or even more, like _dataSources.local.xml_:
 </project>
 
 ```
+
+Everything depends on project itself, used IDE plugins (like debugger, source version control or DB manager). In general, it is worth to take a look around and investigate every _component_ node.
 
 
 As you can see, this is very interesting source of information. I suggest you to download any JetBrains IDE (they offer 30 days trials of almost every product, even more - you can download IntelliJ Idea Community or PyCharm Community and use it for free), then create sample project, add some folders and files, try to manage Git or SVN, create sample database connection and play around with Database Manager - and then dig into _.idea/_ folder to see what you can find there.
