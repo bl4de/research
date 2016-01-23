@@ -1,4 +1,4 @@
-# Hidden directories and files as a source of sensitive information leaks
+# Hidden directories and files as a source of sensitive information about web application
 
 Hidden directories, left accidentally (or not) on the server, might be a very huge source of sensitive data leaks.
 There's a lot of hidden directories: source code version systems folders and files (.git, .gitignore, .svn), any of .rc files (.npmrc, package.json, .htaccess), any not standard configuration files with common extensions, like config.json, config.yml, config.xml and many others.
