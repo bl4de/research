@@ -1,6 +1,6 @@
 # Hidden directories and files as a source of sensitive information leaks
 
-Hidden directories, left accidentaly (or not) on the server, might be a very huge source of sensitive data leaks.
+Hidden directories, left accidentally (or not) on the server, might be a very huge source of sensitive data leaks.
 There's a lot of hidden directories: source code version systems folders and files (.git, .gitignore, .svn), any of .rc files (.npmrc, package.json, .htaccess), any not standard configuration files with common extensions, like config.json, config.yml, config.xml and many others.
 
 There's a lot of web servers where there's no problem to find such files with a lot of sensitive information. Let's take a look at them in more details.
@@ -19,7 +19,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 
 ## Git
 
-Git is "(...)a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency (https://git-scm.com/)". With GitHub.com webservice it's one of the most popular source code version control system right now, especially in opensource world. Also, a lot of companies use its own GitHub-like service (Gitlab - see https://about.gitlab.com/).
+Git is "(...)a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency (https://git-scm.com/)". With GitHub.com web service it's one of the most popular source code version control system right now, especially in open source world. Also, a lot of companies use its own GitHub-like service (Gitlab - see https://about.gitlab.com/).
 
 ### Basic information about Git objects
 
@@ -145,7 +145,7 @@ bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $
 
 ### .gitignore file
 
-There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be commited into repository. So it's the simplest way to spot all content which can not be find in the way described above.
+There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be committed into repository. So it's the simplest way to spot all content which can not be find in the way described above.
 
 
 ![Sample .gitignore file]
@@ -156,7 +156,7 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 
 IDE (Integrated Development Environment) used by many of developers have one in common - they save project's settings and a lot of additional information in their own files, created for each project separately. If such folder has been left on web server - this is yet another source of information about web application.
 
-Let's take a look a little bit closer and as example we use my favourite JetBrains products (https://www.jetbrains.com/).
+Let's take a look a little bit closer and as example we use my favorite JetBrains products (https://www.jetbrains.com/).
 
 
 ## JetBrains IDEs - IntelliJ, WebStorm, PHPStorm
@@ -171,7 +171,7 @@ This directory contains all information about project, files, directories and ID
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/idea_tree.png)
 
 
-One of those files is extremly valuable from Security Researcher point of view. _workspace.xml_ contains a lot of useful information, which allows to enumerate all files and folders, source version control system information and many others.
+One of those files is extremely valuable from Security Researcher point of view. _workspace.xml_ contains a lot of useful information, which allows to enumerate all files and folders, source version control system information and many others.
 
 We spot them step by step:
 
@@ -284,9 +284,15 @@ As you can see, this is very interesting source of information. I suggest you to
 ## NetBeans IDE
 
 
-NetBeans (https://netbeans.org/) is another very popular, free IDE for Java, C/C++, PHP, HTML5 and JavaScript development. Currently supported (and owned) by Oracle, NetBeans becomes an offical IDE for Java applications and it's absolutely free and opensource.
+NetBeans (https://netbeans.org/) is another very popular, free IDE for Java, C/C++, PHP, HTML5 and JavaScript development. Currently supported (and owned) by Oracle, NetBeans becomes an official IDE for Java applications and it's absolutely free and open source.
 
-NetBeans, as JetBrains IDEs, creates its own folder in project's root folder, contains all project settings - _.nbproject/_
+NetBeans, as JetBrains IDEs, creates its own folder in project's root folder, contains all project settings - _nbproject/_
+
+NetBeans is not as verbose as IntelliJ, PHPStorm or WebStorm, but you can still find some interesting information, which might be helpful when you are looking for particular attack vector against vulnerable web application. _project.xml_ is a good point to start investigating NetBeans project configuration.
+
+
+![NetBeans project configuration]
+(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/nb_tree.png)
 
 
 
