@@ -12,7 +12,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 - [IDE project files] (#ide-project-files)
 	- [JetBrains IntelliJ, PHPStrom, WebStorm] (#jetbrains-ides---intellij-webstorm-phpstorm)
 	- [NetBeans] (#netbeans-ide)
-- [Configuration files](#configuration-files)
+- [Developer Tools configuration files](#developer-tools-configuration-files)
 
 
 # Source code version control systems
@@ -296,7 +296,55 @@ NetBeans is not as verbose as IntelliJ, PHPStorm or WebStorm, but you can still 
 
 
 
-# Configuration files
+# Developer Tools configuration files
 
 
-There's a lot of web applications where not all files are saved as files which should be parsed by web server. Those files, which names mostly start with dot sign also contains a lot of information about used technologies, libraries, some directories not available directly from the browser or even not detectable by tools like DirBuster (http://sourceforge.net/projects/dirbuster/).
+There's a lot of configuration files of additional developer tools, which names mostly start with dot and contain a lot of information about used technologies, libraries, some directories not available directly from the browser or even not detectable by tools like DirBuster (http://sourceforge.net/projects/dirbuster/).
+
+Some examples of these tools are _npm_ (https://www.npmjs.com/), linters for JavaScript, like ESlint (http://eslint.org/), Bower package manager (http://bower.io/) and many others.
+
+Let's take a look at sample _bower.json_ file, which contains configuration for Bower and contains list of packages used in web application (frontend side):
+
+```bash
+{
+  "name": "testapp",
+  "version": "2.1.0",
+  "authors": [
+    "Rafal 'bl4de' Janicki <bloorq@gmail.com>"
+  ],
+  "description": "test application",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.4",
+    "pure": "~0.5.0",
+    "angular-route": "~1.2.26",
+    "angular-ui-router": "~0.2.11",
+    "angular-bootstrap-datetimepicker": "latest",
+    "angular-translate": "~2.6.1"
+  },
+  "devDependencies": {}
+}
+
+```
+Maybe more interesting from security point of view is similar file for _Node.js_ or _io.js_ backend application - _package.json_ (if you find the way to read this file from web server, by for example Local File Include error - see https://www.owasp.org/index.php/Testing_for_Local_File_Inclusion for more information about LFI).
+As it is a list of server side details - used packages, like database connectors, middleware components and so on - this file could contains a lot of valuable information about potential vulnerable software.
+
+Sample _package.json_ shows, that there's MySQL database used (probably) and some client-server communication via WebSockets:
+
+```bash
+{
+  "name": "Test application server dependencies",
+  "version": "1.0.0",
+  "author": "bl4de",
+  "dependencies": {
+    "socket.io": "^1.3.5",
+    "mysql": "^2.9.0"
+  }
+}
+```
+
+There are also files like _.bowerrc_, _.eslintrc_, _.jshintrc_ and similar. As they not contain very sensitive information, there's always a chance that you can find some details about web application architecture, used libraries and/or frameworks, or even some valuable information put in comments. It's always worth to look into if you found them during reconnaissance phase.
