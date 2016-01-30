@@ -24,6 +24,7 @@ You can take a look at some of my **writeups from CTFs** events which I've took 
 
 https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
+
 ### [PL only]
 
 Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
@@ -48,7 +49,9 @@ My other IT security related profiles:
 
 **CTFtime.org**		  https://ctftime.org/team/12769
 
-I've **started playing CTFs in 2015**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland (even if I don't live in Poland anymore, I will always play as Polish guy).
+I've **started playing CTFs in 2015**, as team **bl4de**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland (even if I don't live in Poland anymore, I will always play as Polish guy).
+Since 2016 I play also on my own as **Stack** - yeah, I am rather 'lonely rider' than 'team player'.
+
 
 You can see some of my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
