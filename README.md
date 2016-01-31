@@ -88,7 +88,7 @@ Hi,
 
 Thanks for visiting my GitHub!
 
-A few words about myself :)
+A few words about myself :) [ 1st of January, 2016 ]
 
 I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
 Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
