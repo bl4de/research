@@ -295,8 +295,30 @@ NetBeans is not as verbose as IntelliJ, PHPStorm or WebStorm, but you can still 
 (https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/nb_tree.png)
 
 
+## ActiveState Komodo IDE
 
-# Developer Tools configuration files
+Unfortunately, Komodo IDE does not provide any information about project, the only file I've found in directory with project files was short XML file with content below:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="6a2f24b2-0c3d-f44c-bf66-f4341c507a30" kpf_version="5" name="bwapp.komodoproject">
+<preference-set idref="6a2f24b2-0c3d-f44c-bf66-f4341c507a30" id="project" preftype="project">
+</preference-set>
+</project>
+```
+
+Filename is created using simple patter: project name, then dot, then 'komodoproject' postfix:
+
+```bash
+$ ls -l | grep komodo
+-rw-r--r--   1 bl4de  staff    300 Feb  4 23:19 bwapp.komodoproject
+```
+
+All project information Komodo IDE stores in folders not accessible from web server - as far as you don't find Local File Include vulnerability, of course - but if you find LFI, I don't think you will have to find Komodo project configuration file anymore ;)
+
+
+# Miscellaneous developer tools configuration files
 
 
 There's a lot of configuration files of additional developer tools, which names mostly start with dot and contain a lot of information about used technologies, libraries, some directories not available directly from the browser or even not detectable by tools like DirBuster (http://sourceforge.net/projects/dirbuster/).
