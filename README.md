@@ -54,7 +54,7 @@ Since 2016 I play also on my own as **Stack** - yeah, I am rather 'lonely rider'
 
 You can see some of my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
-In **2016** I'm going to get position in first 500 overall and equal or below 12 in Poland :)
+In **2016** I'm going to get position in first 500 overall and equal or below 12 in Poland :)                   
 I am also playing on my own as **Stack** (https://ctftime.org/team/16701)
 
 ### Bug Bounty programs
