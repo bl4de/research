@@ -1,6 +1,6 @@
 # Hidden directories and files as a source of sensitive information about web application
 
-Hidden directories, left accidentally (or not) on the server, might be a very huge source of sensitive data leaks.
+Hidden directories, left accidentally (or not) on the server, might be a very valuable source of sensitive data leaks.
 There's a lot of hidden directories: source code version systems folders and files (.git, .gitignore, .svn), any of .rc files (.npmrc, package.json, .htaccess), any not standard configuration files with common extensions, like config.json, config.yml, config.xml and many others.
 
 There's a lot of web servers where there's no problem to find such files with a lot of sensitive information. Let's take a look at them in more details.
@@ -12,7 +12,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 - [IDE project files] (#ide-project-files)
 	- [JetBrains IntelliJ, PHPStrom, WebStorm] (#jetbrains-ides---intellij-webstorm-phpstorm)
 	- [NetBeans] (#netbeans-ide)
-	- [ActiveState Komodo IDE] (#activestate-komodo-ide)
+	- [ActiveState Komodo IDE] (#activestate-komodo-IDE)
 - [Developer Tools configuration files](#developer-tools-configuration-files)
 
 
@@ -27,7 +27,7 @@ Git is "(...)a free and open source distributed version control system designed 
 Newly created Git repository contains some default folder and files, where all information are stored. Here's sample .git folder, with one commit done.
 
 ![.git folder structure with single commit]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_directory_structure.png)	
+(assets/git_directory_structure.png)	
 
 Let's take a look at this from attacker point of view. Git repository content is written in objects. All of them are stored in .git/objects folder. 
 
@@ -43,7 +43,7 @@ When you find .git folder on web server, there's simple way to get content of an
 
 
 ![.git repository found on the server]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/how-to-find.png)	
+(assets/how-to-find.png)	
 
 
 
@@ -67,7 +67,7 @@ To start retrieving information from Git repository, first we have to find start
 
 
 ![.git/logs/file example]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git_logs_head_file.png)
+(assets/git_logs_head_file.png)
 
 
 Let's take a look a little bit closer to sample line of this file:
@@ -78,7 +78,7 @@ bloorq@gmail.com <bloorq@gmail.com> 1452195279 +0000	commit (initial): index.php
 ```
 
 First two strings are object hashes (previous and current commit) - and this is exactly what we are looking for.
-As this is the very first commit, first hash contains only 0 (it's dummy one), as second one contains informations about commit.
+As this is the very first commit, first hash contains only 0 (it's dummy one), but second one contains informations about commit.
 
 First we have to create valid path to object. Path contains common path to all objects in repository, which is _.git/objects_ and then there are two parts build from hash - a directory name (first two signs from hash) and filename (rest of it). So to get object identified by hash 07603070376d63d911f608120eb4b5489b507692, we should try to retrieve following url:
 
@@ -88,7 +88,7 @@ _localhost/testapp/.git/objects/07/603070376d63d911f608120eb4b5489b507692_
 And - here we are - file download popup:
 
 ![Downloading object file]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/download_object_file.png)
+(assets/download_object_file.png)
 
 Remember - you have to save this file in your dummy Git folder created earlier - this is the simplest way to be able to read content of Git objects. So make sure that you saved it in exactly the same location:
 
@@ -109,20 +109,20 @@ $ git cat-file -p <hash>
 Now, we can check the type and read content of saved object (I'm doing this on original repository on my localhost, but you will get exactly the same result on your machine for any Git repository - the hash is the key :) )
 
 ![Execute Git cat-file commands on downloaded object]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands.png)
+(assets/git-commands.png)
 
 
 When you look at commit description, you can find an information about actual tree object hash - as I mentioned earlier, tree contains information about current folder structure. Using the same method as above it's simple to see how it looks like:
 
 
 ![Current repository files structure]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands-2.png)
+(assets/git-commands-2.png)
 
 
-We're almost home. As you can see, currently there's only one file, _index.php_, and also we know its object hash and type, which is _blob_. And this is what we need to see content of file using the same method as we've used to read content of _commit_ and _tree_ objects before:
+We're very close. As you can see, currently there's only one file, _index.php_, and also we know its object hash and type, which is _blob_. And this is what we need to see content of file using the same method as we've used to read content of _commit_ and _tree_ objects before (first you have to download object from web server, as described above):
 
 ![index.php content]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/git-commands-3.png)
+(assets/git-commands-3.png)
 
 
 Voila!
@@ -146,11 +146,11 @@ bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $
 
 ### .gitignore file
 
-There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be committed into repository. So it's the simplest way to spot all content which can not be find in the way described above.
+There's also one thing worth to mention if we've found .git folder abandoned on web server - .gitignore file. The purpose of this file is simple - it is the place where you can define all folders and files which should NOT be committed into repository - but it does not mean that they are not there ;) (there are just not exists as a part of Git repository, that's all). So it's the simplest way to spot all content which can not be find in the way described above.
 
 
 ![Sample .gitignore file]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/sample-gitignore.png)
+(assets/sample-gitignore.png)
 
 
 # IDE project files
@@ -169,7 +169,7 @@ This directory contains all information about project, files, directories and ID
 
 
 ![sample .idea directory]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/idea_tree.png)
+(assets/idea_tree.png)
 
 
 One of those files is extremely valuable from Security Researcher point of view. _workspace.xml_ contains a lot of useful information, which allows to enumerate all files and folders, source version control system information and many others.
@@ -293,7 +293,7 @@ NetBeans is not as verbose as IntelliJ, PHPStorm or WebStorm, but you can still 
 
 
 ![NetBeans project configuration]
-(https://github.com/bl4de/research/blob/master/hidden_directories_leaks/assets/nb_tree.png)
+(assets/nb_tree.png)
 
 
 ## ActiveState Komodo IDE
