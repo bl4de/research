@@ -12,6 +12,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 - [IDE project files] (#ide-project-files)
 	- [JetBrains IntelliJ, PHPStrom, WebStorm] (#jetbrains-ides---intellij-webstorm-phpstorm)
 	- [NetBeans] (#netbeans-ide)
+	- [ActiveState Komodo IDE] (#activestate-komodo-IDE)
 - [Developer Tools configuration files](#developer-tools-configuration-files)
 
 
@@ -370,3 +371,13 @@ Sample _package.json_ shows, that there's MySQL database used (probably) and som
 ```
 
 There are also files like _.bowerrc_, _.eslintrc_, _.jshintrc_ and similar. As they not contain very sensitive information, there's always a chance that you can find some details about web application architecture, used libraries and/or frameworks, or even some valuable information put in comments. It's always worth to look into if you found them during reconnaissance phase.
+
+
+# Summary
+
+It is always worth to check if one of mentioned folder exists on the web server. Git repository is just a disaster, as it allows to download source code of web application, as well as IntelliJ IDE project configuration folder.	 If you are suing automated scanners (like DirBuster or similar) it's worth to check if those folders already exists in your dictionary files and add them if they don't.
+
+Happy Hacking! :)
+
+
+
