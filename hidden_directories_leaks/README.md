@@ -12,7 +12,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 - [IDE project files] (#ide-project-files)
 	- [JetBrains IntelliJ, PHPStrom, WebStorm] (#jetbrains-ides---intellij-webstorm-phpstorm)
 	- [NetBeans] (#netbeans-ide)
-	- [ActiveState Komodo IDE] (#activestate-komodo-IDE)
+	- [ActiveState Komodo IDE] (#activestate-komodo-ide)
 - [Developer Tools configuration files](#developer-tools-configuration-files)
 
 
