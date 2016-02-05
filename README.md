@@ -9,14 +9,13 @@ If you'd like to know more about me - here's the link: https://github.com/bl4de/
 
 ### You can read now:
 
-(There's no finished articles right now)
+#### Hidden directories and files as a source of sensitive information about web application
+https://github.com/bl4de/research/tree/master/hidden_directories_leaks
 
 
 ### Actually working on...
 
-Leaks in web applications caused by hidden folders and files (like .git)
-
-You can see _work in progress_ here: https://github.com/bl4de/research/blob/master/hidden_directories_leaks/hidden_directories_and_files_leaks.md
+Leaks in web applications caused by hidden folders and files - still looking for hidden resources... :)
 
 ### CTF writeups
 
