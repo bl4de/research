@@ -96,13 +96,14 @@ Unfortunately for me, I was able to start my professional IT career when I was 3
 During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
 
 
-In the next five years I'm going to get five IT security certifications (one each year): eWPT, eWPTX and eCPPT from eLearnSecurity and OSCP and OSCE from Offensive Security. Also I'm going to start professional IT security career in the next couple of years and finally with some experience - I'm going to become an independent IT Security consultant and penetration tester before 50 (I see the bright future for this business :) ).
+In the year or two I'm going to get OSCP from Offensive Security and OSCE will be the next. I'm going to start professional IT security career in the next couple of years and finally with some experience - I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter (I see the bright future for this business :) ).
 Before this, I'm going to help some companies to improve their products security by taking a part in multiple Bug Bounty programs (HackerOne and Bugcrowd). 
 
 
-Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. Yeah, this will be definitely the biggest achievement of my entire IT professional life and I'm going to do this in the next 10, maybe 15 years.
+Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. This will be definitely the biggest achievement of my entire IT life and I'm going to do this in the next 10, maybe 15 years.
 
 
-Yeah, that's a lot of work to do. So let's do this :)
+That's a lot of work to do.
+But the main thing is, that I love this game :)
 
 
