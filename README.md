@@ -92,20 +92,11 @@ A few words about myself :)
 
 
 I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
-Unfortunately for me, I was able to start my professional IT career when I was 30 (well, you know, life is life...)
+Unfortunately for me, I was able to start my professional IT career when I was 30, in 2007. Now, I've got more than 8 years of web development experience (both server and client) with several technologies, including LAMP and MEAN stacks as well as some experience with JavaEE enterprose applications.
 
+During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. 
 
-During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. From now on (January 2016) I'm going to boost my security skills in many ways - I'm going to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
+In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) In the next years I'm going to take couple of IT Security online trainings and get some IT security crtifications (eWPT, eWPTX and eCPPT and OSCP from Offensive Security following OSCE). After that, with some professional experience, I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter.
 
-
-Now we have 2016. In the next years I'm going to take couple of IT Security online trainings and get some IT security crtifications (eWPT, eWPTX and eCPPT and OSCP from Offensive Security following OSCE). After that, with some professional experience, I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter before I'll turn 50 :)
-Before this, I'm going to help some companies to improve their products security by taking a part in multiple Bug Bounty programs (HackerOne and Bugcrowd). 
-
-
-Oh, and finally - one of my hardest goal is to be (one day, maybe) a speaker on DefCon or BlackHat event. This will be definitely the biggest achievement of my entire IT life and I'm going to do this in the next 10, maybe 15 years.
-
-
-That's a lot of work to do.
-But the main thing is, that I love this game :)
 
 
