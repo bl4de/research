@@ -7,15 +7,14 @@ This is my IT security related research repository - writeups, articles, PoCs, b
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
 
-### You can read now:
+
 
 #### Hidden directories and files as a source of sensitive information about web application
+
+Some analysis about how to get information about web application from folders like _.git_ , _.idea_ and similar.
+This whitepaper is still in development           
 https://github.com/bl4de/research/tree/master/hidden_directories_leaks
 
-
-### Actually working on...
-
-Leaks in web applications caused by hidden folders and files - still looking for hidden resources... :)
 
 ### CTF writeups
 
