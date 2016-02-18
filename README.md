@@ -32,11 +32,9 @@ http://sekurak.pl/?s=bl4de
 
 
 
-
-
 # Me online
 
-You can follow me on **Twitter** if you want. I'm trying to share some IT security, web development and coding stuff. I am not following and sharing any politic or religious related content as I am totally independent and broadminded (I mean - I don't care :D )
+You can follow me on **Twitter**. I'm trying to share some IT security, web development and coding related stuff. 95%/5% EN/PL.
 
 https://twitter.com/_bl4de
 
@@ -68,8 +66,6 @@ So far nothing to see here - I will be describing all of my bounty I'll find.
 ### Other sites
 
 **XSSposed**       https://www.xssposed.org/researchers/_bl4de/
-
-Some of my XSS found in the wild.
 
 **Project Euler**
 
