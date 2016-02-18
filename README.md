@@ -1,13 +1,10 @@
 
-# My Research
-
-
 This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
 
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
 
-
+### Research
 
 #### Hidden directories and files as a source of sensitive information about web application
 
@@ -34,7 +31,7 @@ http://sekurak.pl/?s=bl4de
 
 # Me online
 
-You can follow me on **Twitter**. I'm trying to share some IT security, web development and coding related stuff. 95%/5% EN/PL.
+You can follow me on **Twitter**. I'm trying to share some IT security, web development and coding related stuff. 
 
 https://twitter.com/_bl4de
 
