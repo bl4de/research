@@ -49,7 +49,7 @@ My other IT security related profiles:
 
 **CTFtime.org**		  https://ctftime.org/team/12769
 
-I've **started playing CTFs in 2015**, as team **bl4de**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland (even if I don't live in Poland anymore, I will always play as Polish guy).
+I've **started playing CTFs in 2015**, as team **bl4de**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland.
 Since 2016 I play also on my own as **Stack** - yeah, I am rather 'lonely rider' than 'team player'.
 
 
