@@ -255,7 +255,7 @@ If developer used to manage database with integrated DB manager, there are anoth
           <os-authentication value="false" />
           <empty-password value="false" />
           <user value="root" />
-          <password value="cm9vdA==" />
+          <password value="cm9vdA==" />   <!-- yes, this is password 'root' after Base64 decode :) -->
         </database>
 ```
 
