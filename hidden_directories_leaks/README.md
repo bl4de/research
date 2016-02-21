@@ -153,6 +153,85 @@ There's also one thing worth to mention if we've found .git folder abandoned on 
 (assets/sample-gitignore.png)
 
 
+## Subversion (SVN)
+
+Subversion (or SVN, https://subversion.apache.org/) is another very popular source code version control system created by Apache Software Foundation and it is still very popular and widely used.
+
+Sample structure of SVN folders and files looks like following example:
+
+![Sample .snv directory]
+(assets/svn_tree.png)
+
+From our point of view, the most important are _SQLite_ database _wc.db_ file and content of _pristine/_ directory. In _wc.db_ we will find hashes used as filenames in _pristine/_, so we have to start from this file.
+
+To get information from Subversion, first we need to make sure that _wc.db_ file is available. Try to open following path in your web browser:
+
+```
+http://server/path_to_vulnerable_site/.svn/wc.db
+```
+
+If you get download popup - it means there's a chance that the rest of _.svn_ files will be there. First, we need to read content of _wc.db_ to get an information about files hashes (there is no _.logs_ directory here, like it was in Git repository described above).
+
+To read content of _wc.db_, I use SQLite console client, by you can use anything you want.
+
+```bash
+$ sqlite3 wc.db 
+SQLite version 3.8.10.2 2015-05-20 18:17:19
+Enter ".help" for usage hints.
+sqlite> .databases
+seq  name             file                                                      
+---  ---------------  ----------------------------------------------------------
+0    main             /Users/bl4de/hacking/playground/wc.db                     
+sqlite> .dump
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE REPOSITORY (   id INTEGER PRIMARY KEY AUTOINCREMENT,   root  TEXT UNIQUE NOT NULL,   uuid  TEXT NOT NULL   );
+INSERT INTO "REPOSITORY" VALUES(1,'svn+ssh://192.168.1.4/var/svn-repos/project_wombat','88dcec91-39c3-4b86-8627-702dd82cfa09');
+
+(...)
+
+INSERT INTO "NODES" VALUES(1,'trunk',0,'',1,'trunk',1,'normal',NULL,NULL,'dir',X'2829','infinity',NULL,NULL,1,1456055578790922,'bl4de',NULL,NULL,NULL,NULL);
+INSERT INTO "NODES" VALUES(1,'',0,NULL,1,'',1,'normal',NULL,NULL,'dir',X'2829','infinity',NULL,NULL,1,1456055578790922,'bl4de',NULL,NULL,NULL,NULL);
+INSERT INTO "NODES" VALUES(1,'trunk/test.txt',0,'trunk',1,'trunk/test.txt',2,'normal',NULL,NULL,'file',X'2829',NULL,'$sha1$945a60e68acc693fcb74abadb588aac1a9135f62',NULL,2,1456056344886288,'bl4de',38,1456056261000000,NULL,NULL);
+INSERT INTO "NODES" VALUES(1,'trunk/test2.txt',0,'trunk',1,'trunk/test2.txt',3,'normal',NULL,NULL,'file',NULL,NULL,'$sha1$6f3fb98418f14f293f7ad55e2cc468ba692b23ce',NULL,3,1456056740296578,'bl4de',27,1456056696000000,NULL,NULL);
+
+(...)
+```
+
+See INSERT operations to NODES table? Each of them contains filename and SHA1 hash, which corresponds to entry in _pristine/_ folder:
+
+```bash
+$ ls -lA pristine/94/
+total 8
+-rw-r--r--@ 1 bl4de  staff  38 Feb 21 12:05 945a60e68acc693fcb74abadb588aac1a9135f62.svn-base
+```
+
+To map value from NODES to filename, we need to:
+- remove _$sha1$_ prefix
+- add _.svn-base_ postfix
+- use first two signs from hash as folder name inside _pristine/_ directory (94 in this case)
+- create complete path, which will be:
+
+
+```
+http://server/path_to_vulnerable_site/.svn/pristine/94/945a60e68acc693fcb74abadb588aac1a9135f62.svn-base
+```
+
+When we try to open this path in the browser, we should be able to download file or display its content directly in browser:
+
+
+![How to read content of file]
+(assets/svn_read_file.png)
+
+Also, an entry in REPOSITORIES table point to original repository path, which is:
+
+```
+svn+ssh://192.168.1.4/var/svn-repos/project_wombat
+```
+
+There's a lot of information here. Leaving _.svn_ folder on the web server is a huge mistake and can be very dangerous and it means full compromise of web application source code.
+
+
 # IDE project files
 
 IDE (Integrated Development Environment) used by many of developers have one in common - they save project's settings and a lot of additional information in their own files, created for each project separately. If such folder has been left on web server - this is yet another source of information about web application.
