@@ -1,13 +1,19 @@
+Hi,
 
-# My Research
+Thanks for visiting my GitHub!
 
-
-This is my IT security related research repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
+This is my all-IT-security related repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
 
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
+### Quick links
 
+- [Research](#research)
+- [CTF Writeups](#ctf-writeups)
+- [Me online](#me-online)
+- [About me](#about-me)
 
+### Research
 
 #### Hidden directories and files as a source of sensitive information about web application
 
@@ -30,24 +36,20 @@ Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu
 
 http://sekurak.pl/?s=bl4de
 
+### Me online
 
-
-
-
-# Me online
-
-You can follow me on **Twitter** if you want. I'm trying to share some IT security, web development and coding stuff. I am not following and sharing any politic or religious related content as I am totally independent and broadminded (I mean - I don't care :D )
+You can follow me on **Twitter**. I'm trying to share some IT security, web development and coding related stuff. 
 
 https://twitter.com/_bl4de
 
 
 My other IT security related profiles:
 
-### CTF
+#### CTF
 
 **CTFtime.org**		  https://ctftime.org/team/12769
 
-I've **started playing CTFs in 2015**, as team **bl4de**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland (even if I don't live in Poland anymore, I will always play as Polish guy).
+I've **started playing CTFs in 2015**, as team **bl4de**. My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D ) and 14th place (33 teams in total) in Poland.
 Since 2016 I play also on my own as **Stack** - yeah, I am rather 'lonely rider' than 'team player'.
 
 
@@ -56,39 +58,24 @@ You can see some of my **CTF writeups** from variuos events here: https://github
 In **2016** I'm going to get position in first 500 overall and equal or below 12 in Poland :)                   
 I am also playing on my own as **Stack** (https://ctftime.org/team/16701)
 
-### Bug Bounty programs
+#### Bug Bounty programs
 
 **Bugcrowd**		    https://bugcrowd.com/bl4de
 
 **HackerOne**		  https://hackerone.com/bl4de
 
-So far nothing to see here - I will be describing all of my bounty I'll find.
-
-
-### Other sites
+#### Other sites
 
 **XSSposed**       https://www.xssposed.org/researchers/_bl4de/
 
-Some of my XSS found in the wild.
-
 **Project Euler**
-
-Mathematic and algorithmic problems to solve. A lot of them :)
 
 ![Project Euler badge]
 (https://projecteuler.net/profile/bl4de.png)
 
-
-
-# About me
-
-Hi,
-
-Thanks for visiting my GitHub!
-
+### About me
 
 A few words about myself :)
-
 
 I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
 Unfortunately for me, I was able to start my professional IT career when I was 30, in 2007. Now, I've got more than 8 years of web development experience (both server and client) with several technologies, including LAMP and MEAN stacks as well as some experience with JavaEE enterprose applications.
