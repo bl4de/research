@@ -70,6 +70,10 @@ To start retrieving information from Git repository, first we have to find start
 ![.git/logs/file example]
 (assets/git_logs_head_file.png)
 
+-
+####### If _.git/logs/head_ does not work, but _.git_ returns Forbidden 403, which means it's there, try _.git/logs/HEAD_ instead
+-
+
 
 Let's take a look a little bit closer to sample line of this file:
 
