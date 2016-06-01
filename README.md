@@ -82,7 +82,9 @@ Unfortunately for me, I was able to start my professional IT career when I was 3
 
 During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. 
 
-In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) In the next years I'm going to take couple of IT Security online trainings and get some IT security crtifications (eWPT, eWPTX and eCPPT and OSCP from Offensive Security following OSCE). After that, with some professional experience, I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter.
+In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) In the next years I'm going to take couple of IT Security online trainings and get some IT security certifications (eJPT - _currently in progress_, eWPT, eWPTX, eCPPT from  eLearnSecurity and OSCP, OSCE, OSWE, OSEE from Offensive Security). 
+
+After that, with some professional experience, I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter for the rest of my professional career.
 
 
 
