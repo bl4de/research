@@ -38,12 +38,12 @@ http://sekurak.pl/?s=bl4de
 
 ### Me online
 
-You can follow me on **Twitter**. I'm trying to share some IT security, web development and coding related stuff. 
+You can follow me on **Twitter**. I share IT security, web development and coding related stuff.
 
 https://twitter.com/_bl4de
 
 
-My other IT security related profiles:
+My other online profiles:
 
 #### CTF
 
