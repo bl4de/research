@@ -66,7 +66,7 @@ I am also playing on my own as **Stack** (https://ctftime.org/team/16701)
 
 #### Other sites
 
-**XSSposed**       https://www.xssposed.org/researchers/_bl4de/
+**OpenBugBounty**       https://www.openbugbounty.org/researchers/_bl4de/
 
 **Project Euler**
 
