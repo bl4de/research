@@ -77,12 +77,14 @@ I am also playing on my own as **Stack** (https://ctftime.org/team/16701)
 
 A few words about myself :)
 
-I am Full Stack Web Application developer since October 2007 (professional career, but I was programming on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've get my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn evewrything else by myself. From time to time.
-Unfortunately for me, I was able to start my professional IT career when I was 30, in 2007. Now, I've got more than 8 years of web development experience (both server and client) with several technologies, including LAMP and MEAN stacks as well as some experience with JavaEE enterprose applications.
+I am Full Stack Web Application developer since October 2007 (professional career, but I was writing some code in Basic on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've got my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn everything else by myself. From time to time.
+Unfortunately for me, I was able to start my professional IT career when I was 30 years old, in 2007. Now, I've got web development experience (both server and client) with several technologies, including LAMP (Linux/Apache/MySQL/PHP) and MEAN  stacks as well as some experience with JavaEE enterprise applications.
 
-During all of those years I felt that all IT Security related things is something I'd like to do most - so I've started to improve my knowledge in fileds like web applications security, network security and so on. 
+So, Linux/UNIX machines, Bash, PHP, JavaScript, HTML5, Python, SQL, database engines, web servers, Node, Single Page Applications, AJAX, REST, SOAP/WSDL, Angular, Git, SVN, MongoDB, JSON, EcmaScript 6, Babel, Promises, closures, Public/Protected/Private, constructors, interfaces, imports, includes, Require, modules, components - and many, many, many other words - I know them all :) Even more - I know what they mean and even how to use them! :D
 
-In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) In the next years I'm going to take couple of IT Security online trainings and get some IT security certifications (eJPT - _currently in progress_, eWPT, eWPTX, eCPPT from  eLearnSecurity and OSCP, OSCE, OSWE, OSEE from Offensive Security). 
+From the other point of view - during all of those years I felt that all IT Security related things is something I'd like to do most. So I've started to improve my knowledge in fileds like web applications security, network security and so on. 
+
+In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) In the next years I'm going to take couple of IT Security online trainings and get some IT security certifications (eJPT - _currently in progress_, eWPT, eWPTX, eCPPT from  eLearnSecurity and OSCP, OSCE, OSWE and OSEE from Offensive Security). 
 
 After that, with some professional experience, I'm going to become an independent IT Security consultant, penetration tester, white hat and bug bounty hunter for the rest of my professional career.
 
