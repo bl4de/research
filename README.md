@@ -2,7 +2,7 @@ Hi,
 
 Thanks for visiting my GitHub!
 
-This is my all-IT-security related repository - writeups, articles, PoCs, bug bounty descriptions and all that stuff.
+This is my all-IT-security related repository - CTFs writeups, articles, PoCs, bug bounty descriptions and all that stuff.
 
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
@@ -18,8 +18,12 @@ If you'd like to know more about me - here's the link: https://github.com/bl4de/
 #### Hidden directories and files as a source of sensitive information about web application
 
 Some analysis about how to get information about web application from folders like _.git_ , _.idea_ and similar.
-This whitepaper is still in development           
 https://github.com/bl4de/research/tree/master/hidden_directories_leaks
+
+As a part of this, I'm working on tool (in Python) to extract data from revealed Git repositories:
+
+https://github.com/bl4de/security-tools/tree/master/diggit
+
 
 
 ### CTF writeups
