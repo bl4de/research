@@ -54,7 +54,9 @@ My other online profiles:
 **CTFtime.org**		  https://ctftime.org/team/16701
 
 I've **started playing CTFs in 2015**, as team **bl4de** (https://ctftime.org/team/12769). My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D )
-In 2016 new players joined to team **bl4de**. Since HackIM 2016 (https://ctftime.org/event/285) I also play on my own as **Stack** (https://ctftime.org/team/16701).
+There were other players as well in one of two CTFs, but they decided to not continue their adventure.
+
+Since 2016 I play on my own as **Stack** (https://ctftime.org/team/16701).
 
 
 You can see some of my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
