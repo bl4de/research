@@ -1,0 +1,5 @@
+hidden_directories_leaks/assets.zip
+snippets/sqlite_sqlinjection_research.txt
+.idea/
+*/**/.idea
+
