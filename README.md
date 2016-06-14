@@ -51,7 +51,10 @@ My other online profiles:
 
 #### CTF
 
-**CTFtime.org**		  https://ctftime.org/team/16701
+**CTFtime.org**		  
+
+- 01.2015 - 12.2015 -  https://ctftime.org/team/12769 (bl4de) (not active at this name anymore)
+- 01.2016 - present -  https://ctftime.org/team/16701 (Stack)
 
 I've **started playing CTFs in 2015**, as team **bl4de** (https://ctftime.org/team/12769). My first year I've finished on **560th** place overall (I was in **9% of the best**, as there were **7272 teams with any points** - so I think it's not so bad for the rookie :D )
 There were other players as well in one of two CTFs, but they decided to not continue their adventure.
