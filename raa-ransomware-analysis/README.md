@@ -2,9 +2,9 @@
 
 On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
 
-Following some links provided by Polish malware analyst @hasherezade (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
+Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
 
-File _raa.js_ contains original content of RAA downloaded from malwr.com, and other files contains source code with some refactoring which I've done during RAA analysis and test runs.
+File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains source code with some refactoring which I've done during RAA analysis and test runs.
 
 
 # Analysis
@@ -15,14 +15,14 @@ File _raa.js_ contains original content of RAA downloaded from malwr.com, and ot
 
 To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
 
-Folder _partials/_ contains those parts of code (I keep order of how those fragments exists in original file). Please be aware that I've done a lot of renaming, mostly in **raa_other.js**. Original, obfuscated names you can find in **raa.js**.
+Folder **partials/** contains those parts of code (I keep order of how those fragments exists in original file). Please be aware that I've done a lot of renaming, mostly in **raa_other.js**. Original, obfuscated names you can find in **raa.js**.
 
-- _CryptoJS_ contains CryptoJS library
-- _raa_other.js_ contains other functions, including **zQqUzoSxLQ()**, which seems to be an entry point for the program
-- _NWvQtGjjfQX.js_ contains content of function **NWvQtGjjfQX()**
+- **Crypto.js** contains CryptoJS library
+- **raa_other.js** contains other functions, including **zQqUzoSxLQ()**, which seems to be an entry point for the program
+- **NWvQtGjjfQX.js** contains only body of function _NWvQtGjjfQX()_, which is quite huge :)
 
 
-## How RAA JavaScript part works
+## How RAA JavaScript works
 
 First executable line of script is this assingment:
 
@@ -30,7 +30,7 @@ First executable line of script is this assingment:
 var TBucypWw = YUIMqkFkI();
 ```
 
-I tried to rename all found variables and function names into something what makes sense and allows to follow them in code. This is how previous line and a function just before it looks like after quick renaming (I just guessed the role of each variable and function to choose particular name):
+I renamed all found variables and function into something what makes sense and allows to follow them in code in some easy way. This is how previous line and a function just before it looks like after renaming (I just guessed the role of each variable and function to choose particular name):
 
 ```javascript
 function generateKey() {
@@ -67,13 +67,12 @@ if (__arguments.length == 0) {
 }
 
 ```
-And here's RAA starts its work.
-First, **runShell()** is executed. Original name of this function is **nYuMHHRx()**, below there's refactored version.
+And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't) **runShell()** is executed. Original name of this function is **nYuMHHRx()**, below is my refactored version.
 
 ```javascript
 
 function runShell() {
-    var b64EncodedString = "e1xydGYxXG..( very long Base64 encoded string - removed)..zIwXHBhcg0KfQ0KBBSDIOBBSDIO==";
+    var b64EncodedString = "e1xydGYxXG..( very long Base64 encoded string )..zIwXHBhcg0KfQ0KBBSDIOBBSDIO==";
     b64EncodedString = b64EncodedString.replace(/BBSDIO/g, "A");
     var clear_b64EncodedString = CryptoJS.enc.Base64.parse(b64EncodedString);
     var clearedString = clear_b64EncodedString.toString(CryptoJS.enc.Utf8);
@@ -97,27 +96,31 @@ function runShell() {
 
 Let's go through it step by step.
 
-b64EncodedString contains very long, obfuscated Base64 encoded string. After a couple of operations with Regular Expressions and CryptoJS calls finally we get RTF document (see **extracted/extracted_rtf.rtf** file)
+_b64EncodedString_ variable contains very long Base64 encoded string. After a couple of operations with Regular Expressions and CryptoJS methods calls - finally we get RTF document (see **extracted/extracted_rtf.rtf** file)
 
 Next, a file is created with following path:
+
 ```
 \MyDocuments\doc_atatched_xW5Gf
 ```
+
 Content of previously generated RTF file is then saved at this path.
 
-Finally, following command is created:
+Finally, following command is prepared:
 
 ```
 var run = wordpad.exe "\MyDocuments\doc_atatched_xW5Gf"
 ```
-and after that executed by Windows Script Host method Run():
+
+and executed by Windows Script Host using method Run():
 
 ```
 WScriptShellObj.Run(run);
 ```
-(see https://msdn.microsoft.com/en-us/library/d5fk67ky(v=vs.84).aspx  for deatils about WScript object Run() method)
+( reference: https://msdn.microsoft.com/en-us/library/d5fk67ky(v=vs.84).aspx )
 
 
+-- TBD --
 
 
 
