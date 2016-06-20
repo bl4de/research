@@ -133,3 +133,7 @@ http://www.bleepingcomputer.com/news/security/the-new-raa-ransomware-is-created-
 **malwr.com**
 
 https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/
+
+
+**SophosLabs blog**			
+https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/
