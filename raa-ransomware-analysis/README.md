@@ -67,7 +67,7 @@ if (__arguments.length == 0) {
 }
 
 ```
-And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't) **runShell()** is executed. Original name of this function is **nYuMHHRx()**, below is my refactored version.
+And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't any) **runShell()** (nYuMHHRx()) is executed. Original name of this function is **nYuMHHRx()**, below is my refactored version.
 
 ```javascript
 
