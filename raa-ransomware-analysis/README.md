@@ -11,7 +11,7 @@ File **raa.js** in this repository contains original source code of RAA download
 
 ## Extracting parts of code into separate files
 
-**raa.js** file contains 3rd party library, used for some encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
+**raa.js** file contains 3rd party library, used for some encoding and encryption purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
 
 To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
 
