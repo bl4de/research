@@ -4,7 +4,7 @@ On 14th of June 2016 I found an information about new ransomware called RAA Rans
 
 Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
 
-File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains source code with some refactoring which I've done during RAA analysis and test runs.
+File **raa.js** in this repository contains original source code of RAA downloaded from malwr.com. Other files contains source code with some refactoring/renaming which I've done during RAA analysis and test runs.
 
 
 # Analysis
