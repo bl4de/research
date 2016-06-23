@@ -1,4 +1,4 @@
-# RAA Ransomware JavaScript code analysis
+## RAA Ransomware JavaScript code analysis
 
 On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
 
@@ -7,9 +7,9 @@ Following some links provided by Polish malware analyst **@hasherezade** (https:
 File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains source code with some refactoring which I've done during RAA analysis and test runs.
 
 
-# Analysis
+## Analysis
 
-## Extracting parts of code into separate files
+### Extracting parts of code into separate files
 
 **raa.js** file contains 3rd party library, used for some encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
 
@@ -22,10 +22,10 @@ Folder **partials/** contains those parts of code (I keep order of how those fra
 - **NWvQtGjjfQX.js** contains only body of function _NWvQtGjjfQX()_, which is quite huge :)
 
 
-# How RAA JavaScript works
+## How RAA JavaScript works
 
 
-## The beginning
+### The beginning
 
 First executable line of script is this assigment:
 
@@ -51,7 +51,7 @@ var __key = generateKey();  // <-- returns xW5Gf
 This fragment just generates a string which contains five characters. In this writeup, to understand its meaning, how and where it's used, I assigned *xW5Gf* from example above as generated value of **__key** variable.
 
 
-## Here comes the Pony.
+### Here comes the Pony.
 
 Next executable fragment is:
 
@@ -191,7 +191,7 @@ I saved this file in extracted/ folder as **file01**. As I found here - https://
 Next, Pony is saved to file with previously created ADODB.Stream ActiveX object and executed.
 
 
-## Going forward
+### Going forward
 
 Next function executes couple of things, eg. sets entry in Windows registry. Here's original, obfuscated source code, below is the same function with some renaming.
 
