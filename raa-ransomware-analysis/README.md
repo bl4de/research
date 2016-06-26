@@ -261,9 +261,7 @@ function addEntryToRegistryRun() {
 addEntryToRegistryRun();
 ```
 
-
---TBC--
-
+At the beginning, code checks if there's an entry in Windows registry at HKCU\RAA\Raa-fnl path. If not, _check_ variable is set to 0.
 
 ## Summary
 
