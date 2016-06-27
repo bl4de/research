@@ -229,6 +229,7 @@ function addEntryToRegistryRun() {
     } catch (e) {
         check = 0;
     }
+    
     var parts = [];
     var windowsScriptExec = "wscript.exe";
     var counter = 0;
@@ -262,6 +263,16 @@ addEntryToRegistryRun();
 ```
 
 At the beginning, code checks if there's an entry in Windows registry at HKCU\RAA\Raa-fnl path. If not, _check_ variable is set to 0.
+
+Next couple of lines check list of run processes:
+
+```javascript
+// e is an iterator which allows to enumerate running processes
+var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
+```
+Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ key, then **HxBG()** function is run
+
+
 
 ## Summary
 

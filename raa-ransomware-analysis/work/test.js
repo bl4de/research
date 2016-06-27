@@ -6,6 +6,7 @@ function addEntryToRegistryRun() {
     } catch (e) {
         check = 0;
     }
+
     var parts = [];
     var windowsScriptExec = "wscript.exe";
     var counter = 0;
@@ -24,6 +25,7 @@ function addEntryToRegistryRun() {
             null
         }
     } while (iterator < parts.length);
+
     if (counter < 2 && check == 0) {
         var scriptFullName = WScript.ScriptFullName;
         scriptFullName = scriptFullName + " argument";
