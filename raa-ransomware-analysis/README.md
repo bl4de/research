@@ -208,7 +208,7 @@ I saved this file in extracted/ folder as **file01**. As I found here - https://
 Next, Pony is saved to file with previously created ADODB.Stream ActiveX object and executed.
 
 
-### Going forward
+### Modify Windows registry
 
 Next function sets entry in Windows HKCU\Software\Microsoft\Windows\\CurrentVersion\Run\ registry key. Here's function after some more meaningful names.
 
@@ -270,7 +270,17 @@ Next couple of lines check list of run processes:
 // e is an iterator which allows to enumerate running processes
 var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
 ```
-Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ key, then **HxBG()** function is run
+
+Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ key, then **HxBG()** function is run.
+
+
+### Connect to the server
+
+Last part of the code contains two functions, **HxBG()** and **izzU()** (see partials/raa_other.js - lines 94 and 161). Below there are refactored fragments of this part of the RAA code, with some renaming done
+
+```javascript
+
+```
 
 
 
