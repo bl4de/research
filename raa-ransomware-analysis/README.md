@@ -15,11 +15,13 @@ File **raa.js** contains original content of RAA downloaded from malwr.com, and 
 
 To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
 
-Folder **partials/** contains those parts of code (I keep order of how those fragments exists in original file). Please be aware that I've done a lot of renaming, mostly in **raa_other.js**. Original, obfuscated names you can find in **raa.js**.
+Folder **partials/** contains those parts of code (I keep order of how those fragments exists in original file). Please be aware that I've done a lot of renaming, mostly in **raa_other.js**. Original source code you can find in **raa.js**.
 
 - **Crypto.js** contains CryptoJS library
 - **raa_other.js** contains other functions, including **zQqUzoSxLQ()**, which seems to be an entry point for the program
 - **NWvQtGjjfQX.js** contains only body of function _NWvQtGjjfQX()_, which is quite huge :)
+
+**raa_other.js** after renaming I've saved as **work/raa_refactored.js**.
 
 
 ## How RAA JavaScript works
@@ -33,7 +35,7 @@ First executable line of script is this assigment:
 var TBucypWw = YUIMqkFkI();
 ```
 
-I renamed all found variables and function into something what makes sense and allows to follow them in code in some easy way. This is how previous line and a function just before it looks like after renaming (I just guessed the role of each variable and function to choose particular name):
+I renamed all found variables and functions into something what makes sense and allows to follow them in code in some easy way. This is how previous line and a function just before it looks like after renaming (I just guessed the role of each variable and function to choose particular name):
 
 ```javascript
 function generateKey() {
@@ -80,7 +82,7 @@ if (__arguments.length == 0) {
 }
 
 ```
-And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't any) **runShell()** (nYuMHHRx()) is executed. Original name of this function is **nYuMHHRx()**, below is my refactored version.
+And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't any) **runShell()** is executed. Original name of this function is **nYuMHHRx()**, below is my version after renaming.
 
 ```javascript
 
@@ -276,7 +278,9 @@ Last part of the function checks if there are currently running **wscript.exe** 
 
 ### Connect to the server
 
-Last part of the code contains two functions, **HxBG()** and **izzU()** (see partials/raa_other.js - lines 94 and 161). Below there are refactored fragments of this part of the RAA code, with some renaming done
+Last part of the code contains two functions, **HxBG()** and **izzU()** (see partials/raa_other.js - lines 94 and 161). Below there are refactored fragments of this part of the RAA code, with some renaming done.
+
+First, let's take a look at **izzU()** (doDirtyJob())
 
 ```javascript
 
