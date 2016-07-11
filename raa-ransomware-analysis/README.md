@@ -21,9 +21,6 @@ Folder **partials/** contains those parts of code (I keep order of how those fra
 - **raa_other.js** contains other functions, including **zQqUzoSxLQ()**, which seems to be an entry point for the program
 - **NWvQtGjjfQX.js** contains only body of function _NWvQtGjjfQX()_, which is quite huge :)
 
-**raa_other.js** after renaming I've saved as **work/raa_refactored.js**.
-
-
 ## How RAA JavaScript works
 
 

