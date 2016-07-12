@@ -41,10 +41,47 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 
 ### Execution flow graph
 
-Next paragraphs describe in details each function of RAA. Here's how they all are executed, starting from the very beginning:
+Next paragraphs describe in details each function of RAA. Here's how they all are executed (simplified), starting from the very beginning:
 
-```
-Execution flow of RAA
+```javascript
+// Execution flow of RAA
+
+	
+	YUIMqkFkI()
+		|
+		|
+		v
+	nYuMHHRx()
+	NWvQtGjjfQX()
+		|
+		v
+	zQqUzoSxLQ() ---> HxBG()
+						|
+						|
+						v
+					try {
+						uTNMmZ() --------
+					} catch {			|
+						izzU()			|
+					}	  |				|
+						  |				|
+					      |				v
+						  |			NdpcNJVAPrNj()
+						  |				|
+						  |				v
+						  |<-----------izzU()
+						  |
+						  v
+					iKTzQKbfDJs()
+					PLnEyqCPKHV()
+						  |
+						  |
+						  v
+					nXmsNjMpKTv()
+						  |
+						  v
+					KWgwJwOlqJcs()
+
 
 
 
@@ -155,7 +192,7 @@ As a result, RTF document is displayed with some error message:
 ![RTF document]
 (extracted/extracted_rtf_screen.png)
 
-There's an information that this document can't be open in WordPAd and should be open in MS Word 2013 instead.
+There's an information that this document can't be open in Wordpad and should be open in MS Word 2013 instead.
 
 
 Next function is **NWvQtGjjfQX()** 
