@@ -4,12 +4,31 @@ On 14th of June 2016 I found an information about new ransomware called RAA Rans
 
 Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
 
-File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains source code with some refactoring which I've done during RAA analysis and test runs.
+
+--
+
+### What is this writeup about?
+
+As this is my very first time I was analyzing malicious code (and its worst type - ransomware) - if you're experienced Reverse Engineer or Malware Analysis - you may feel that a lot of things/details is missing here. Please, forgive me.
+
+This writeup is focused mostly on how JavaScript works in RAA rather than on details of eg. modifying Windows Registry. But as there's a lot of Windows Script Host API used here, I've added reference links for couple of interesting resources, mostly on MSDN pages, if someone will want to dig a little bit more.
+
+File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains eg. extracted RTF files or parts of RAA code which was created and executed "on the fly".
+
+When I've started to work on this, I've tried to refactor variables and function names to something more meaningful. Unfortunately, this did not help much, so I decided not to do this at all. Original names have the same impact on code readability.
 
 
 ## Analysis
 
-### Extracting parts of code into separate files
+### Some first thoughts
+
+For someone like me, who works with JavaScript for eight to ten hours every day and sleeps with ES6 book under the pillow - RAA source code looks like one, big mess. Unfortunately, this messy, spaghetti code just does its job.
+
+
+
+--
+
+### Splitting code into separate parts
 
 
 **raa.js** file contains 3rd party library, used for some encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
@@ -18,8 +37,6 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 
 ```javascript
 /*
-	file raa.js
-	
 	CryptoJS library
 	lines from 1 to 482
 */
@@ -31,7 +48,7 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 
 
 /*
-	part where malicious RTF is created
+	part where first malicious RTF is created
 	lines from 1083 to the end of file
 */
 
@@ -42,7 +59,7 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 
 ### Execution flow graph
 
-Next paragraphs describe in details each function of RAA. Here's how they all are executed (simplified), starting from the very beginning:
+Next paragraphs describe in details each function of RAA. Here's a very simplified execution flow chart how they all are executed, starting from the very beginning:
 
 ```javascript
 // Execution flow of RAA
@@ -91,7 +108,7 @@ Next paragraphs describe in details each function of RAA. Here's how they all ar
 --
 ### The beginning
 
-First executable line of script is this asigment:
+First executable line of script is this assigment:
 
 ```javascript
 var TBucypWw = YUIMqkFkI();
