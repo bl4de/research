@@ -31,7 +31,7 @@ For someone like me, who works with JavaScript for eight to ten hours every day 
 ### Splitting code into separate parts
 
 
-**raa.js** file contains 3rd party library, used for some encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
+RAA (see **raa.js** file) contains 3rd party library, used for all encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
 
 To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
 
@@ -53,6 +53,9 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 */
 
 ```
+
+Analysis of CryptoJS is not a part of this writeup - as originally this library is not a part of RAA :) 
+
 
 ## How RAA JavaScript works
 
