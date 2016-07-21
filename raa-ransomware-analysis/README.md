@@ -615,6 +615,10 @@ function nXmsNjMpKTv(kAgTDYi) {
 
 ```
 
+In function above, there's interesting way how to define counter for _do...while_ loop. **EPtLPm** starts not from 0 or 1, but from -1. In loop condition, value of **EPtLPm** is compared with length of **kAgTDYi** array minus 2. I suppose this is some kind of obfuscation _do...while_ loop, but I am only guessing here.
+
+Inside loop, a couple of thing is going:
+
 
 
 ## Summary
