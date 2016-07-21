@@ -11,6 +11,7 @@ File **raa.js** contains original content of RAA downloaded from malwr.com, and 
 
 ### Extracting parts of code into separate files
 
+
 **raa.js** file contains 3rd party library, used for some encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
 
 To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
@@ -87,7 +88,7 @@ Next paragraphs describe in details each function of RAA. Here's how they all ar
 
 ```
 
-
+--
 ### The beginning
 
 First executable line of script is this asigment:
@@ -112,6 +113,7 @@ function YUIMqkFkI() {
 
 This fragment just generates a string which contains five characters randomly chose from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned **xW5Gf** from example above as generated value of ** TBucypWw** variable.
 
+--
 
 ### Here comes the Pony.
 
@@ -262,6 +264,7 @@ I saved this file in extracted/ folder as **file01**. As I found here - https://
 
 Next, Pony is saved to file with previously created ADODB.Stream ActiveX object and executed.
 
+--
 
 ### Modify Windows registry
 
@@ -319,6 +322,7 @@ var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
 
 Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ key, then **HxBG()** function is run.
 
+--
 
 ### Connect to the server
 
@@ -444,6 +448,7 @@ var VKw = KrvABjTTXNS[0];
 var jOnaTnksWb = KrvABjTTXNS[1];
 ```
 
+--
 
 ### Identify drives, folders and files
 
@@ -617,8 +622,49 @@ function nXmsNjMpKTv(kAgTDYi) {
 
 In function above, there's interesting way how to define counter for _do...while_ loop. **EPtLPm** starts not from 0 or 1, but from -1. In loop condition, value of **EPtLPm** is compared with length of **kAgTDYi** array minus 2. I suppose this is some kind of obfuscation _do...while_ loop, but I am only guessing here.
 
-Inside loop, a couple of thing is going:
+**LMz()** function is executed for every drive (drives are stored in element of index 0 and this element is also an array - that is why 
+**kAgTDYi[0][EPtLPm]** is used)
 
+**LMz()** contains a lot of _if..else if_ conditions. The only purpose of this function is to iterate over all files on drive and create one, long string with filenames of particular types (images, MS Office documents, PDF files, Zip archives, Photoshop files - see extensions in function body?). Those filenames are concatenated together with **TBucypWw** key as separator, which is then used to split this string into array in the next line in **nXmsNjMpKTv()**.
+Next, as new element of **kAgTDYi** a new array is build from all previously generated arrays with filenames (in other words: _concat()_ joins array with filenames extracted from actual drive with current value of **kAgTDYi[1]**).
+
+Next, quick cleanup is performed on those list - all empty entries are removed:
+
+```javascript
+function OFTEml(array_to_clean) {
+    var pjvsEz = new Array();
+    for (var i = 0; i < array_to_clean.length; i++) {
+        if (array_to_clean[i]) {
+            pjvsEz.push(array_to_clean[i]);
+        }
+    }
+    return pjvsEz;
+}
+```
+
+Function **HHiAp()** performs similar operation like **LMz()**, but with folder names rather than files. It creates and returns a list of all folders on each drive, which names are not in defined set.
+
+Finally, **nXmsNjMpKTv()** returns an array contains all filenames from each drive of an infected machine.
+
+
+--
+
+### Last step - encryption of files
+
+**KWgwJwOlqJcs()** finishes all process. This function contains a couple of its own, private, scoped functions with the one, which is responsible for encryption:
+
+```javascript
+function ukBnxEOtjm(EQs) {
+    var HZtSmFNRdJM = HZtSmFNRdJM_data[1];
+    var gmCRXSMsLyM = qPCIyff[1];
+    EQs = CryptoJS.AES.encrypt(EQs, HZtSmFNRdJM, {gmCRXSMsLyM: gmCRXSMsLyM});
+    return EQs;
+}
+```
+
+But before each file passes through those four lines, a lot of other things are done.
+
+--
 
 
 ## Summary
