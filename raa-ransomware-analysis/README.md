@@ -131,7 +131,7 @@ function YUIMqkFkI() {
 }
 ```
 
-This fragment just generates a string which contains five characters randomly chose from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned **xW5Gf** from example above as generated value of ** TBucypWw** variable.
+This fragment just generates a string which contains five characters randomly chose from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned **xW5Gf** from example above as generated value of **TBucypWw** variable.
 
 --
 
@@ -140,7 +140,6 @@ This fragment just generates a string which contains five characters randomly ch
 Next executable fragment is:
 
 ```javascript
-/* 
 var Yvwtdbvd = WScript.Arguments;
 if (Yvwtdbvd.length == 0) {
     nYuMHHRx();
