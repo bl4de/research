@@ -237,7 +237,7 @@ This function executes code...
 	eval(dec_cmd);
 ```
 
-...which is decrypted from **cmd** with **key_cmd** key:
+...which comes as decrypted **cmd** (with **key_cmd** key):
 
 ```javascript
 	// key
