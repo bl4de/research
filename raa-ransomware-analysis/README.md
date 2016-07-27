@@ -5,6 +5,25 @@ On 14th of June 2016 I found an information about new ransomware called RAA Rans
 Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
 
 
+# Table of Contents
+
+- [RAA Ransomware JavaScript code analysis] (#raa-ransomware-javascript-code-analysis)
+	- [What is this writeup about?](#what-is-this-writeup-about)
+- [Analysis] (#analysis)
+	- [Some first thoughts](#some-first-thoughts)
+	- [Splitting code into separate parts](#splitting-code-into-separate-parts)
+- [How RAA JavaScript works](#how-raa-javascript-works)
+	- [Execution flow graph](#execution-flow-graph)
+	- [The beginning](#the-beginning)
+	- [Here comes the Pony](#here-comes-the-pony)
+	- [Modify Windows registry](#modify-windows-registry)
+	- [Connect to the server](#connect-to-the-server)
+	- [Identify drives, folders and files](#identify-drives-folders-and-files)
+	- [Last step - encryption of files](#last-step---encryption-of-files)
+	- [End of the process](#end-of-the-process)
+- [Summary](#summary)
+- [Links, references](#links-references)
+
 --
 
 ### What is this writeup about?
