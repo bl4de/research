@@ -1,3 +1,9 @@
+## RAA Ransomware JavaScript code analysis
+
+On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
+
+Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
+
 # Table of Contents
 
 - [RAA Ransomware JavaScript code analysis] (#raa-ransomware-javascript-code-analysis)
@@ -17,12 +23,6 @@
 - [Summary](#summary)
 - [Links, references](#links-references)
 
-
-## RAA Ransomware JavaScript code analysis
-
-On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
-
-Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
 
 --
 
