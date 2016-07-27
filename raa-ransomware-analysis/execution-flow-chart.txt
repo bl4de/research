@@ -26,14 +26,16 @@
 						  |
 						  v
 					iKTzQKbfDJs()
+					      |
+					      v
 					PLnEyqCPKHV()
 						  |
-						  |
-						  v
-					nXmsNjMpKTv()
-						  |
-						  v
-					KWgwJwOlqJcs()
+				    nXmsNjMpKTv()
+				          |
+					do {
+						KWgwJwOlqJcs(file_to_encrypt)
+					} while (files_to_encrypt)
+
 
 
 

