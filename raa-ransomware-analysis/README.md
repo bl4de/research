@@ -2,7 +2,7 @@
 
 On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
 
-Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look its internals.
+Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look at its internals.
 
 # Table of Contents
 
@@ -32,7 +32,7 @@ As this is my very first time I was analyzing malicious code (and its worst type
 
 This writeup is focused mostly on how JavaScript works in RAA rather than on details of eg. modifying Windows Registry. But as there's a lot of Windows Script Host API used here, I've added reference links for couple of interesting resources, mostly on MSDN pages, if someone will want to dig a little bit more.
 
-File **raa.js** contains original content of RAA downloaded from malwr.com, and other files contains eg. extracted RTF files or parts of RAA code which was created and executed "on the fly".
+File **raa.js** contains original content of RAA downloaded from malwr.com. Other folders and files contains eg. extracted RTF files or parts of RAA code which I've created and executed "on the fly" to find how exactly some parts of the code works.
 
 When I've started to work on this, I've tried to refactor variables and function names to something more meaningful. Unfortunately, this did not help much, so I decided not to do this at all. Original names have the same impact on code readability.
 
@@ -41,18 +41,16 @@ When I've started to work on this, I've tried to refactor variables and function
 
 ### Some first thoughts
 
-For someone like me, who works with JavaScript for eight to ten hours every day and sleeps with ES6 book under the pillow - RAA source code looks like one, big mess. Unfortunately, this messy, spaghetti code just does its job.
+For someone like me, who works with JavaScript for eight to ten hours every day and sleeps with ES6 book under the pillow - RAA source code looks like one, big mess. There are even labels used in code to immediately jump off out of the loop (good old Basic GOTO is the grandpa of this). I'll explain how it works when analyzing one of RAA functions below.
 
-
+Unfortunately, this messy, spaghetti code just does its job. And no Pokemon to catch here after all...
 
 --
 
 ### Splitting code into separate parts
 
+First look at source of RAA (see **raa.js** file) reveals three main part of the code:
 
-RAA (see **raa.js** file) contains 3rd party library, used for all encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
-
-To keep source code easier to analysis, I've decided to divide **raa.js** into couple of smaller parts. After quick investigation I was able to spot three main parts.
 
 ```javascript
 /*
@@ -73,6 +71,10 @@ To keep source code easier to analysis, I've decided to divide **raa.js** into c
 
 ```
 
+
+
+RAA contains 3rd party library, used for all encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
+
 Analysis of CryptoJS is not a part of this writeup - as originally this library is not a part of RAA :) 
 
 
@@ -81,7 +83,7 @@ Analysis of CryptoJS is not a part of this writeup - as originally this library 
 
 ### Execution flow graph
 
-Next paragraphs describe in details each function of RAA. Here's a very simplified execution flow chart how they all are executed, starting from the very beginning:
+Next paragraphs describe in details each function of RAA. Here's a very simplified execution flow chart how they all are executed, starting from the very beginning. For now it does not look good. Every function and variable name is just some random string and there's no way to know what does function or variable responsible for.
 
 ```javascript
 // Execution flow of RAA
@@ -115,10 +117,10 @@ Next paragraphs describe in details each function of RAA. Here's a very simplifi
 					iKTzQKbfDJs()
 					      |
 					      v
-					PLnEyqCPKHV()
+	  ------------- PLnEyqCPKHV() ----------------- 
 					      v
 					nXmsNjMpKTv()
-				    do {
+				   	do {
 						KWgwJwOlqJcs(file_to_encrypt)
 					} while (files_to_encrypt)
 
@@ -126,6 +128,8 @@ Next paragraphs describe in details each function of RAA. Here's a very simplifi
 
 
 ```
+
+Now, it's time to go through every line of RAA code.
 
 --
 ### The beginning
@@ -150,13 +154,13 @@ function YUIMqkFkI() {
 }
 ```
 
-This fragment just generates a string which contains five characters randomly chose from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned **xW5Gf** from example above as generated value of **TBucypWw** variable.
+This fragment just generates a string which contains five characters randomly chosen from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned _**xW5Gf**_ from example above as generated value of **TBucypWw** variable.
 
 --
 
 ### Here comes the Pony.
 
-Next executable fragment is:
+Next executable fragment is this part:
 
 ```javascript
 var Yvwtdbvd = WScript.Arguments;
@@ -169,7 +173,7 @@ if (Yvwtdbvd.length == 0) {
 ```
 
 
-And here's RAA starts its work. After script checks if there are any arguments passed (now let's assume that there aren't any) **nYuMHHRx()** is executed. 
+And this is the place here's RAA starts its work. After script checks if there are any arguments passed (let's assume that there aren't any) **nYuMHHRx()** is executed. 
 
 
 ```javascript
@@ -232,8 +236,6 @@ As a result, RTF document is displayed with some error message:
 ![RTF document]
 (extracted/extracted_rtf_screen.png)
 
-There's an information that this document can't be open in Wordpad and should be open in MS Word 2013 instead.
-
 
 Next function is **NWvQtGjjfQX()** 
 
@@ -250,20 +252,17 @@ function NWvQtGjjfQX() {
 }
 ```
 
-This function executes code...
+This function executes code with _eval()_ call...
 
 ```javascript
 	eval(dec_cmd);
 ```
 
-...which comes as decrypted **cmd** (with **key_cmd** key):
+...which comes from decrypted **cmd** (with **key_cmd** key):
 
 ```javascript
-	// key
 	var key_cmd = "2c025c0a1a45d1f18df9ca3514babdbc";
-	// AES decrypt using key_cmd as a key   
     var dec_cmd = CryptoJS.AES.decrypt(cmd, key_cmd);
-    // change decrypted code to UTF-8 string      
     dec_cmd = CryptoJS.enc.Utf8.stringify(dec_cmd); 
 ```
 
@@ -301,13 +300,15 @@ var pny_dec = pny_ar.toString(CryptoJS.enc.Utf8);
 I saved this file in extracted/ folder as **file01**. As I found here - https://reaqta.com/2016/06/raa-ransomware-delivering-pony/ - it contains malware called Pony (http://www.mcafee.com/threat-intelligence/malware/default.aspx?id=105468). After I found this information I've realized that its code comes from variable called **pny** (PoNY) Nice naming convention... :)
 
 Next, Pony is saved to file with previously created ADODB.Stream ActiveX object and executed.
+You can find more information about Pony here: https://blog.malwarebytes.com/threat-analysis/2015/11/no-money-but-pony-from-a-mail-to-a-trojan-horse/
 
 --
 
 ### Modify Windows registry
 
-Next function sets entry in Windows HKCU\Software\Microsoft\Windows\\CurrentVersion\Run\ registry key:
+Next function sets entry in Windows HKCU\Software\Microsoft\Windows\\CurrentVersion\Run\ registry key.
 
+It uses _WScript.Shell_ object from Windows Script Host. It allows to read Windows registry entries (with _RegRead_ method - see https://msdn.microsoft.com/en-us/library/x05fawxd(v=vs.84).aspx).
 
 ```javascript
 function zQqUzoSxLQ() {
@@ -349,7 +350,7 @@ function zQqUzoSxLQ() {
 }
 ```
 
-At the beginning, code checks if there's an entry in Windows registry at HKCU\RAA\Raa-fnl path. If not, **QCY** variable is set to 0.
+At the beginning, code checks if there's an entry in Windows registry at _HKCU\RAA\Raa-fnl_ path. If not, **QCY** variable is set to 0.
 
 Next couple of lines check list of run processes:
 
@@ -358,13 +359,13 @@ Next couple of lines check list of run processes:
 var e = new Enumerator(GetObject("winmgmts:").InstancesOf("Win32_process"));
 ```
 
-Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ key, then **HxBG()** function is run.
+Last part of the function checks if there are currently running **wscript.exe** processes and, under some conditions (eg. if previous _check_ is equal to 0) adds new Registry value under _HKCU\Software\Microsoft\Windows\CurrentVersion\Run\\_ key, then **HxBG()** function is run.
 
 --
 
 ### Connect to the server
 
-Last part of the code contains two functions, **HxBG()** and **izzU()**
+Last part of RAA code contains two very long functions, **HxBG()** and **izzU()**
 
 First, let's take a look at **izzU()**. 
 
@@ -391,7 +392,7 @@ Here's the code which generates GUID:
  var cVjZujcP = FknDierotSzK.GUID.substr(1, 36);
 ```
 
-Next thing is to initialize **KrvABjTTXNS** array with values get from remote server. Function **get_HZtSmFNRdJM()**, which is responsible for this part, contains hardcoded url, with **id** argument passed via GET:
+Next thing is to initialize **KrvABjTTXNS** array with values read from remote server. Function **get_HZtSmFNRdJM()**, which is responsible for this part, contains hardcoded url, with **id** argument passed via GET:
 
 ```javascript
 var VuSD = cVjZujcP + " - RAA";
@@ -432,9 +433,8 @@ last-modified:  2014-11-30T13:42:54Z
 source:         RIPE # Filtered
 ```
 
-Let's go back to the code.
 
-I could not check what server returns, because this particular account was suspended. In next line, ServerXMLHTTP server is created to communicate with remote machine. Next couple of lines set timeouts for **req** object (see https://msdn.microsoft.com/en-us/library/ms760403(v=vs.85).aspx for details):
+I could not check what server returns, because this particular account was suspended. In next line, _ServerXMLHTTP_ object is created to communicate with remote machine. Next couple of lines set timeouts for **req** object (see https://msdn.microsoft.com/en-us/library/ms760403(v=vs.85).aspx for details):
 
 ```javascript
 var req = new ActiveXObject("Msxml2.ServerXMLHTTP.6.0");
