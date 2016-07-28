@@ -445,7 +445,7 @@ var olWVonsDzH = 15000;
 req.setTimeouts(QSJCTxMMl, bFPwcaPNy, zarI, olWVonsDzH);
 ```
 
-Following code uses GET method to receive some data from remote machine:
+Following code uses Ajax HTTP GET call to receive some data from remote machine:
 
 ```javascript
 (...)
@@ -473,9 +473,9 @@ do {
 return aka;
 ```
 
-If we take a look at this fragment a little bit closer, it does not have a lot of sense. Take a look at how **MOSKn** array is used - only its first element is initalised and then, inside do...while() loop, only 0 index is in use (if we follow  **pointer_MOSKn**, its value is always 0).
+If we take a look at this fragment a little bit closer, it does not have a lot of sense. Take a look at how **MOSKn** array is used - only its first element is initalized and then, inside _do...while()_ loop, only 0 index is in use (if we follow  **pointer_MOSKn**, its value is always 0).
 
-Because **aka** value changes after first request. I couldn't check what exactly is returned as startwavenow.com domain was already suspended and url does not respond, but I found an information in ReaQta writeup that there were some values used in encrytption phase later - see https://reaqta.com/2016/06/raa-ransomware-delivering-pony/ for more details. 
+Because **aka** value changes after first request, I couldn't check what exactly is returned as startwavenow.com domain was already suspended and url does not respond, but I found an information in ReaQta writeup that there were some values used in encryption phase later - see https://reaqta.com/2016/06/raa-ransomware-delivering-pony/ for more details. 
 
 After **get_HZtSmFNRdJM()** function there's code assigns returned values to an array:
 
@@ -518,7 +518,13 @@ function kth() {
 }
 
 ```
+
+This is the first function where I found real example of how labels can be used to immediately escape from _for_ loop. ```continue RKsqOBz;``` instruction causes JavaScript interpreter to immediately jump off the loop, right to ```RKsqOBz:``` label definition.
+
+This language construct is equivalent to other languages _goto_ instruction. It's not a good habit to use such instructions as it's hard to follow execution flow of the program and is very error prone. And, if the code is well organized, it's absolutely unnecessary to use any _goto_-like construct. But I am pretty sure that those arguments aren't accurate for RAA.
     
+You can read more about how to use labels in JavaScript here: http://devdocs.io/javascript/statements/label
+
 At the beginning there's _FileSystemObject_ created. As we can find on MSDN documentation page:
 
 ```
