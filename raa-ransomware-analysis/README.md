@@ -118,7 +118,7 @@ Next paragraphs describe in details each function of RAA. Here's a very simplifi
 					iKTzQKbfDJs()
 					      |
 					      v
-	  ------------- PLnEyqCPKHV() ----------------- 
+	 				PLnEyqCPKHV()
 					      v
 					nXmsNjMpKTv()
 				   	do {
