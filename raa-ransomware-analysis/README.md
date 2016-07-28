@@ -1,6 +1,6 @@
 ## RAA Ransomware JavaScript code analysis
 
-On 14th of June 2016 I found an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
+On 14th of June 2016 while checking Twitter I spotted an information about new ransomware called RAA Ransomware. Couple of websites mentioned about it as first ransomware created only by using JavaScript.
 
 Following some links provided by Polish malware analyst **@hasherezade** (https://github.com/hasherezade, https://twitter.com/hasherezade) I've downloaded RAA JavaScript source code from malwr.com (https://malwr.com/analysis/YmE4MDNlMzk2MjY3NDdlYWE1NzFiOTNlYzVhZTlkM2Y/) to take a look at its internals.
 
@@ -21,6 +21,7 @@ Following some links provided by Polish malware analyst **@hasherezade** (https:
 	- [Last step - encryption of files](#last-step---encryption-of-files)
 	- [End of the process](#end-of-the-process)
 - [Summary](#summary)
+	- [Get in touch maybe?](#get-in-touch-maybe)
 - [Links, references](#links-references)
 
 
@@ -1058,6 +1059,7 @@ SlSPWu.Position = GinRqOjln;
 
 Finally, content of **SlSPWu** stream is copied into **FhDYKCTNZFu**, and the same operation as in **omaDplUyHou()** is performed: change file name to the one with _.locked_ extension and then override original file with encrypted version.
 
+--
 
 ### End of the process
 
@@ -1097,6 +1099,16 @@ And not only RAA uses JavaScript for such things. @hasherezade recently describe
 Also, obfuscation of JavaScript code in similar malware is insane. In "Return of Locky" blogpost (https://malcat.moe/?p=53) you can follow process of deobfuscation Locky ransomware code. JavaScript variables and function names can be refer in many ways - eg. object property identifier can be defined as concatenated string of mixed UTF, hexadecimal and plain text chunks, reverted, encoded and reverted once again.
 
 But one fact is very important here: every single JavaScript runtime environment needs JavaScript code in plaintext. That simply means it is **always** possible to get any JavaScript obfuscated code into something readable and executable in Node.js or web browser.
+
+--
+
+### Get in touch maybe? :)
+
+If you have any questions or doubts - feel free to contact me:
+
+- Twitter: https://twitter.com/_bl4de
+- email: bloorq@gmail.com
+
 
 
 ## Links, references
