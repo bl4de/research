@@ -525,6 +525,8 @@ This language construct is equivalent to other languages _goto_ instruction. It'
     
 You can read more about how to use labels in JavaScript here: http://devdocs.io/javascript/statements/label
 
+Ok, go back to our function.
+
 At the beginning there's _FileSystemObject_ created. As we can find on MSDN documentation page:
 
 ```
@@ -548,7 +550,7 @@ kAgTDYi[1] = [];
 ```
 
 
-Function **iKTzQKbfDJs()** calls two other functions, **OFTEml()** and **YlDrqb()** - let's follow all of them to get the final result of their execution:
+Function **iKTzQKbfDJs()** calls two other functions, **OFTEml()** and **YlDrqb()** - let's follow both of them to get the final result of their execution:
 
 ```javascript
 function iKTzQKbfDJs() {
@@ -581,9 +583,9 @@ function OFTEml(array_to_clean) {
 
 ```
 
-This short function returns all not empty elements from array passed as argument.
+This short function returns all not empty (eg. strings like "") elements from array passed as argument.
 
-Next function **YlDrqb()**, is called for each element of cleaned by **OFTEml()** array (in other words: is executed for each drive)
+Next function **YlDrqb()**, is called for every element of cleaned by **OFTEml()** array (in other words: is executed for each drive)
 
 ```javascript
 function YlDrqb(kth) {
@@ -595,13 +597,13 @@ function YlDrqb(kth) {
     return 0;
 }
 ```
-Again, _FileSystemObject_ is used to create file with following example name on each drive, and to write to those files content created by function **VGCDtihB()**:
+Again, _FileSystemObject_ is used to create file with following example name on each drive, and it writes to those files content created by function **VGCDtihB()**:
 
 ```
 C!!!README!!!xW5Gf.rtf
 ```
 
-Why **xW5Gf** in filename? Remember function generates random key, from the very beginning of RAA execution? Here's where this key is used (see 'The beginning' above).
+Why **xW5Gf** in filename? Remember function which generates random key, from the very beginning of RAA execution? Here's where this key is used (see 'The beginning' above).
 
 Function **VGCDtihB()** generates another _rtf_ file with ransomware payment note - you can see this file on ReaQta writeup (https://reaqta.com/wp-content/uploads/2016/06/RAA_Ransomware_build_refund_file.png - as I was not able to generate those files on my machine)
 
@@ -669,7 +671,10 @@ In function above, there's interesting way how to define counter for _do...while
 **LMz()** function is executed for every drive (drives are stored in element of index 0 and this element is also an array - that is why 
 **kAgTDYi[0][EPtLPm]** is used)
 
-**LMz()** contains a lot of _if..else if_ conditions. The only purpose of this function is to iterate over all files on drive and create one, long string with filenames of particular types (images, MS Office documents, PDF files, Zip archives, Photoshop files - see extensions in function body?). Those filenames are concatenated together with **TBucypWw** key as separator, which is then used to split this string into array in the next line in **nXmsNjMpKTv()**.
+**LMz()** contains a lot of _if..else if_ conditions. The only purpose of this function is to iterate over all files on drive and create one, long string with filenames of particular types (images, MS Office documents, PDF files, Zip archives, Photoshop files - do you see variables initialized by strings containing some popular files extensions in function body?). Those filenames are concatenated together with **TBucypWw** key as separator, which is then used to split this string into array in the next line in **nXmsNjMpKTv()**.
+
+Extensions such as _.locked_ are omitted.
+
 Next, as new element of **kAgTDYi** a new array is build from all previously generated arrays with filenames (in other words: _concat()_ joins array with filenames extracted from actual drive with current value of **kAgTDYi[1]**).
 
 Next, quick cleanup is performed on those list - all empty entries are removed:
@@ -686,7 +691,7 @@ function OFTEml(array_to_clean) {
 }
 ```
 
-Function **HHiAp()** performs similar operation like **LMz()**, but with folder names rather than files. It creates and returns a list of all folders on each drive, which names are not in defined set.
+Function **HHiAp()** performs similar operation like **LMz()**, but with folder names rather than files. It creates and returns a list of all folders on each drive, which names are not in defined set. In other way - encryption does not include system folders like _WINDOWS_, _RECYCLER_, _Program Files_, _Temp_, _AppData_ and similar.
 
 Finally, **nXmsNjMpKTv()** returns an array contains all filenames from each drive of an infected machine.
 
@@ -695,7 +700,9 @@ Finally, **nXmsNjMpKTv()** returns an array contains all filenames from each dri
 
 ### Last step - encryption of files
 
-Function **KWgwJwOlqJcs()** finishes whole process. This function contains a couple of its own, private scoped functions with the one, which is responsible for encryption:
+Function **KWgwJwOlqJcs()** finishes whole process. This function is called in the loop in **PLnEyqCPKHV()** (one iteration per each file) with file name passed as an argument.
+
+**KWgwJwOlqJcs()** contains a couple of private scoped functions with the one responsible for encryption:
 
 ```javascript
 function ukBnxEOtjm(EQs) {
@@ -708,7 +715,7 @@ function ukBnxEOtjm(EQs) {
 
 To this function goes every single file which RAA wants to encrypt.
 
-But before any file passes through those four lines, a lot of other things is happening. Let's go through them step by step.
+But before any file goes through those four lines, a lot of other things is happening. Let's go through them step by step.
 
 First, two variables are initialized with values returned from **rStinsVp()** function:
 
@@ -758,6 +765,7 @@ Logic of this function is quite simple: it returns an array with two elements: f
 I ran this function and as argument I've passed some random MD5 hash. Results were similar for any other strings as well:
 
 ```javascript
+// rStinsVp.js file content
 console.log(rStinsVp("c2378574f4fa4a4353d1ab7e2961fd88"));
 ```
 
@@ -797,10 +805,11 @@ $ node rStinsVp.js
     '0939' ],
   'cccccccccccccccccccccccccccccccc' ]
 ```
-So **HZtSmFNRdJM_data** and **qPCIyff** contains some similar results as above.
+In real execution **HZtSmFNRdJM_data** and **qPCIyff** should contains some similar results as above. As I mentioned earlier - I can't check this as there's no way to get real values from remote server.
 
 
-Next call is **udpIHxNm()** function, which takes as an argument name of the file to encrypt (from list of files generated in function **nXmsNjMpKTv()**; each file is passed here through _do..while_ loop in **PLnEyqCPKHV()** by function **KWgwJwOlqJcs()** called per each file name):
+Next call is **udpIHxNm()** function, which takes as an argument name of the file to encrypt (from list of files generated in function **nXmsNjMpKTv()**; each file is passed here through _do..while_ loop in **PLnEyqCPKHV()** to the function **KWgwJwOlqJcs()** called per each file name).
+
 
 ```javascript
 function udpIHxNm(IMhTname) {
