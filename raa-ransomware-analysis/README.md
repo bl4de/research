@@ -74,7 +74,7 @@ First look at source of RAA (see **raa.js** file) reveals three main part of the
 
 
 
-RAA contains 3rd party library, used for all encoding purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
+RAA contains 3rd party library, used for all encoding and encryption  purposes. It's **CryptoJS** library (source code available here https://code.google.com/archive/p/crypto-js/ or GitHub fork here https://github.com/sytelus/CryptoJS).
 
 Analysis of CryptoJS is not a part of this writeup - as originally this library is not a part of RAA :) 
 
