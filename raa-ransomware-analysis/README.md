@@ -174,7 +174,7 @@ if (Yvwtdbvd.length == 0) {
 ```
 
 
-And this is the place here's RAA starts its work. After script checks if there are any arguments passed (let's assume that there aren't any) **nYuMHHRx()** is executed. 
+And this is the place here's RAA starts its work. After script checks if there are any arguments passed (let's assume that there aren't any) **nYuMHHRx()** is executed (I've truncated content of **tpcVJWrQG** here): 
 
 
 ```javascript
@@ -247,7 +247,8 @@ As a result, RTF document is displayed with some error message:
 (extracted/extracted_rtf_screen.png)
 
 
-Next function is **NWvQtGjjfQX()** 
+Next function is **NWvQtGjjfQX()** (I've truncated content of **data_pn** here): 
+
 
 ```javascript
 function NWvQtGjjfQX() {
