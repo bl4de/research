@@ -90,6 +90,6 @@ Unfortunately for me, I was able to start my professional IT career when I was 3
 So, Linux/UNIX machines, Bash, PHP, JavaScript, HTML5, Python, SQL, database engines, web servers, Node, Single Page Applications, AJAX, REST, SOAP/WSDL, Angular, Git, SVN, MongoDB, JSON, EcmaScript 6, Babel, Promises, closures, Public/Protected/Private, constructors, interfaces, imports, includes, Require, modules, components - and many, many, many other words - I know them all :) Even more - I know what they mean and even how to use them! :D
 
 During all of those years I had a feeling that IT Security is something I'd like to do most. So I've started to improve my knowledge in fields like web applications security, network security, penetration testing.
-In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;)
+In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) Since June 2016 I've also started to participate in couple of bug bounty programs on Bugcrowd and HackerOne and looking forward to get my first bounties soon :)
 
 
