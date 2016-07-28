@@ -1099,8 +1099,7 @@ And not only RAA uses JavaScript for such things. @hasherezade recently describe
 
 Also, obfuscation of JavaScript code in similar malware is insane. In "Return of Locky" blogpost (https://malcat.moe/?p=53) you can follow process of deobfuscation Locky ransomware code. JavaScript variables and function names can be refer in many ways - eg. object property identifier can be defined as concatenated string of mixed UTF, hexadecimal and plain text chunks, reverted, encoded and reverted once again.
 
-But one fact is very important here: every single JavaScript runtime environment needs JavaScript code in plaintext. That simply means it is **always** possible to get any JavaScript obfuscated code into something readable and executable in Node.js or web browser.
-
+But one fact is very important here: every single JavaScript runtime environment needs JavaScript code in plaintext to be able to  execute. Including Windows Script Host. That simply means it is **always** possible to get any JavaScript obfuscated code into something readable and executable in Node.js or web browser.
 --
 
 ### Get in touch maybe? :)
