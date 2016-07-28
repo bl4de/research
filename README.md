@@ -24,6 +24,13 @@ As a part of this, I'm working on tool (in Python) to extract data from revealed
 
 https://github.com/bl4de/security-tools/tree/master/diggit
 
+#### RAA Ransomware JavaScript code analysis
+
+Detailed, step-by-step analysis of RAA ransomware, created entirely in JavaScript
+
+https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
+
+
 
 
 ### CTF writeups
