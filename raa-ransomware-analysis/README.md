@@ -155,7 +155,7 @@ function YUIMqkFkI() {
 }
 ```
 
-This fragment just generates a string which contains five characters randomly chosen from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned _**xW5Gf**_ from example above as generated value of **TBucypWw** variable.
+This fragment just generates a string which contains five characters randomly chosen from **WKQttPJDfsQE** string. In this writeup, to understand its meaning, how and where it's used, I assigned _**xW5Gf**_ as generated value of **TBucypWw** variable.
 
 --
 
