@@ -1097,9 +1097,10 @@ But RAA confirms that JavaScript can be used for, literally, everything. Even fo
 
 And not only RAA uses JavaScript for such things. @hasherezade recently described in details Locky ransomware downloader script, which is also created in JavaScript (see https://blog.malwarebytes.com/threat-analysis/2016/07/from-locky-with-love-reading-malicious-attachments/ )
 
-Also, obfuscation of JavaScript code in similar malware is insane. In "Return of Locky" blogpost (https://malcat.moe/?p=53) you can follow process of deobfuscation Locky ransomware code. JavaScript variables and function names can be refer in many ways - eg. object property identifier can be defined as concatenated string of mixed UTF, hexadecimal and plain text chunks, reverted, encoded and reverted once again.
+Also, obfuscation of JavaScript code in similar malware is insane. In "Return of Locky" blogpost (https://malcat.moe/?p=53) you can follow process of deobfuscation Locky ransomware code. JavaScript variables and function names can be refer in many ways eg. object property identifier can be defined as concatenated string of mixed UTF, hexadecimal and plain text chunks, reverted, encoded and reverted once again.
 
 But one fact is very important here: every single JavaScript runtime environment needs JavaScript code in plaintext to be able to  execute. Including Windows Script Host. That simply means it is **always** possible to get any JavaScript obfuscated code into something readable and executable in Node.js or web browser.
+
 --
 
 ### Get in touch maybe? :)
