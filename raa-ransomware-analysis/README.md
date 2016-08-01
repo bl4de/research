@@ -907,8 +907,12 @@ if (PRuJZyAvfeza > 6122 && PRuJZyAvfeza < 5000000) {
 * if file size is more than 4,76 MB and less than 476 MB - **qqJ()** function is called with file name as an argument
 
 * otherwise, if file size is less than or equal 6122 bytes - file content read in line:
+
 ```
-hXpHGpZ[0][0] = SlSPWu.ReadText;``` and **hXpHGpZ** array is passed to **jMvqmKSQu()** function. 
+hXpHGpZ[0][0] = SlSPWu.ReadText;
+``` 
+
+and **hXpHGpZ** array is passed to **jMvqmKSQu()** function. 
 
 Files bigger than 476 MB are ommited.
 
