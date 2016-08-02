@@ -17,7 +17,7 @@ function whoIsBl4de() {
 }
 ```
 Hello and welcome to my GitHub account.
-If you'd like to know more about me, this is likely the best place to start from :)
+If you'd like to know more about me, this is likely the best place to start :)
 
 --
 
@@ -122,10 +122,11 @@ So, Linux/UNIX machines, Bash, PHP, JavaScript, HTML5, Python, SQL, database eng
 
 During all of those years I had a feeling that IT Security is something I'd like to do most. So I've started to improve my knowledge in fields like web applications security, network security, penetration testing.
 In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) 
+
 Since June 2016 I've also started to participate in couple of bug bounty programs on Bugcrowd and HackerOne.
 In July 2016 I was able to send my first couple of bugs finding reports both on HackerOne and BugCrowd and on 1st of August 2016 I've received my first "Hall of Fame" entry and first approved bugs. But that was just the beginning.
 
 Today, I'm going to continue my career as successful inedpendent penetration tester, security researcher and bug bounty hunter.
 
-
+--
 
