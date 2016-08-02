@@ -55,13 +55,6 @@ You can see my **CTF writeups** from variuos events here: https://github.com/bl4
 
 --
 
-### [PL only]
-
-Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
-Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
-
-http://sekurak.pl/?s=bl4de
-
 ### Me online
 
 You can follow me on **Twitter**. I share IT security, web development and coding related stuff.
@@ -79,6 +72,15 @@ https://www.openbugbounty.org/researchers/_bl4de/
 
 ![Project Euler badge]
 (https://projecteuler.net/profile/bl4de.png)
+
+--
+
+### [PL only]
+
+Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
+Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
+
+http://sekurak.pl/?s=bl4de
 
 --
 
