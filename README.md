@@ -6,12 +6,6 @@ This is my all-IT-security related repository - CTFs writeups, articles, PoCs, b
 
 If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
 
-### Quick links
-
-- [Research](#research)
-- [CTF Writeups](#ctf-writeups)
-- [Me online](#me-online)
-- [About me](#about-me)
 
 ### Research
 
@@ -30,15 +24,36 @@ Detailed, step-by-step analysis of RAA ransomware, created entirely in JavaScrip
 
 https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
 
+--
 
+## Bug Bounty
 
+**Bugcrowd**		    
+
+https://bugcrowd.com/bl4de
+
+**HackerOne**		  
+
+https://hackerone.com/bl4de
+
+## Hall of Fames
+
+**OLX** https://security.olx.com/security-hall-of-fame.html
+
+--
+
+## CTF
+
+**CTFtime.org**		  
+
+- 01.2015 - 12.2015 -  https://ctftime.org/team/12769 (bl4de) (not active at this name anymore)
+- 01.2016 - present -  https://ctftime.org/team/16701 (Stack)
 
 ### CTF writeups
 
-You can take a look at some of my **writeups from CTFs** events which I've took a part and resolved some tasks:
+You can see my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
-https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
-
+--
 
 ### [PL only]
 
@@ -54,31 +69,18 @@ You can follow me on **Twitter**. I share IT security, web development and codin
 https://twitter.com/_bl4de
 
 
-My other online profiles:
+### Other sites
 
-#### CTF
+**OpenBugBounty**       
 
-**CTFtime.org**		  
-
-- 01.2015 - 12.2015 -  https://ctftime.org/team/12769 (bl4de) (not active at this name anymore)
-- 01.2016 - present -  https://ctftime.org/team/16701 (Stack)
-
-You can see my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
-
-#### Bug Bounty programs
-
-**Bugcrowd**		    https://bugcrowd.com/bl4de
-
-**HackerOne**		  https://hackerone.com/bl4de
-
-#### Other sites
-
-**OpenBugBounty**       https://www.openbugbounty.org/researchers/_bl4de/
+https://www.openbugbounty.org/researchers/_bl4de/
 
 **Project Euler**
 
 ![Project Euler badge]
 (https://projecteuler.net/profile/bl4de.png)
+
+--
 
 ### About me
 
