@@ -1,11 +1,25 @@
-Hi,
 
-Thanks for visiting my GitHub!
+### whoami
+--
 
-This is my all-IT-security related repository - CTFs writeups, articles, PoCs, bug bounty descriptions and all that stuff.
+```
+/**
+  @return   who is bl4de... depends on what he's probably doing right now...
+*/
+function whoIsBl4de() {
+  return [
+    $$BugBounty$$ Hunter, 
+    CTF{flag_seeker}, 
+    coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
+    h4cK3R, 
+    https://web.developer
+  ].random()
+}
+```
+Hello and welcome to my GitHub account.
+If you'd like to know more about me, this is likely the best place to start from :)
 
-If you'd like to know more about me - here's the link: https://github.com/bl4de/research/blob/master/README.md#about-me
-
+--
 
 ### Research
 
@@ -26,7 +40,7 @@ https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
 
 --
 
-## Bug Bounty
+### Bug Bounty
 
 **Bugcrowd**		    
 
@@ -42,14 +56,14 @@ https://hackerone.com/bl4de
 
 --
 
-## CTF
+### CTF
 
 **CTFtime.org**		  
 
 - 01.2015 - 12.2015 -  https://ctftime.org/team/12769 (bl4de) (not active at this name anymore)
 - 01.2016 - present -  https://ctftime.org/team/16701 (Stack)
 
-### CTF writeups
+#### CTF writeups
 
 You can see my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
@@ -62,7 +76,7 @@ You can follow me on **Twitter**. I share IT security, web development and codin
 https://twitter.com/_bl4de
 
 
-### Other sites
+#### Other sites
 
 **OpenBugBounty**       
 
@@ -77,7 +91,7 @@ https://www.openbugbounty.org/researchers/_bl4de/
 
 ### [PL only]
 
-Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi materiałami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
+Jeśli nie jest Ci obcy język polski ;-), to poza powyższymi miejscami możesz także zajrzeć na strony portalu **sekurak.pl**, gdzie znajdziesz trochę moich tekstów.
 Możesz je odszukać podając w wyszukiwarce mój nickname (bl4de) lub po prostu kliknąć ten link:
 
 http://sekurak.pl/?s=bl4de
@@ -88,12 +102,17 @@ http://sekurak.pl/?s=bl4de
 
 A few words about myself :)
 
-I am Full Stack Web Application developer since October 2007 (professional career, but I was writing some code in Basic on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've got my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn everything else by myself. From time to time.
-Unfortunately for me, I was able to start my professional IT career when I was 30 years old, in 2007. Now, I've got web development experience (both server and client) with several technologies, including LAMP (Linux/Apache/MySQL/PHP) and MEAN  stacks as well as some experience with JavaEE enterprise applications.
+I am Full Stack Web Application developer since October 2007 (professional career, but I have started to write code in Basic on my Commodore 16 when I was 15, in 1992 :) ). After 8-bit era (Commodore 16, 64 and 128) and 16-bit era (Amiga 1200) in 2000 finally I've got my first 32-bit PC machine with Pentium processor and 32 MB RAM. Then in 2002 I've finished my IT Associate Degree and started to learn everything else by myself. From time to time.
+Unfortunately for me, I was able to start my professional IT career when I was 30 years old, in 2007. Now, I've got web development experience (both server and client) with several technology stacks including LAMP (Linux/Apache/MySQL/PHP) Node.js/server-side JavaScript applications, JavaEE enterprise applications (some basic experience, I am not Java developer).
 
 So, Linux/UNIX machines, Bash, PHP, JavaScript, HTML5, Python, SQL, database engines, web servers, Node, Single Page Applications, AJAX, REST, SOAP/WSDL, Angular, Git, SVN, MongoDB, JSON, EcmaScript 6, Babel, Promises, closures, Public/Protected/Private, constructors, interfaces, imports, includes, Require, modules, components - and many, many, many other words - I know them all :) Even more - I know what they mean and even how to use them! :D
 
 During all of those years I had a feeling that IT Security is something I'd like to do most. So I've started to improve my knowledge in fields like web applications security, network security, penetration testing.
-In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) Since June 2016 I've also started to participate in couple of bug bounty programs on Bugcrowd and HackerOne and looking forward to get my first bounties soon :)
+In 2015 I've started to attend as many CTFs as possible, to do IT security related research, to develop tools for IT security world and to do all this stuff what some guys call 'hacking' ;) 
+Since June 2016 I've also started to participate in couple of bug bounty programs on Bugcrowd and HackerOne.
+In July 2016 I was able to send my first couple of bugs finding reports both on HackerOne and BugCrowd and on 1st of August 2016 I've received my first "Hall of Fame" entry and first approved bugs. But that was just the beginning.
+
+Today, I'm going to continue my career as successful inedpendent penetration tester, security researcher and bug bounty hunter.
+
 
 
