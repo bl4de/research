@@ -52,7 +52,7 @@ https://hackerone.com/bl4de
 
 ## Hall of Fames
 
-**OLX** https://security.olx.com/security-hall-of-fame.html
+**OLX** https://security.olx.com/security-hall-of-fame.html (Aug 2016)
 
 --
 
