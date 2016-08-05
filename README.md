@@ -91,10 +91,6 @@ https://twitter.com/_bl4de
 
 #### Other sites
 
-**OpenBugBounty**       
-
-https://www.openbugbounty.org/researchers/_bl4de/
-
 **Project Euler**
 
 ![Project Euler badge]
