@@ -3,16 +3,15 @@
 --
 
 ```
-/**
-  @return   who is bl4de... depends on what he's probably doing right now...
-*/
 function whoIsBl4de() {
   return [
+  
     $$BugBounty$$ Hunter, 
     CTF{flag_seeker}, 
     coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
     h4cK3R, 
     https://web.developer
+  
   ].random()
 }
 ```
