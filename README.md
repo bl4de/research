@@ -49,9 +49,15 @@ https://bugcrowd.com/bl4de
 
 https://hackerone.com/bl4de
 
-### Hall of Fames
+
+### Hall of Fame
 
 **OLX** https://security.olx.com/security-hall-of-fame.html (Aug 2016)
+
+
+### Acknowledgments
+
+**Eternity Wall** https://eternitywall.it/m/5ac86b8099d0121ff3b1944309878eb7d1d37341b062ec4a7219957fb5776365
 
 --
 
