@@ -3,16 +3,15 @@
 --
 
 ```
-/**
-  @return   who is bl4de... depends on what he's probably doing right now...
-*/
 function whoIsBl4de() {
   return [
+  
     $$BugBounty$$ Hunter, 
     CTF{flag_seeker}, 
     coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
     h4cK3R, 
     https://web.developer
+  
   ].random()
 }
 ```
@@ -50,9 +49,15 @@ https://bugcrowd.com/bl4de
 
 https://hackerone.com/bl4de
 
-### Hall of Fames
+
+### Hall of Fame
 
 **OLX** https://security.olx.com/security-hall-of-fame.html (Aug 2016)
+
+
+### Acknowledgments
+
+**Eternity Wall** https://eternitywall.it/m/5ac86b8099d0121ff3b1944309878eb7d1d37341b062ec4a7219957fb5776365
 
 --
 
@@ -65,8 +70,8 @@ https://hackerone.com/bl4de
 Finished overall rating place: 562 with 14,677 pts in 2015.
 Teams with points: 7275, best team result: 1789,884 (Plaid Parliament of Pwning)
 
-I've finished in **top 8%** teams in the whole CTFtime ranking, with **0,81% points of the best team** :)
-I was as good as almost 1% of Plaid Parliament of Pwning whole team! :)
+In 2015 I've finished in **top 8%** teams in CTFtime ranking with any points (more than 7800 teams in total), with **0,81% points of the best team** :)
+I was as good as almost 1% of Plaid Parliament of Pwning! :)
 
 Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anymore)
 
@@ -90,10 +95,6 @@ https://twitter.com/_bl4de
 
 
 #### Other sites
-
-**OpenBugBounty**       
-
-https://www.openbugbounty.org/researchers/_bl4de/
 
 **Project Euler**
 
