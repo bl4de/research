@@ -3,15 +3,13 @@
 --
 
 ```
-function whoIsBl4de() {
-  return [
-  
+whoIsBl4de() {
+  [
     $$BugBounty$$ Hunter, 
     CTF{flag_seeker}, 
     coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
     h4cK3R, 
     https://web.developer
-  
   ].random()
 }
 ```
@@ -49,10 +47,15 @@ https://bugcrowd.com/bl4de
 
 https://hackerone.com/bl4de
 
+**OpenBugBounty**
+
+https://www.openbugbounty.org/researchers/_bl4de/
+
+--
 
 ### Hall of Fame
 
-**OLX** https://security.olx.com/security-hall-of-fame.html (Aug 2016)
+**OLX** https://security.olx.com/security-hall-of-fame.html
 
 
 ### Acknowledgments
