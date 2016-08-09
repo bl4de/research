@@ -3,15 +3,13 @@
 --
 
 ```
-function whoIsBl4de() {
-  return [
-  
+whoIsBl4de() {
+  [
     $$BugBounty$$ Hunter, 
     CTF{flag_seeker}, 
     coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
     h4cK3R, 
     https://web.developer
-  
   ].random()
 }
 ```
