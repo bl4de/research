@@ -49,6 +49,10 @@ https://bugcrowd.com/bl4de
 
 https://hackerone.com/bl4de
 
+**OpenBugBounty**
+
+https://www.openbugbounty.org/researchers/_bl4de/
+
 
 ### Hall of Fame
 
