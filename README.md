@@ -53,10 +53,11 @@ https://hackerone.com/bl4de
 
 https://www.openbugbounty.org/researchers/_bl4de/
 
+--
 
 ### Hall of Fame
 
-**OLX** https://security.olx.com/security-hall-of-fame.html (Aug 2016)
+**OLX** https://security.olx.com/security-hall-of-fame.html
 
 
 ### Acknowledgments
