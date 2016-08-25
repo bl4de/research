@@ -132,5 +132,5 @@ In July 2016 I was able to send my first couple of bugs finding reports both on 
 
 Today, I'm going to continue my career as successful inedpendent penetration tester, security researcher and bug bounty hunter.
 
+If you'd like to contact me, please feel free to send an email to bloorq [at] gmail [dot] com
 --
-
