@@ -1,24 +1,10 @@
 
-### whoami
---
-
-```
-whoIsBl4de() {
-  [
-    $$BugBounty$$ Hunter, 
-    CTF{flag_seeker}, 
-    coder.createCode([JavaScript,Python,PHP,Bash,C,Java]), 
-    h4cK3R, 
-    https://web.developer
-  ].random()
-}
-```
 Hello and welcome to my GitHub account.
-If you'd like to know more about me, this is likely the best place to start :)
+If you'd like to know more about me, this is likely the best place to start
 
 --
 
-### Research
+### IT Security related writeups
 
 #### Hidden directories and files as a source of sensitive information about web application
 
@@ -47,10 +33,6 @@ https://bugcrowd.com/bl4de
 
 https://hackerone.com/bl4de
 
-**OpenBugBounty**
-
-https://www.openbugbounty.org/researchers/_bl4de/
-
 --
 
 ### Hall of Fame
@@ -64,9 +46,7 @@ https://www.openbugbounty.org/researchers/_bl4de/
 
 --
 
-### CTF
-
-**CTFtime.org**		  
+### CTF **CTFtime.org**		  
 
 #### 2015
 
