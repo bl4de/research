@@ -53,8 +53,7 @@ https://hackerone.com/bl4de
 Finished overall rating place: 562 with 14,677 pts in 2015.
 Teams with points: 7275, best team result: 1789,884 (Plaid Parliament of Pwning)
 
-In 2015 I've finished in **top 8%** teams in CTFtime ranking with any points (more than 7800 teams in total), with **0,81% points of the best team** :)
-I was as good as almost 1% of Plaid Parliament of Pwning! :)
+In 2015 I've finished in **top 8%** teams in CTFtime ranking with any points (more than 7800 teams in total), with **0,81% points of the best team** 
 
 Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anymore)
 
