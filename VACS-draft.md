@@ -242,7 +242,25 @@ So, **if you are web developer and you care about website you've created**:
 
 ```
 
-- use ```contribute.json``` provided by **Mozilla**. You can find all details about this here: https://www.contributejson.org/
+- use ```contribute.json``` provided by **Mozilla** and add following JSON code:
+
+```JOSN
+"bugs": {
+    "properties": {
+        "list": {
+            "type": "string"
+        }, 
+        "mentored": {
+            "type": "string"
+        }, 
+        "report": {
+            "type": "string"
+        }
+    }, 
+    "type": "object"
+}, 
+```    
+You can find all details about this here: https://www.contributejson.org/
 
 
 ## Thoughts?
