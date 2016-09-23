@@ -250,9 +250,6 @@ If you'd like to talk about my idea, why it's bad (or good, I hope), what should
 
 I'll try to keep this page up-to-date as long as there will be any feedback and reason to do this.
 
-In the meanwhile, I'm going to do what I do - notify website owners about any vulnerability I'll face with visiting their page, no matter if they'll get my email or they don't.
-
-
 ## Resources
 
 Here you can find some links to resources I've mentioned in this writeup. There are not about my idea, but they provide good background to understand the problem and everyone, not only IT Security professionals, should care about web security.
