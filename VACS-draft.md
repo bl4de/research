@@ -242,9 +242,12 @@ So, **if you are web developer and you care about website you've created**:
 
 ```
 
-- use ```contribute.json``` provided by **Mozilla** and add following JSON (schema):
+- use ```contribute.json``` provided by **Mozilla** and add following JSON:
 
 ```JOSN
+
+//schema:
+
 "bugs": {
     "properties": {
         "list": {
@@ -258,7 +261,15 @@ So, **if you are web developer and you care about website you've created**:
         }
     }, 
     "type": "object"
-}, 
+}
+
+// example of use (source: https://github.com/mozilla/contribute.json):
+
+"bugs": {
+	"list": "https://bugzilla.mozilla.org/buglist.cgi?query_format=advanced&bug_status=UNCONFIRMED&bug_status=NEW&product=www.mozilla.org",
+	"report": "https://bugzilla.mozilla.org/enter_bug.cgi?product=www.mozilla.org&component=Bedrock",
+	"mentored": "https://bugzilla.mozilla.org/buglist.cgi?f1=bug_mentor&o1=isnotempty&query_format=advanced&bug_status=NEW&product=www.mozilla.org&list_id=10866041"
+}
 ```    
 You can find all details about this here: https://www.contributejson.org/
 
