@@ -186,6 +186,45 @@ The same example with ```same-domain``` directive:
 ```
 
 
+## Why is this so important for me? And should be for you as well?
+
+On 20th of September, Casey Ellis from TechCrunch published very interesting article about vulnerability reporting in medical devices.
+
+Most of his article is focused on those devices, but there are couple of universal thoughts valid for IT Security in general:
+
+> Vulnerability disclosure ethics are an inherently murky area. There are countless vulnerabilities that exist unpatched in software systems,(...)
+
+> Ideally, vulnerabilities are discovered when the vendor learns about them through their own testing or through the help of
+> security researchers operating under a “Coordinated Disclosure” or bug bounty model. Other times, vulnerabilities found are 
+> kept secret, and used for attack, unbeknownst to the manufacturer or their users. Then there’s what is called “Full 
+> Disclosure,” where discovered vulnerabilities are simply disclosed to the public, sometimes before the vendor has had the 
+> opportunity to respond. These three scenarios are status quo for disclosure.
+
+
+(source: https://techcrunch.com/2016/09/20/hacking-for-investor-profit/ by Casey Ellis, TechCrunch)
+
+
+But more important from my point of view is this fragment:
+
+
+> Full Disclosure is most frequently chosen out of frustration at a slow response or bad communication by the impacted 
+> organization. The risk of Full Disclosure can be mitigated by organizations, firstly by taking whatever steps are necessary 
+> to identify and fix vulnerabilities in the first place, then by establishing clear channels and expectations between security 
+> researchers and vendors around newly identified ones.
+
+
+**Full Disclosure is most frequently chosen out of frustration at a slow response or bad communication by the impacted organization** - this is what you can expect when you ignore Security Reseacrher(s) and their reports about vulnerability found in **your software or website**. Full Disclosure menas someone with not the best intentions can easily use vulnerability **against** your company and causes real problems. Money problems. Your money problems.
+
+**The risk of Full Disclosure can be mitigated by organizations, firstly by taking whatever steps are necessary to identify and fix vulnerabilities in the first place...** - that's why Security Reseacrhers and Ethical Hackers send you notifications about vulnerabilities found in your websites, software, network infrastructure and so on. It's like your good neighbour telling you that you left your window open in the morning, when you was leaving your house going to work. What would you do then? Ignore him? Send him a letter with "Thank you!" a week later? 
+
+Or would you rather go back immediately, close the window and say something like "Hey, thanks Joe! Have a nice day, I own you a beer!" or something similar?
+
+**... by establishing clear channels and expectations between security researchers and vendors around newly identified ones**
+Again, this is all about this post is.
+
+Communication channel allowing anyone to report vulnerability found in **your** software.
+
+
 ## What we can do today?
 
 Not much to be honest. Beside all websites currently having any type of bug bounty programs or similar, there is nothing called "good practice" to drop somewhere contact information for security issues.
@@ -222,7 +261,7 @@ Here you can find some links to resources I've mentioned in this writeup. There 
 - Acunetix Web Application Vulnerability Report 2016 http://www.acunetix.com/acunetix-web-application-vulnerability-report-2016/
 - Acunetix Web Application Vulnerability Report 2015 http://www.acunetix.com/acunetix-web-application-vulnerability-report-2015/
 - OWASP Open Web Application Security Project https://www.owasp.org/index.php/Main_Page
-- Hacking for investor profit by Casey Ellis (TechCrunch, posted on 20th Sept. 2016) https://techcrunch.com/2016/09/20/hacking-for-investor-profit/
+- "Hacking for investor profit" by Casey Ellis (TechCrunch, posted on 20th Sept. 2016) https://techcrunch.com/2016/09/20/hacking-for-investor-profit/
 
 
 
