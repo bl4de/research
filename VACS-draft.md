@@ -242,6 +242,7 @@ So, **if you are web developer and you care about website you've created**:
 
 ```
 
+- use ```contribute.json``` provided by **Mozilla**. You can find all details about this here: https://www.contributejson.org/
 
 
 ## Thoughts?
