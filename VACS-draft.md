@@ -202,3 +202,27 @@ So, **if you are web developer and you care about website you've created**:
 </html>
 
 ```
+
+
+
+## Thoughts?
+
+If you'd like to talk about my idea, why it's bad (or good, I hope), what should I change, remove or add - just ping me on Twitter (https://twitter.com/_bl4de) or send an email (bloorq (AT) gmail.com).
+
+I'll try to keep this page up-to-date as long as there will be any feedback and reason to do this.
+
+In the meanwhile, I'm going to do what I do - notify website owners about any vulnerability I'll face with visiting their page, no matter if they'll get my email or they don't.
+
+
+## Resources
+
+Here you can find some links to resources I've mentioned in this writeup. There are not about my idea, but they provide good background to understand the problem and everyone, not only IT Security professionals, should care about web security.
+
+
+- Acunetix Web Application Vulnerability Report 2016 http://www.acunetix.com/acunetix-web-application-vulnerability-report-2016/
+- Acunetix Web Application Vulnerability Report 2015 http://www.acunetix.com/acunetix-web-application-vulnerability-report-2015/
+- OWASP Open Web Application Security Project https://www.owasp.org/index.php/Main_Page
+- Hacking for investor profit by Casey Ellis (TechCrunch, posted on 20th Sept. 2016) https://techcrunch.com/2016/09/20/hacking-for-investor-profit/
+
+
+
