@@ -242,7 +242,7 @@ So, **if you are web developer and you care about website you've created**:
 
 ```
 
-- use ```contribute.json``` provided by **Mozilla** and add following JSON code:
+- use ```contribute.json``` provided by **Mozilla** and add following JSON (schema):
 
 ```JOSN
 "bugs": {
