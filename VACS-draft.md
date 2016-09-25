@@ -273,6 +273,12 @@ So, **if you are web developer and you care about website you've created**:
 ```    
 You can find all details about this here: https://www.contributejson.org/
 
+## Who else takes care about this?
+
+**Twitter** (https://dev.twitter.com/overview/general/security-best-practices)
+
+> Have you set up security@yourapplication.com? Do those emails go right to your phone? Make it easy for people to contact you about potential security issues with your application. If someone does report a security flaw to you, be nice to them; they’ve just done you a huge favor. Thank them for their time and fix the issue promptly. It’s fairly common for security researchers to write about vulnerabilities they’ve discovered once the hole has been closed, so don’t be upset if your application ends up in a blog post or research paper. Security is hard, and nobody is perfect. As long as you’re fixing the issues that are reported to you, you’re doing right.
+
 
 ## Thoughts?
 
