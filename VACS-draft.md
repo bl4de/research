@@ -99,14 +99,12 @@ But we're not talking about such companies.
 We're talking about hundreds of thousands of others.
 
 
-## Technical details of VACS standard
-
-
 My proposition is to provide **Vulnerability Alert Contact Standard** specification, which will allow to setup contact information **in case of vulnerability report only** in form of standard HTML meta tag or custom server HTTP response header (like X-XSS-Protection), dedicated email address (similar to _abuse@companyname.com_) or any other contact form.
 
 **My idea is something like 112 (or 911 in US) phone number** - if there's something wrong going on, you just pick up the phone and call that number. **VACS should be something you can use when there is something wrong (from security perspective) with the website you're visiting**
 
 
+## Technical details of VACS standard
 
 ### HTTP Respone header
 
