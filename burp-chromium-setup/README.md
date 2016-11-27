@@ -124,6 +124,9 @@ Usage: chromium [port] [enable xss Auditor]
 [+] running ./Chromium --proxy-server=127.0.0.1:8080 --disable-xss-auditor
 ```
 
+![Burp and Chromium]
+(assets/burp_with_chromium.png)
+
 ## Summary
 
 Of course if you are not a fan of console scripts, Bash and all this stuff, you can still run Chromium with all those features (proxy, XSS Auditor disabled) simply by running this command:
