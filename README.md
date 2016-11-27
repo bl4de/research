@@ -4,7 +4,7 @@ If you'd like to know more about me, this is likely the best place to start
 
 --
 
-### IT Security related writeups
+### Writeups
 
 #### Hidden directories and files as a source of sensitive information about web application
 
@@ -50,10 +50,8 @@ https://hackerone.com/bl4de
 
 #### 2015
 
-Finished overall rating place: 562 with 14,677 pts in 2015.
+Finished overall rating place: 562 with 14,677 pts in 2015 (finished in **top 8%** teams in CTFtime ranking with any points (more than 7800 teams in total), with **0,81% points of the best team**)
 Teams with points: 7275, best team result: 1789,884 (Plaid Parliament of Pwning)
-
-In 2015 I've finished in **top 8%** teams in CTFtime ranking with any points (more than 7800 teams in total), with **0,81% points of the best team** 
 
 Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anymore)
 
