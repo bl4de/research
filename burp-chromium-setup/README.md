@@ -42,7 +42,12 @@ Chromium, web browser based on Blink HTML engine and V8 JavaScript engine (used 
 
 https://download-chromium.appspot.com/
 
-As you can see, there is the newest build available. That's fine, because we don't want to use Chromium as our main web browser or even for testing web applications for our clients (if you're web developer you are already aware of this, aren't you? ;) )
+Builds are available for all major platforms (OSX, Linux, Android and Windows)
+
+![Chromium download page]
+(assets/chromium.png)
+
+As you can see, there is always the newest build available. That's fine, because we don't want to use Chromium as our main web browser or even for testing web applications for our clients (if you're web developer you are already aware of this, aren't you? ;) )
 
 What we want is the newest compilation of Chromium Developer Tools to be able to use it while doing our web application penetration testing or bug bounty stuff.
 
