@@ -1,8 +1,8 @@
-### Burp Suite and Chromium quick setup
+## Burp Suite and Chromium setup how-to
 
 This is quick how-to presents my way to configure Chromium web browser to work with Burp Suite HTTP Proxy.
 
-#### Why Chromium
+### Why Chromium
 
 As a full time, Full Stack Web Developer I use Chromium-based browsers and runtimes (Chromium, Chrome, Opera, node) all the time in my daily work. I found Developer Tools build in all of those products the most easy, flexible and powerful developer tools ever.  
 
@@ -18,7 +18,7 @@ Solution for this was to create simple console script with couple of additional 
 
 But let's start from Burp Suite first.
 
-#### Set up Burp Suite
+## Set up Burp Suite
 
 Burp Suite Free Edition is one of the best tool any not professional penetration tester, bug hunter or web application security eager (like me) can get (Thanks Portswigger!!!).
 
@@ -36,7 +36,7 @@ If you are not familiar with Burp - 'Getting Started With Burp Suite' is likely 
 https://portswigger.net/burp/help/suite_gettingstarted.html
 
 
-#### Set up Chromium
+### Set up Chromium
 
 Chromium, web browser based on Blink HTML engine and V8 JavaScript engine (used also by Chrome, Opera and node projects) can be downloaded from here:
 
@@ -57,7 +57,7 @@ https://developer.chrome.com/devtools
 
 You can find there everything you will need to become familiar with Chromium Developer Tools.
 
-#### Run Chromium with Burp Suite as HTTP Proxy
+### Run Chromium with Burp Suite as HTTP Proxy
 
 Now, when we have both Chromium and Burp set up, it's time to run them as one, perfect web application killing machine :)
 
@@ -119,7 +119,7 @@ Usage: chromium [port] [enable xss Auditor]
 [+] running ./Chromium --proxy-server=127.0.0.1:8080 --disable-xss-auditor
 ```
 
-#### Summary
+## Summary
 
 Of course if you are not a fan of console scripts, Bash and all this stuff, you can still run Chromium with all those features (proxy, XSS Auditor disabled) simply by running this command:
 
