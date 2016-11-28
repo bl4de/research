@@ -75,7 +75,7 @@ Here is my Bash script I am using to run Chromium using Burp as proxy:
 # http://peter.sh/experiments/chromium-command-line-switches/
 #
 # 8080 - is a standard port for Burp
-# To disable XSS Auditor in Chromium simply put 0 as second argument, 1eaves XSS Auditor enabled
+# To disable XSS Auditor in Chromium simply put 0 as second argument, any other value leaves XSS Auditor enabled
 #
 
 echo
