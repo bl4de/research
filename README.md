@@ -55,7 +55,9 @@ In progress...
 #### 2016
 
 Ranking position: 882 with 11,276 points; finished in **top 9%** teams with any points in CTFtime ranking, with **0,69% points of the best team**
+
 teams with any points: 10593
+
 best team result: 1625,714 (dcua)
 
 Full stats: https://ctftime.org/team/16701 (Stack)
@@ -63,7 +65,9 @@ Full stats: https://ctftime.org/team/16701 (Stack)
 #### 2015
 
 Ranking position: 562 with 14,677 points; finished in **top 8%** teams with any points in CTFtime ranking, with **0,81% points of the best team**
+
 teams with any points: 7275
+
 best team result: 1789,884 (Plaid Parliament of Pwning)
 
 Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anymore)
