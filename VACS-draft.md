@@ -271,6 +271,39 @@ So, **if you are web developer and you care about website you've created**:
 ```    
 You can find all details about this here: https://www.contributejson.org/
 
+
+## Needs some inspiration?
+
+If you think about putting such information and you wonder how to do this, I present some great, real world examples below.
+
+#### Jet.com - an online store
+
+Jet.com already provides bug bounty program on Bugcrowd and communicates it clearly in its HTML source:
+
+```html
+<!--
+
+        9ååååå\          .ÖååååΓⁿ       
+       xååååååå          φååååååå       
+        ╘Öååå0.           q4åå@n        Hello from Hoboken,
+                                        
+                         ¬çççççç²       We <3 curious people!
+                         =ååååååS       
+                         =ååååååS       
+                         =ååååååS       
+        ìììììì=          =ååååååS       Working at Jet
+        åååååå#          ⌠ååååååm       https://jet.com/careers
+        ååååååå"         Γåååååå~       
+        .ååååååå½l'  .:xååååååå(        
+          Çåååååååååååååååååå4¬         Responsible Disclosure
+            ²╚åååååååååååå╪≥.           https://bugcrowd.com/jet
+                'ⁿ»|!l,~                
+
+-->
+```
+
+
+
 ## Who else takes care about this?
 
 List below contains companies which understand the problem and treat it seriously.
