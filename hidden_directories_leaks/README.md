@@ -145,9 +145,13 @@ $i = 100;
 echo "Value of i is $i";
 
 bl4de on Rafals-MacBook in /Library/WebServer/Documents/testapp $ 
-
-
 ```
+
+Because manual object retrieving is not efficient and very time consuming, I've created simple console tool in Python to automate this process. You can take a look at in here:
+
+https://github.com/bl4de/security-tools/tree/master/diggit
+
+
 
 ### .gitignore file
 
