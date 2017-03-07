@@ -21,6 +21,15 @@ Detailed, step-by-step analysis of RAA ransomware, created entirely in JavaScrip
 
 https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
 
+
+#### Simple JavaScript malware code deobfuscation walkthrough
+
+JavaScript malware code deobfuscation step-by-step walkthrough
+
+https://github.com/bl4de/research/blob/master/javascript-malware-obfuscation/Simple_JavaScript_malware_code_obfuscation_examples.md
+
+
+
 --
 
 ### Bug Bounty
