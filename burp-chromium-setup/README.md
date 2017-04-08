@@ -28,8 +28,7 @@ https://portswigger.net/burp/download.html
 
 After installation run Burp Suite and go to Proxy->Options tab and in Proxy Listeners set up your local address and port you want to use (it can be any available port above 1024 well known ports, 8080 is just set by default)
 
-![Proxy settings]
-(assets/proxy1.png)
+![Proxy settings](assets/proxy1.png)
 
 If you are not familiar with Burp - 'Getting Started With Burp Suite' is likely the best place you can start from:
 
@@ -44,8 +43,7 @@ https://download-chromium.appspot.com/
 
 Builds are available for all major platforms (OSX, Linux, Android and Windows)
 
-![Chromium download page]
-(assets/chromium.png)
+![Chromium download page](assets/chromium.png)
 
 As you can see, there is always the newest build available. That's fine, because we don't want to use Chromium as our main web browser or even for testing web applications for our clients (if you're web developer you are already aware of this, aren't you? ;) )
 
@@ -53,8 +51,7 @@ What we want is the newest compilation of Chromium Developer Tools to be able to
 
 When you run Chromium, you can open its Developer Tools just by clicking F12 on Windows and Linux or CMD+ALT+i on OSX:
 
-![CDT]
-(assets/dt1.png)
+![CDT](assets/dt1.png)
 
 There are plenty of options available and what I recommend is just to go to this website:
 
@@ -124,8 +121,7 @@ Usage: chromium [port] [enable xss Auditor]
 [+] running ./Chromium --proxy-server=127.0.0.1:8080 --disable-xss-auditor
 ```
 
-![Burp and Chromium]
-(assets/burp_with_chromium.png)
+![Burp and Chromium](assets/burp_with_chromium.png)
 
 ## Summary
 
@@ -145,5 +141,4 @@ If you have any questions just ping me on Twitter (https://twitter.com/_bl4de) o
 Happy hacking!!!
 
 Rafal 'bl4de' Janicki
-
 

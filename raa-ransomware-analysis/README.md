@@ -243,8 +243,7 @@ GtDEcTuuN.Run(run);
 
 As a result, RTF document is displayed with some error message:
 
-![RTF document]
-(extracted/extracted_rtf_screen.png)
+![RTF document](extracted/extracted_rtf_screen.png)
 
 
 Next function is **NWvQtGjjfQX()** (I've truncated content of **data_pn** here): 
@@ -1142,4 +1141,3 @@ https://reaqta.com/2016/06/raa-ransomware-delivering-pony/
 
 **Locky downloader script analysis by @hasherezade**
 
-https://blog.malwarebytes.com/threat-analysis/2016/07/from-locky-with-love-reading-malicious-attachments/
