@@ -6,9 +6,9 @@ Following some links provided by Polish malware analyst **@hasherezade** (https:
 
 # Table of Contents
 
-- [RAA Ransomware JavaScript code analysis] (#raa-ransomware-javascript-code-analysis)
+- [RAA Ransomware JavaScript code analysis](#raa-ransomware-javascript-code-analysis)
 	- [What is this writeup about?](#what-is-this-writeup-about)
-- [Analysis] (#analysis)
+- [Analysis](#analysis)
 	- [Some first thoughts](#some-first-thoughts)
 	- [Splitting code into separate parts](#splitting-code-into-separate-parts)
 - [How RAA JavaScript works](#how-raa-javascript-works)
