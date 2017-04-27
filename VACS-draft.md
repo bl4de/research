@@ -1,3 +1,5 @@
+July, 2016
+
 ## Introduction
 
 We're living in the Net. All our data, communication, money, work, almost everything depends on billions of zeros and ones traveling all around the world in every single second. We're living in information age and there's no doubt it will be changing our lives more and more in the nearest future.
