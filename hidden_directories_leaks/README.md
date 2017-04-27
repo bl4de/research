@@ -451,7 +451,7 @@ There are also files like _.bowerrc_, _.eslintrc_, _.jshintrc_ and similar. As t
 
 # Summary
 
-It is always worth to check if one of mentioned folder exists on the web server. Git repository is just a disaster, as it allows to download source code of web application, as well as IntelliJ IDE project configuration folder.	 If you are suing automated scanners (like DirBuster or similar) it's worth to check if those folders already exists in your dictionary files and add them if they don't.
+It is always worth to check if one of mentioned folder exists on the web server. Git repository is just a disaster, as it allows to download source code of web application, as well as IntelliJ IDE project configuration folder.	 If you are using automated scanners (like DirBuster or similar) it's worth to check if those folders already exists in your dictionary files and add them if they don't.
 
 Happy Hacking! :)
 
