@@ -463,7 +463,9 @@ Here's a list of tools which may help discover hidden content
 ### BFAC by @mazen160
 
 BFAC (Backup File Artifacts Checker): An automated tool that checks for backup artifacts that may disclose the web-application's source code. 
-An absolute amazing tool to discover backup files created and maintained by Mazin Ahmed (https://github.com/mazen160)
+
+An absolute amazing tool to discover backup files created and maintained by Mazin Ahmed.
+
 
 https://github.com/mazen160/bfac
 
