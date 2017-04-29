@@ -15,6 +15,7 @@ There's a lot of web servers where there's no problem to find such files with a 
 	- [NetBeans](#netbeans-ide)
 	- [ActiveState Komodo IDE](#activestate-komodo-IDE)
 - [Developer Tools configuration files](#developer-tools-configuration-files)
+- [Recommended tools](#recommended-tools)
 
 
 # Source code version control systems
@@ -454,5 +455,22 @@ There are also files like _.bowerrc_, _.eslintrc_, _.jshintrc_ and similar. As t
 It is always worth to check if one of mentioned folder exists on the web server. Git repository is just a disaster, as it allows to download source code of web application, as well as IntelliJ IDE project configuration folder.	 If you are using automated scanners (like DirBuster or similar) it's worth to check if those folders already exists in your dictionary files and add them if they don't.
 
 Happy Hacking! :)
+
+# Recommended tools
+
+Here's a list of tools which may help discover hidden content
+
+### BFAC by @mazen160
+
+BFAC (Backup File Artifacts Checker): An automated tool that checks for backup artifacts that may disclose the web-application's source code. 
+An absolute amazing tool to discover backup files created and maintained by Mazin Ahmed (https://github.com/mazen160)
+
+https://github.com/mazen160/bfac
+
+
+
+
+
+
 
 
