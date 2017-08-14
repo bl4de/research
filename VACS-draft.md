@@ -242,6 +242,31 @@ So, **if you are web developer and you care about website you've created**:
 
 ```
 
+- @EdOverflow (https://twitter.com/EdOverflow) maintains a project __Security.txt__ - dedicated file like robots.txt, but for security related issues:
+
+> Security.txt is a standard that allows websites to define security policies. This standard sets clear guidelines for security researchers for how to report security issues and allows bug bounty programs to define a scope. Security.txt is the equivalent of robots.txt, but for security issues.
+
+Example security.txt file contains information as follows:
+
+```
+# In scope targets
+In-scope: *.example.com
+
+# Out of scope targets
+Out-of-scope: test.example.com
+
+# Out of scope vulnerabilities
+Out-of-scope-vuln: Clickjacking
+
+# Our security address
+Contact: security@example.com
+
+# Our HackerOne program
+Platform: https://hackerone.com/example
+```
+
+You can read more about his project here https://github.com/EdOverflow/security-txt
+
 - use ```contribute.json``` provided by **Mozilla** and add following JSON:
 
 ```JOSN
