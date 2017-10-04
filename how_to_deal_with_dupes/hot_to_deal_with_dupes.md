@@ -204,6 +204,8 @@ I can't even say how much time I've spent on all of them in total, how many blog
 
 I hope you will look at every single duplicate you'll get in the future in different way, as I've used to. Of course, I wish you not too many of them! But getting duplicates is a part of being Bug Bounty Hunter, like being hit in the face is pretty normal for every boxer in the world :)
 
+__Kudos for Jason Haddix (@jhaddix) from Bugcrowd for adding information about duplicates in Bugcrowd platform.__
+
 Happy Hunting!
 
 bl4de
