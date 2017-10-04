@@ -1,4 +1,4 @@
-## How to deal with duplicates
+## How to deal with duplicates (and start to like them ;) )
 
 ### Intro
 
@@ -16,7 +16,7 @@ If your report is correct (vulnerability you have found exists, you have prepare
 
 But there is one, very specific situation, when your report is valid (thus, it can't be rejected as 'Not applicable'), you have prepared the best PoC you could, issue is definitely in scope and has significant security impact - in general, everything's going fine and you're already starting to count money you will get. You get notification, your heart starts to beat faster and faster, you open your mailbox and...
 
-{dupe1.png}
+![dupe](dupe1.png)
 
 Ouch :/
 
@@ -24,7 +24,7 @@ Ouch :/
 
 The worst feeling bug bounty hunter can feel.
 
-{empty.gif}
+![dupe](empty.gif)
 
 If you know that feeling - don't worry, been there, done that. Nobody likes duplicates (or 'dupes' like some researchers call them). Getting duplicates constantly, if you're participating in public programs and comepte against dozens, if not hundreds, of other researchers is a routine. They are also nothing special in private, invite-only programs, where there are not as many researchers, but their level of knowledge and skills allow them to find most of low hanging fruits and not-so-low hanging fruits as well very quickly.
 
