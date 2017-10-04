@@ -152,6 +152,44 @@ If you won't follow this rule - you will end up with negative Signal and your re
 
 Last, but not least - every dupe adds 2 points to your Reputation (on HackerOne platform) when original report gets resolved. It's not 7 points as for resolved one, but still something better than 0, isn't it? :)
 
+### Bounty Platform Metrics related to Duplicates
+
+Another way to look at Duplicates optimistically is that they offer a newer bug hunter some opportunity to receive private program invites. The criteria for Bugcrowd's invites are as follows:
+
+![privprogs](privprogs.png)
+
+In this system, duplicates do NOT impact your average submission priority so if a researcher reports two issues: one an accepted :P1: and another duplicate :P1: their average submission priority is still 1.0.  
+
+The standard points value of duplicates is as follows:
+
+```
+accepted: {
+      p1: 40,
+      p2: 20,
+      p3: 10,
+      p4: 5
+    },
+    duplicate: {
+      p1: 10,
+      p2: 5,
+      p3: 2,
+      p4: 1
+    },
+    rejected: {
+      not_applicable: 0,
+      not_reproducible: -1,
+      out_of_scope: -1,
+      wont_fix: 0
+    }
+```
+
+Duplicates are definitely still benefiting bug hunters! As you accrue points and reputation you are bound to get more private program invites!
+
+
+![haters](haters.gif)
+
+
+
 ### Final words
 
 At the moment I'm writting these words, I have 60 reports in total (closed and triaged) where 13 of them are duplicates. But even though they cost me 65 points of Reputation less (13 * 2 instead of 13 * 7) - I've learnt a lot from them. In my dupes there are reports including vulnerabilities like:
