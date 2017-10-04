@@ -20,7 +20,7 @@ But there is one, very specific situation, when your report is valid (thus, it c
 
 Ouch :/
 
-4th place. No medal. You were good, but not good enough. 
+4th place. No medal. You were good, but not fast enough. 
 
 The worst feeling bug bounty hunter can feel.
 
@@ -37,7 +37,7 @@ The good news is: yes, it is worth all that energy. Every single second you have
 
 Let's assume issue you have found in private program you have been just invited to and ended up with 'Duplicate'. It's RCE (Remote Code Execution) in web application written in Java, run on Tomcat application server in internal network. You have found this issue by exploiting template injection in JSP (Java Server Page) file along with SSRF (Server-Side Request Forgery). 
 
-Your reaction when you see your report is a duplicate is obvious - anger mixed with dissapointment.
+Your reaction when you see your report is a duplicate is obvious - anger mixed with disappointment.
 
 ![thankyou](thankyou.gif)
 
@@ -45,26 +45,26 @@ But hold on there for a second.
 
 First thing - ask yourself what you had to do to find this issue. Let's get through, step by step.
 
-1. You had to find out, what software is running on this server.
+- You had to find out, what software is running on this server.
 
 This requires some recon to be done - maybe basic banner grabbing, maybe something little bit more sophisticated, like port scanning with nmap and -sV option set. You had to use some tools - like netcat, nmap, maybe nikto. Some of those tools might be pretty new for you, or with some of them you are not very familiar and you needed to 'man' them a little bit first.
 
-2. You had to figure out how website is build
+- You had to figure out how website is build
 
 Did you spot JSESSIONID in cookies indicates that this is Java application? Maybe there was HTTP header set with JSP string in it? Maybe you triggered an error with 404 Not Found standard Tomcat response?
 
-3. You had to actually spot that user input is reflected in JSP file
+- You had to actually spot that user input is reflected in JSP file
 
 That was it, right? You figured out that one of user inputs is reflected in HTML output and you realized it has to be processed by the server in some way? How long it took you to craft working exploit and see response from your command you have sent to the server, like 'whoami' or 'uname -a'? How many blog posts you have to read, like this one for example:
 
 https://blog.netspi.com/hacking-with-jsp-shells/
 
 
-4. Finally, you had to figure out that there is request sent to that internal server, which leads directly to SSRF
+- Finally, you had to figure out that there is request sent to that internal server, which leads directly to SSRF
 
 The input from JSP file is used in request sent to internal server, behind the firewall. This server is unaccesible form outside, but this particular injection you have just found in JSP file allows you to spot that response comes from something hidden deeper in program's network. If SSRF was something new for you (let's assume that it is true) - an enormous effort had to be put from you to exploit this and turn into fully exploitable RCE. Hours, if not days spent on reading, searching, looking in Hacktivity for similar reports to find out how it can be done.
 
-5. Last, but not least - you had to write report and put detailed Proof of Concept there
+- Last, but not least - you had to write report and put detailed Proof of Concept there
 
 Write a good report is also a part of the whole process (IMHO it's one of the hardest steps). With every report written - you gain new skills, you actually __learn__ how to describe issue you've just found in the way people from the program can understand.
 
