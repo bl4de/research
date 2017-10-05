@@ -84,7 +84,7 @@ Those were technical things. But there are other as well, maybe even more import
 
 - you know that __you can find very severe vulnerabilities__. You are getting more self-confident. You weren't first, but you need to realize __it does not matter__ really. You could not know that someone else just found the same bug. 
 
-There is the best summary by  @abhijeth which I've found on Twitter:
+There is the best summary by @abhijeth which I've found on Twitter:
 
 ![tweet1](tweet1.png)
 
