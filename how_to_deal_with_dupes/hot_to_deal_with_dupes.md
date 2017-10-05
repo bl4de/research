@@ -84,9 +84,16 @@ Those were technical things. But there are other as well, maybe even more import
 
 - you know that __you can find very severe vulnerabilities__. You are getting more self-confident. You weren't first, but you need to realize __it does not matter__ really. You could not know that someone else just found the same bug. 
 
-Bug was there and you have found it, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into. There are only couple of programs out there, where you can use 'white-box' approach - and there are mostly PHP open source applications where everyone can download the source, run it locally and read the code. Magento, WordPress, concrete5 and Phabricator are the examples, as well as Discourse (Ruby).
+There is the best summary by  @abhijeth which I've found on Twitter:
 
-It's not your fault when you end up with Duplicate. Remember - your competitors are always better than you (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!!!
+![tweet1](tweet1.png)
+
+https://twitter.com/abhijeth/status/915747406938963968
+
+
+__Bug was there and you have found it__, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into. There are only couple of programs out there, where you can use 'white-box' approach - and there are mostly PHP open source applications where everyone can download the source, run it locally and read the code. Magento, WordPress, concrete5 and Phabricator are the examples, as well as Discourse (Ruby).
+
+It's not your fault when you end up with Duplicate. Remember - there will be always someone better than you  (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!!!
 
 
 ![yeah](ohyeah.gif)
