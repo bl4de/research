@@ -86,7 +86,7 @@ Those were technical things. But there are other as well, maybe even more import
 
 There is the best summary by @abhijeth which I've found on Twitter:
 
-![tweet1](tweet1.png)
+![tweet1](tweet1.png){:height="50%" width="50%"}
 
 https://twitter.com/abhijeth/status/915747406938963968
 
