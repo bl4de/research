@@ -134,7 +134,7 @@ That means only one thing - getting duplicate is more likely here than in progra
 When you have source code in front of your eyes, build with language(s) you are familiar with for years and you know what to look for - chances that you will find something really severe are very high. Also, there are many vulnerabilities which are almost impossible to find in traditional, black-boxed hunting based on fuzzing with common payloads, like nuances in business logic which allows to gain privillege escalation or get code execution because of some old, hidden functionality or that one weird 'if' condition which is true only for someone with username 'JenniferL' ;)
 
 
-### Get duplicates to become your best friends!
+### Let duplicates to become your best friends!
 
 ![friends](friends.gif)
 
