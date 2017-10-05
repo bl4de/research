@@ -86,7 +86,11 @@ Those were technical things. But there are other as well, maybe even more import
 
 Bug was there and you have found it, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into. There are only couple of programs out there, where you can use 'white-box' approach - and there are mostly PHP open source applications where everyone can download the source, run it locally and read the code. Magento, WordPress, concrete5 and Phabricator are the examples, as well as Discourse (Ruby).
 
-It's not your fault when you end up with Duplicate. Remember - your competitors are always better than you (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!
+It's not your fault when you end up with Duplicate. Remember - your competitors are always better than you (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!!!
+
+
+![yeah](ohyeah.gif)
+
 
 - it's always good to win. How to deal with defeat is much harder to learn. Duplicates can teach you persistence, patience and something which I did not realized until I found bug in the same program as duplicate couple of days earlier - getting up after you have felt down (mentally ;) )
 
@@ -118,6 +122,14 @@ Start from looking at Hacktivity (feature on HackerOne which allows to see all r
 You should look for programs where:
 
 - scope is wide as mentioned earlier - the best examples for me are so far Yahoo and __General Motors__. Especially second one looks interesting, because literally __everything__ is in scope. I was able to report the weirdest issues I was able to spot, some of them with almost no or very little security impact. Every report I've sent to GM program was triaged and GM Security Team never left any of vulnerability I've found not triaged or without any response.
+
+Another worth to mention program with very wide scope is __US Departament of Defence__ bug bounty program available on HackerOne platform. This program has very well defined scope, without any exclusions:
+
+```
+Any public-facing website owned, operated, or controlled by DoD, including web applications hosted on those sites.
+```
+
+
 
 The result is that for 29 reports I've sent to GM program so far, only 7 were not fully resolved - including __five of them__ were actually duplicates (plus two closed as 'Informative' without any security impact for GM and Reputation for me). Only 5 dupes in 29 reports in total, in public program which runs for two years and has about one hundred hunters involved so far is quite good result I think.
 
@@ -152,7 +164,7 @@ If you won't follow this rule - you will end up with negative Signal and your re
 
 Last, but not least - every dupe adds 2 points to your Reputation (on HackerOne platform) when original report gets resolved. It's not 7 points as for resolved one, but still something better than 0, isn't it? :)
 
-### Bounty Platform Metrics related to Duplicates
+### Bugcrowd Bounty Platform Metrics related to Duplicates
 
 Another way to look at Duplicates optimistically is that they offer a newer bug hunter some opportunity to receive private program invites. The criteria for Bugcrowd's invites are as follows:
 
@@ -189,6 +201,27 @@ Duplicates are definitely still benefiting bug hunters! As you accrue points and
 ![haters](haters.gif)
 
 
+### HackerOne Metrics related to Duplicates.
+
+HackerOne reputation system defines that every duplicate report is worth 2 Reputation points, no matter of severity or how many reputation points original report gets. Based on this, you shoud be aware of negative impact of duplicates on your Signal Metric. Signal (in HackerOne terminology) is an average Reputation points gained by report (without additional points gained for monetary bounties).
+
+If you are sending only valid reports, your reports are first every time and triaged and resolved - your Signal will be no more or no less than 7.00. If you are able to keep that Signal all the time - you're doing brilliant job there!
+
+
+![happy](happy.gif)
+
+
+Unfortunately, it's not possible in the long term and duplicates are one of the reason of this. But no worries, having Signal like 4.50 or 5.20 is perfectly fine. As long as your Signal won't fell down to -2.34 for example, because that means you're sending a lot of 'Not applicable' reports, which costs you literaly minus five Reputation points.
+
+So even if duplicates harms you from time to time - the good news is they actually increases your Reputation and it's not possible to end up with negative Reputation. 
+
+
+Better this than nothing, right ;) ?  
+
+
+![happy](why.gif)
+
+
 
 ### Final words
 
@@ -203,6 +236,15 @@ I can't even say how much time I've spent on all of them in total, how many blog
 
 
 I hope you will look at every single duplicate you'll get in the future in different way, as I've used to. Of course, I wish you not too many of them! But getting duplicates is a part of being Bug Bounty Hunter, like being hit in the face is pretty normal for every boxer in the world :)
+
+
+Now, tell me, duplicates aren't that bad as you might think, are they?
+
+
+![uhm](uhm.gif)
+
+
+:)))
 
 __Kudos for Jason Haddix (@jhaddix) from Bugcrowd for adding information about duplicates in Bugcrowd platform.__
 
