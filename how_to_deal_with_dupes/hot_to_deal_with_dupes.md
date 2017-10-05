@@ -87,7 +87,9 @@ Those were technical things. But there are other as well, maybe even more import
 There is the best summary by @abhijeth which I've found on Twitter:
 
 <img src="tweet1.png" width="480px"/>
-https://twitter.com/abhijeth/status/915747406938963968
+
+
+source:https://twitter.com/abhijeth/status/915747406938963968
 
 
 __Bug was there and you have found it__, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into. There are only couple of programs out there, where you can use 'white-box' approach - and there are mostly PHP open source applications where everyone can download the source, run it locally and read the code. Magento, WordPress, concrete5 and Phabricator are the examples, as well as Discourse (Ruby).
