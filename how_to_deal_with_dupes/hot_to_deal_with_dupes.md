@@ -4,7 +4,7 @@
 
 If you are Bug Bounty Hunter, you know that feeling, when your report is marked as 'Duplicate'. This moment is like 4th place in the race - you were so close to the podium. So close to Gold, Silver or Bronze. But you've finished with nothing and the only thing left to do for you is to watch medal ceremony from tribune. And cry.
 
-If you are not involved in bug bounty programs, here is quick explanation of what 'Duplicate' means. In bug bounty programs you compete against other hunters in hunting for bugs. Two biggest and most popular bug bounty platforms (HackerOne and Bugcrowd) maintain programs for their clients and allows you to send to those programs something called 'Report' - which is description of security issue you have found with all required information about your finding (what kind of bug, where did you find it, how to reproduce it and, if you know how to do this - how to mitigate it).
+In bug bounty programs you compete against other hunters in hunting for bugs. Two biggest and most popular bug bounty platforms (HackerOne and Bugcrowd) maintain programs for their clients and allows you to send to those programs something called 'Report' - which is description of security issue you have found with all required information about your finding (what kind of bug, where did you find it, how to reproduce it and, if you know how to do this - how to mitigate it).
 
 Program can accept your report, if it's valid, or rejects one if bug you found is not valid, program maintainers can't reproduce it or you found this bug in resource which is 'Out of scope' ('Out of scope' is the way programs treat particular types of vulnerabilities as not potential security issues, or marks resources like web application or server as something you should not look for bugs there). Typical examples of out of scope issues are CSRF on logout, self XSS with no security impact or lack of specific, security related HTTP headers in server's response.
 
@@ -26,7 +26,7 @@ The worst feeling bug bounty hunter can feel.
 
 ![dupe](empty.gif)
 
-If you know that feeling - don't worry, been there, done that. Nobody likes duplicates (or 'dupes' like some researchers call them). Getting duplicates constantly, if you're participating in public programs and compete against dozens, if not hundreds, of other researchers is a routine. They are also nothing special in private, invite-only programs, where there are not as many researchers, but their level of knowledge and skills allow them to find most of low hanging fruits and not-so-low hanging fruits as well very quickly.
+If you know that feeling - don't worry, been there, done that. Nobody likes duplicates (or 'dupes' like some researchers call them). Getting duplicates constantly, if you're participating in public programs and compete against hundreds of other researchers is a routine. Duplicates also are nothing special in private, invite-only programs, where there are not as many researchers, but their level of knowledge and skills allow them to find most of low hanging fruits and not-so-low hanging fruits as well very quickly.
 
 This can be very frustrating and demotivates you from hunting. You're starting to think if all your effort you put in finding the bug you've get dupe for is worth all energy you've put in.
 
@@ -37,34 +37,35 @@ The good news is: yes, it is worth all that energy. Every single second you have
 
 Let's assume issue you have found in private program you have been just invited to and ended up with 'Duplicate'. It's RCE (Remote Code Execution) in web application written in Java, run on Tomcat application server in internal network. You have found this issue by exploiting template injection in JSP (Java Server Page) file along with SSRF (Server-Side Request Forgery). 
 
-Your reaction when you see your report is a duplicate is obvious - anger mixed with disappointment.
+Your reaction when you see your report is a duplicate is obvious - anger mixed with disappointment. Something what Katniss Everdeen could feel when she was presenting her skills as District 12 tribute, but sponsors did not really care:
 
 ![thankyou](thankyou.gif)
 
-But hold on there for a second.
 
-First thing - ask yourself what you had to do to find this issue. Let's get through, step by step.
+But hold on there for a second. It's not Hunger Games :)
 
-- You had to find out, what software is running on this server.
+First thing - ask yourself what you had to do to find this issue. Let's get through, step by step, and see what you've could learn from this duplicate:
+
+#### You had to find out, what software is running on this server.
 
 This requires some recon to be done - maybe basic banner grabbing, maybe something little bit more sophisticated, like port scanning with nmap and -sV option set. You had to use some tools - like netcat, nmap, maybe nikto. Some of those tools might be pretty new for you, or with some of them you are not very familiar and you needed to 'man' them a little bit first.
 
-- You had to figure out how website is build
+#### You had to figure out how website is build
 
 Did you spot JSESSIONID in cookies indicates that this is Java application? Maybe there was HTTP header set with JSP string in it? Maybe you triggered an error with 404 Not Found standard Tomcat response?
 
-- You had to actually spot that user input is reflected in JSP file
+#### You had to actually spot that user input is reflected in JSP file
 
 That was it, right? You figured out that one of user inputs is reflected in HTML output and you realized it has to be processed by the server in some way? How long it took you to craft working exploit and see response from your command you have sent to the server, like 'whoami' or 'uname -a'? How many blog posts you have to read, like this one for example:
 
 https://blog.netspi.com/hacking-with-jsp-shells/
 
 
-- Finally, you had to figure out that there is request sent to that internal server, which leads directly to SSRF
+#### Finally, you had to figure out that there is request sent to that internal server, which leads directly to SSRF
 
 The input from JSP file is used in request sent to internal server, behind the firewall. This server is unaccesible form outside, but this particular injection you have just found in JSP file allows you to spot that response comes from something hidden deeper in program's network. If SSRF was something new for you (let's assume that it is true) - an enormous effort had to be put from you to exploit this and turn into fully exploitable RCE. Hours, if not days spent on reading, searching, looking in Hacktivity for similar reports to find out how it can be done.
 
-- Last, but not least - you had to write report and put detailed Proof of Concept there
+#### Last, but not least - you had to write report and put detailed Proof of Concept there
 
 Write a good report is also a part of the whole process (IMHO it's one of the hardest steps). With every report written - you gain new skills, you actually __learn__ how to describe issue you've just found in the way people from the program can understand.
 
@@ -84,7 +85,7 @@ Those were technical things. But there are other as well, maybe even more import
 
 - you know that __you can find very severe vulnerabilities__. You are getting more self-confident. You weren't first, but you need to realize __it does not matter__ really. You could not know that someone else just found the same bug. 
 
-There is the best summary by @abhijeth which I've found on Twitter:
+There is the best summary of this, posted on Twitter by @abhijeth:
 
 <img src="tweet1.png" width="480px"/>
 
@@ -92,15 +93,15 @@ There is the best summary by @abhijeth which I've found on Twitter:
 source:https://twitter.com/abhijeth/status/915747406938963968
 
 
-__Bug was there and you have found it__, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into. There are only couple of programs out there, where you can use 'white-box' approach - and there are mostly PHP open source applications where everyone can download the source, run it locally and read the code. Magento, WordPress, concrete5 and Phabricator are the examples, as well as Discourse (Ruby).
+__Bug was there and you have found it__, exploit it and gain remote code execution in something you have no idea how it works earlier. Remember that bug bounty hunting is almost always a 'black box' in penetration testing methodology - that means you have no idea what's under the hood until you actually dig into.
 
-It's not your fault when you end up with Duplicate. Remember - there will be always someone better than you  (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!!!
+It's not your fault when you end up with duplicate. Remember - there will be always someone better than you  (just look on the Leaderboard and compare your position and number of bugs found :) ). But if you can find very, very severe bugs in the same fashion like @Mr Hack, @meals, @Geekboy, @mongo, @yappare, @zseano or @mlitchfield - nothing can stop you from heading to the Top!!!
 
 
 ![yeah](ohyeah.gif)
 
 
-- it's always good to win. How to deal with defeat is much harder to learn. Duplicates can teach you persistence, patience and something which I did not realized until I found bug in the same program as duplicate couple of days earlier - getting up after you have felt down (mentally ;) )
+- it's always good to win. How to deal with defeat is much harder to learn. Duplicates can teach you persistence, patience and something which I did not realized until I found valid, triagged and resolved later bug in the same program I've found duplicate couple of days earlier - getting up after you have felt down (mentally ;) ) It's all about __don't giving up__.
 
 Don't think in short term - 'Oh God, it's a dupe! I'm doomed :('. Think in the long term. For every duplicate you get, there are (or will be) two, three, five or ten valid reports. Duplicates are, from their nature, impossible to omit. __Always remember you are not the only one hunting for bugs__. This is especially important in most popular, public programs out there like Yahoo, General Motors, Uber, Shopify or VK.com.
 
@@ -172,7 +173,9 @@ If you won't follow this rule - you will end up with negative Signal and your re
 
 Last, but not least - every dupe adds 2 points to your Reputation (on HackerOne platform) when original report gets resolved. It's not 7 points as for resolved one, but still something better than 0, isn't it? :)
 
-### Bugcrowd Bounty Platform Metrics related to Duplicates
+Now, let's get into some metric details related to duplicated reports on Bugcrowd and HackerOne.
+
+### Bugcrowd Bounty Platform Metrics related to Duplicates (by @jhaddix)
 
 Another way to look at Duplicates optimistically is that they offer a newer bug hunter some opportunity to receive private program invites. The criteria for Bugcrowd's invites are as follows:
 
@@ -233,7 +236,7 @@ Better this than nothing, right ;) ?
 
 ### Final words
 
-At the moment I'm writting these words, I have 60 reports in total (closed and triaged) where 13 of them are duplicates. But even though they cost me 65 points of Reputation less (13 * 2 instead of 13 * 7) - I've learnt a lot from them. In my dupes there are reports including vulnerabilities like:
+At the moment I'm writting these words, I have 63 reports in total (closed and triaged) where 13 of them are duplicates. But even though they cost me 65 points of Reputation less (13 * 2 instead of 13 * 7) - I've learnt a lot from them. In my dupes there are reports including vulnerabilities like:
 
 - time-based SQL Injection in ASP.NET+MSSQL application (I was not very good at exploiting this stack, so it was good lesson)
 - another SQL Injection in ASP.NET application (yeah, it seems I am not very lucky with ASP stack ;) ) - again, it requires from me a lot of work to exploit this one as well
