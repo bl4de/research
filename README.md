@@ -28,9 +28,19 @@ https://hackerone.com/bl4de
 
 ### CTF **CTFtime.org**		  
 
-#### 2017
+#### 2018
 
 In progress...
+
+#### 2017
+
+Ranking position: 1247 with 13,435 points; finished in **top 8,55%** teams with any points in CTFtime ranking, with **1,75% points of the best team**
+
+teams with any points: 14580
+
+best team result: 763,992 (Plaid Parliament of Pwning)
+
+Full stats: https://ctftime.org/team/16701 (Stack)
 
 #### 2016
 
