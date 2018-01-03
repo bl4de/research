@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script src="simple-markdown-modified.js"></script>
+  </head>
+  <body>
+    <div id="root">
+
+    </div>    
+
+    <script type="text/babel">
+    var md = '|test table|column 1 | column2|'
+
+    var syntaxTree = SimpleMarkdown.defaultBlockParse(md);
+  //  console.log(JSON.stringify(syntaxTree, null, 4))
+
+      ReactDOM.render(
+        React.DOM.div(null, SimpleMarkdown.defaultOutput(syntaxTree)),
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
+
