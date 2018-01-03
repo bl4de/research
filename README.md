@@ -3,34 +3,6 @@ Hello and welcome to my GitHub account.
 If you'd like to know more about me, this is likely the best place to start
 
 
-### Writeups
-
-#### Hidden directories and files as a source of sensitive information about web application
-
-Some analysis about how to get information about web application from folders like _.git_ , _.idea_ and similar.
-https://github.com/bl4de/research/tree/master/hidden_directories_leaks
-
-As a part of this, I'm working on tool (in Python) to extract data from revealed Git repositories:
-
-https://github.com/bl4de/security-tools/tree/master/diggit
-
-#### RAA Ransomware JavaScript code analysis
-
-Detailed, step-by-step analysis of RAA ransomware, created entirely in JavaScript
-
-https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
-
-
-#### Simple JavaScript malware code deobfuscation walkthrough
-
-JavaScript malware code deobfuscation step-by-step walkthrough
-
-https://github.com/bl4de/research/blob/master/javascript-malware-obfuscation/Simple_JavaScript_malware_code_obfuscation_examples.md
-
-
-
---
-
 ### Bug Bounty
 
 **Bugcrowd**		    
@@ -56,9 +28,19 @@ https://hackerone.com/bl4de
 
 ### CTF **CTFtime.org**		  
 
-#### 2017
+#### 2018
 
 In progress...
+
+#### 2017
+
+Ranking position: 1251 with 13,435 points; finished in **top 8,55%** teams with any points in CTFtime ranking, with **1,72% points of the best team**
+
+teams with any points: 14615
+
+best team result: 780,201 (217)
+
+Full stats: https://ctftime.org/team/16701 (Stack)
 
 #### 2016
 
@@ -86,6 +68,37 @@ Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anym
 You can see my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
 --
+
+
+### Other Writeups
+
+#### Hidden directories and files as a source of sensitive information about web application
+
+Some analysis about how to get information about web application from folders like _.git_ , _.idea_ and similar.
+https://github.com/bl4de/research/tree/master/hidden_directories_leaks
+
+As a part of this, I'm working on tool (in Python) to extract data from revealed Git repositories:
+
+https://github.com/bl4de/security-tools/tree/master/diggit
+
+#### RAA Ransomware JavaScript code analysis
+
+Detailed, step-by-step analysis of RAA ransomware, created entirely in JavaScript
+
+https://github.com/bl4de/research/tree/master/raa-ransomware-analysis
+
+
+#### Simple JavaScript malware code deobfuscation walkthrough
+
+JavaScript malware code deobfuscation step-by-step walkthrough
+
+https://github.com/bl4de/research/blob/master/javascript-malware-obfuscation/Simple_JavaScript_malware_code_obfuscation_examples.md
+
+
+
+--
+
+
 
 You can follow me on **Twitter**. I share IT security, web development and coding related stuff.
 
