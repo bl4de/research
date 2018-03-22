@@ -1,5 +1,6 @@
-## Intro
+# Most common security vulnerabilities in npm static content/file servers modules
 
+## Intro
 
 If you are JavaScript developer and you are working with Node.js, chances that you've never heard about [npm](https://npmjs.org) are literaly slim. **npm** (Node Package Manager) is a repository, where hundreds of thousands ready-to-use modules for your state-of-the-art Node.js application are just waiting to be downloaded and used as a part of your codebase. node_modules directory in your project grows up exponential along with every new feature you are working on.
 
