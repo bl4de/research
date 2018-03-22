@@ -203,7 +203,7 @@ Of course, ```href``` attribute valueis invalid, but this is not important in th
 When this output will be returned to the browser by ```res.end()``` call, JavaScript will be executed.
 
 
-Ok, but this is only some teoretical attack vector. To be able to exploit this vulnerability, we need to put ```<script>alert('XSS!')</script>``` as a file name. Of course, instead of ```alert('XSS!')``` JavaScript code in the payload should do something little bit malicious than only displaying popup with some message.
+Ok, but this is only some teoretical attack vector. To be able to exploit this vulnerability, we need to put ```<script>alert('XSS!')</script>``` as a file name. Of course, instead of ```alert('XSS!')``` JavaScript code in the payload should do something a little bit more malicious than only displaying popup with some message to be considered as a threat for the users.
 
 Creating the file with name ```<script>alert('XSS!')</script>``` is the only way to achieve some code execution in the browser. But, due to operating system, there is no way to create file or directory with ```/``` character in the name. 
 
