@@ -209,7 +209,7 @@ Creating the file with name ```<script>alert('XSS!')</script>``` is the only way
 
 Do we need one though?
 
-Not really, because we **do not need to execute JavaScript directly**. We can instead embed ```<iframe>``` element and set its ```src``` attribute to HTML file created in the same directory. And in this HTML file we can implement any logic, including any JavaScript we want. Like for example ransoware downolader.
+Not really, because we **do not need to execute JavaScript directly**. We can instead embed ```<iframe>``` element and set its ```src``` attribute to HTML file created in the same directory. And in this HTML file we can implement any logic, including any JavaScript we want. Like ransomware downolader.
 
 So, let's summarize what we need to expolit this:
 
