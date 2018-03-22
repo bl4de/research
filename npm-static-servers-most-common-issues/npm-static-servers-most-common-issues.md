@@ -12,7 +12,8 @@ If you developed already such module or you are going to build one, maybe just f
 
 Unfortunately, this is not always the case.
 
-In December 2017, **[Node.js Ecosystem Bug Bounty Program](https://hackerone.com/nodejs-ecosystem)** emerged on **HackerOne** platform. The very first report, opened by Yasin Soliman [@ysx](https://hackerone.com/ysx) was Path Traversal vunlnerability in ```serve-here``` module and since then, this kind of vulnerability (which in most cases leads to Local File Include) is most common.
+In December 2017, **[Node.js Ecosystem Bug Bounty Program](https://hackerone.com/nodejs-ecosystem)** emerged on **HackerOne** platform. The very first report, opened by Yasin Soliman [@ysx](https://hackerone.com/ysx) was Path Traversal vunlnerability in ```serve-here``` module and since then, this kind of vulnerability (which in most cases leads to Local File Include) is the most common reported - https://hackerone.com/nodejs-ecosystem/hacktivity?sort_type=latest_disclosable_activity_at&filter=type%3Aall%20to%3Anodejs-ecosystem&page=1&range=forever
+
 
  In this post I'd like to present most common security issues in static server npm modules I found in the last couple of weeks. If you do not know what Path Traversal, LFI or XSS issues are - I put links to some basic resources about each of issue and strongly recommend to read and learn what they are and how they can be used against your application users.
 
