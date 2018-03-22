@@ -356,7 +356,7 @@ As you can see, an output contains information about each identified pattern, wi
 ![](assets/5.png)
 
 
-The list of patterns is not very impressive, but I use this tool while looking for the issues in Node.js Ecosystem Bug Bounty program and add any nwe pattern which looks suspicious or used in the wrong way (without sanitization of user input) might expose some vulnerability.
+The list of patterns is not very impressive, but I use this tool while looking for the issues in Node.js Ecosystem Bug Bounty program and add any new pattern which looks (for me) suspicious or used in the wrong way (without sanitization of user input) might expose some vulnerability.
 
 
 Feel free to use it and modify as you want :) It's under the license called "There is no license"
