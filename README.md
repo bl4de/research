@@ -5,13 +5,15 @@ If you'd like to know more about me, this is likely the best place to start
 
 ### Bug Bounty
 
-**Bugcrowd**		    
-
-https://bugcrowd.com/bl4de
 
 **HackerOne**		  
 
 https://hackerone.com/bl4de
+
+
+**Bugcrowd**		    
+
+https://bugcrowd.com/bl4de
 
 
 
@@ -20,9 +22,25 @@ https://hackerone.com/bl4de
 **OLX** https://security.olx.com/security-hall-of-fame.html
 
 
+
+
 ### Acknowledgments
 
 **Eternity Wall** https://eternitywall.it/m/5ac86b8099d0121ff3b1944309878eb7d1d37341b062ec4a7219957fb5776365
+
+
+### Published Advisories, CVSs etc.
+
+#### Node.js
+
+**serve Directory Traversal** 
+
+CVE-2018-3712
+
+https://nodesecurity.io/advisories/561
+
+
+
 
 ### Hackthebox.eu
 
