@@ -31,15 +31,8 @@ https://bugcrowd.com/bl4de
 
 ### Published Advisories, CVSs etc.
 
-#### Node.js
 
-**serve Directory Traversal** 
-
-CVE-2018-3712
-
-https://nodesecurity.io/advisories/561
-
-
+**serve npm module Directory Traversal vulnerability** - CVE-2018-3712 (https://nodesecurity.io/advisories/561)
 
 
 ### Hackthebox.eu
