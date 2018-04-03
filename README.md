@@ -19,7 +19,7 @@ https://bugcrowd.com/bl4de
 
 ### Hall of Fame
 
-**OLX** https://security.olx.com/security-hall-of-fame.html
+**OLX** https://security.olx.com/security-hall-of-fame.html  (2016)
 
 
 
@@ -42,7 +42,8 @@ https://bugcrowd.com/bl4de
 https://www.hackthebox.eu/profile/703
 
 
-### CTF **CTFtime.org**		  
+### CTFtime.org
+
 
 #### 2018
 
