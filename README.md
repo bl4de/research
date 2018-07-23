@@ -86,7 +86,13 @@ Full stats: https://ctftime.org/team/12769 (bl4de - not active at this name anym
 
 You can see my **CTF writeups** from variuos events here: https://github.com/bl4de/ctf#ctf-capture-the-flag-writeups-repository
 
---
+
+### Tools
+
+Some security related tools I've created:
+
+
+https://github.com/bl4de/security-tools
 
 
 ### Other Writeups
@@ -125,7 +131,6 @@ https://github.com/bl4de/research/blob/master/javascript-malware-obfuscation/Sim
 
 
 
---
 
 
 
