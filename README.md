@@ -2,7 +2,7 @@
 Hello and welcome to my GitHub account.
 If you'd like to know more about me, this is likely the best place to start
 
-![HackTheBox](https://www.hackthebox.eu/badge/image/703)
+
 
 ### Bug Bounty
 
@@ -42,6 +42,7 @@ https://bugcrowd.com/bl4de
 
 https://www.hackthebox.eu/profile/703
 
+![HackTheBox](https://www.hackthebox.eu/badge/image/703)
 
 ### CTFtime.org
 
