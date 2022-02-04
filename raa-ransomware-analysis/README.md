@@ -1110,7 +1110,7 @@ But one fact is very important here: every single JavaScript runtime environment
 
 If you have any questions or doubts - feel free to contact me:
 
-- Twitter: https://twitter.com/_bl4de
+- Twitter: https://twitter.com/I_am_bl4de
 - email: bloorq@gmail.com
 
 
